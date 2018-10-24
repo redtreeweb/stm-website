@@ -1,33 +1,36 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          {siteTitle}
+import imgLogo from '../images/logo-color.svg';
+import imgLogoWhite from '../images/logo.svg';
+
+import '../styles/components/header.scss';
+
+const Header = ({ siteTitle, fontColor, subTitle }) => (
+  <div class={`nav-wrapper ${fontColor}`  }>
+		<div id="logo-flow">
+			<Link to="/">
+        <img 
+          src={fontColor === 'light' ? 
+            imgLogoWhite : 
+            imgLogo} 
+            alt="logo-tag" />
         </Link>
-      </h1>
-    </div>
-  </div>
+		</div>
+		
+		<div id="cd-nav">
+			{/* <a href="#0" onclick="return false;" class="cd-nav-trigger">Menu<span></span></a> */}
+		
+			<nav id="cd-main-nav">
+				<ul>
+					<li><Link to="/our-approach">Our Approach</Link></li>
+					<li><Link to="/our-work">Our Work</Link></li>
+					<li><Link to="/our-background">Our Background</Link></li>
+				</ul>
+			</nav>
+		</div>
+		<h3 class="center interior-title">{subTitle}</h3>
+	</div>
 )
 
 export default Header

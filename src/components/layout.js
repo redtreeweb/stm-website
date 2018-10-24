@@ -4,9 +4,11 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
-import './layout.css'
+// import './layout.css'
+import '../styles/main.scss';
 
-const Layout = ({ children }) => (
+
+const Layout = ({ children, headerFontColor, headerSubTitle }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -25,18 +27,18 @@ const Layout = ({ children }) => (
             { name: 'description', content: 'Sample' },
             { name: 'keywords', content: 'sample, something' },
           ]}
+          link={[
+            {rel: 'stylesheet', type: 'text/css', href:'//cloud.typography.com/7803112/799324/css/fonts.css'}
+          ]}
         >
           <html lang="en" />
         </Helmet>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div
-          style={{
-            margin: '0 auto',
-            maxWidth: 960,
-            padding: '0px 1.0875rem 1.45rem',
-            paddingTop: 0,
-          }}
-        >
+        <Header 
+          siteTitle={data.site.siteMetadata.title} 
+          fontColor={headerFontColor}
+          subTitle={headerSubTitle}
+        />
+        <div>
           {children}
         </div>
       </>
@@ -44,8 +46,8 @@ const Layout = ({ children }) => (
   />
 )
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+// Layout.propTypes = {
+//   children: PropTypes.node.isRequired,
+// }
 
 export default Layout
