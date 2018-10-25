@@ -528,9 +528,16 @@ header {
 // 2018 REFACTOR
 .nav-wrapper {
   background-color: rgba(255, 255, 255, 0.7);
-  position: relative;
+  position: absolute;
+  width: 100%;
 
   &.light {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.25) 50%, transparent 100%);
+
+    &:after {
+      content: initial;
+    }
+
     #cd-nav {
       li {
         a {

@@ -6,15 +6,14 @@ import Image from '../components/image'
 
 const IndexPage = () => (
   <Layout 
-    headerFontColor="dark"
+    headerFontColor="light"
   >
-    {/* <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: '300px', marginBottom: '1.45rem' }}>
-      <Image />
+  <div id="section0" className="index-slide section">
+    <div class="layer">
+        <h1 class="title">Create. Distinguish. Matter.</h1>
+      </div>
+      <a data-menuanchor="makes-you-look-good" class="arrow down" href="#makes-you-look-good"></a>
     </div>
-    <Link to="/page-2/">Go to page 2</Link> */}
   </Layout>
 )
 
