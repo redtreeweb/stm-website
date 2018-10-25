@@ -4,6 +4,8 @@ import { Link } from 'gatsby';
 import Layout from '../components/layout';
 import Image from '../components/image';
 
+import _ from 'lodash';
+
 
 class IndexPage extends React.Component {
 
@@ -19,18 +21,44 @@ class IndexPage extends React.Component {
   }
 
   componentDidMount() {
-      window.addEventListener('scroll', this.handleScrollEvent);
+      // window.addEventListener('wheel', _.debounce(this.handleScrollEvent, 100, {leading: true, trailing: false }), {once: true});
+      window.addEventListener('wheel', this.handleScrollEvent);
+
   }
 
 
   handleButtonPress() {
-    this.setState({scrollPosition: this.state.scrollPosition + 1});
+    this.setState({scrollPosition: Math.min(this.state.scrollPosition + 1, 3)});
   }
 
   handleScrollEvent(e) {
-    e.preventDefault();
-    this.setState({scrollPosition: this.state.scrollPosition + 1});
+    console.log(e)
+    if (e.cancelable) {
+
+      this.setState({scrollPosition: Math.min(this.state.scrollPosition + 1, 3)});
+      
+    }
+    
+
+    // this.setState({scrollPosition: Math.min(this.state.scrollPosition + 1, 3)}, () => setTimeout(() => {
+      //   window.addEventListener('wheel', this.handleScrollEvent, {once: true});
+      // }, 10))
+
+    // window.addEventListener('wheel', _.throttle(this.handleScrollEvent, 1000, {leading: true, trailing: false }), {once:true});
+
+    // window.addEventListener('wheel', this.handleScrollEvent, {once: true});
+    // this.setState({scrollPosition: Math.min(this.state.scrollPosition + 1, 3)});
+    // this.scrollDebounce = () =>  {
+    //   console.log('throttle')
+    //   this.setState({scrollPosition: this.state.scrollPosition + 1})
+    // }
+
+    // console.log('outside')
+    // const throttle = 
+    // throttle();
   }
+
+
 
   render() {
 
