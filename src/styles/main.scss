@@ -28,6 +28,9 @@ ol,ul {
     margin:0;
     padding:0;
 }
+button {
+	outline: 0;
+}
 caption,th {
     text-align: left;
 
@@ -1146,10 +1149,29 @@ img.tapes {
 	color: #282828 !important;
 }
 
-.index-slide {
-	width: 100vw;
+.fullpage-viewport {
 	height: 100vh;
+	overflow: hidden;
+
+	.fullpage-wrapper {
+
+		height: 100%;
+		position: relative;
+		touch-action: none;
+		// transform: translate3d(0px, 0px, 0px);
+		transition: all 600ms ease 0s;
+	
+	
+		.index-slide {
+			position: relative;
+			width: 100vw;
+			height: 100vh;
+		}
+	}
 }
+
+
+
 
 
 
