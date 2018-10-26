@@ -13,7 +13,6 @@ class IndexPage extends React.Component {
       super(props)
     this.state = {
       scrollPosition: 0,
-      prevScrollY: window.scrollY
     }
 
     this.handleButtonPress = this.handleButtonPress.bind(this);
