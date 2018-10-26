@@ -94,8 +94,7 @@ class IndexPage extends React.Component {
       <Helmet
           bodyAttributes={{
               class: 'disable-scroll'
-          }}
-      />
+          }}/>
       <div class="fullpage-viewport" >
         <div class="fullpage-wrapper" style={{transform: transformWrapper}} onScroll={this.handleScrollEvent}>
           <div id="section0" className="index-slide section" ref={section => this.section = section}>
