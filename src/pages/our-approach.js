@@ -11,7 +11,8 @@ const OurApproach = () => (
     headerFontColor="dark"
     headerSubTitle="WE LIKE TO MAKE S#*T THAT LOOKS GOOD – AND MATTERS"
   >
-    <img src={imageHat} className="content-featured-image-fixed our-approach" />
+    {/* figure out if this image approach is the best */}
+    <img src={imageHat} className="content-featured-image-fixed our-approach" /> 
     <div className="" style={{ flex: 1 }}>
     <div className="content-featured-image-fixed our-approach spacer"></div>
       <div class="wrapper content-wrapper skinny">

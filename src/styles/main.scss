@@ -904,6 +904,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 
 
 .wrapper.catalog-videos {
+	background-color: #fff;
 	padding: 50px 0 0 0;
 		& h3 {
 		font-family: 'Knockout 90 A', 'Knockout 90 B'; 
@@ -1200,14 +1201,14 @@ body.disable-scroll {
 .content-featured-image-fixed {
 	position: fixed;
 	top: 0;
-	// background-size: cover;
-	// background-position: center top;
+	background-size: cover;
+	background-position: center top;
 	height: 680px;
 	width: 100%;
 	z-index: -1;
 
-	// background-repeat: no-repeat;
-	// background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 
 
 	&.our-approach {
