@@ -5,7 +5,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import Layout from '../components/layout';
-import Helmet from 'react-helmet';
+import {Helmet} from 'react-helmet';
 import Image from '../components/image';
 import Slider from "react-slick";
 
@@ -89,6 +89,7 @@ class IndexPage extends React.Component {
       <Layout
         headerFontColor="light"
       >
+      <Helmet bodyAttributes={{class: 'disable-scroll'}}></Helmet>
       <div class="fullpage-viewport" >
         <div class="fullpage-wrapper" style={{transform: transformWrapper}} onScroll={this.handleScrollEvent}>
           <div id="section0" className="index-slide section" ref={section => this.section = section}>
