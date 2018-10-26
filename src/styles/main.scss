@@ -10,6 +10,7 @@ form,fieldset,input,textarea,p,blockquote,th,td {
 }
 html, body {
 	background-color: $color-primary-orange;
+	z-index: -1; //this allows the color to work and the fixed images
 }
 a{
 	text-decoration:none;
@@ -712,7 +713,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 
 
 .wrapper.skinny {
-	margin: 70px 0 90px 0;
+	// margin: 70px 0 90px 0;
 	& p {
 		font-size: .9em;
 		color: #4A4A4A;
@@ -1199,14 +1200,14 @@ body.disable-scroll {
 .content-featured-image-fixed {
 	position: fixed;
 	top: 0;
-	background-size: cover;
-	background-position: center top;
+	// background-size: cover;
+	// background-position: center top;
 	height: 680px;
 	width: 100%;
-	// z-index: -10;
+	z-index: -1;
 
-	background-repeat: no-repeat;
-	background-attachment: fixed;
+	// background-repeat: no-repeat;
+	// background-attachment: fixed;
 
 
 	&.our-approach {
@@ -1222,4 +1223,10 @@ body.disable-scroll {
 		position: relative;
 		background: none;
 	}
+}
+
+.content-wrapper {
+	background-color: #fff;
+	padding: 70px 0 90px 0;
+
 }

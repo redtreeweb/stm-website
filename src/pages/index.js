@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import Layout from '../components/layout';
+import Helmet from 'react-helmet';
 import Image from '../components/image';
 import Slider from "react-slick";
 
@@ -25,17 +26,17 @@ class IndexPage extends React.Component {
     this.handleScrollEvent = this.handleScrollEvent.bind(this);
   }
 
-  componentWillMount() {
-    document.body.className = 'disable-scroll'
-  }
+  // componentWillMount() {
+  //   // document.body.className = 'disable-scroll'
+  // }
 
   componentDidMount() {
     window.addEventListener('wheel', this.handleScrollEvent);
   }
 
-  componentWillUnmount() {
-    document.body.className = ''
-  }
+  // componentWillUnmount() {
+  //   // document.body.className = ''
+  // }
 
 
   handleButtonPress() {
@@ -80,6 +81,11 @@ class IndexPage extends React.Component {
       <Layout
         headerFontColor="light"
       >
+      <Helmet
+          bodyAttributes={{
+              class: 'disable-scroll'
+          }}
+      />
       <div class="fullpage-viewport" >
         <div class="fullpage-wrapper" style={{transform: transformWrapper}} onScroll={this.handleScrollEvent}>
           <div id="section0" className="index-slide section" ref={section => this.section = section}>

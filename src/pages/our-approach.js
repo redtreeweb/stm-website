@@ -14,7 +14,7 @@ const OurApproach = () => (
     <img src={imageHat} className="content-featured-image-fixed our-approach" />
     <div className="" style={{ flex: 1 }}>
     <div className="content-featured-image-fixed our-approach spacer"></div>
-      <div class="wrapper skinny">
+      <div class="wrapper content-wrapper skinny">
         <div class="row">
           <div class="large-8 columns skinny-copy">
 
