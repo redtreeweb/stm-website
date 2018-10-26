@@ -22,7 +22,6 @@ const Layout = ({ children, headerFontColor, headerSubTitle, bodyClass }) => (
     render={data => (
       <>
         <Helmet
-          bodyAttributes={{class: bodyClass}}
           title={data.site.siteMetadata.title}
           meta={[
             { name: 'description', content: 'Sample' },
@@ -33,6 +32,7 @@ const Layout = ({ children, headerFontColor, headerSubTitle, bodyClass }) => (
           ]}
         >
           <html lang="en" />
+          <body className={bodyClass} />
         </Helmet>
         <Header 
           siteTitle={data.site.siteMetadata.title} 
