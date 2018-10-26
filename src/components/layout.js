@@ -8,7 +8,7 @@ import Header from './header'
 import '../styles/main.scss';
 
 
-const Layout = ({ children, headerFontColor, headerSubTitle }) => (
+const Layout = ({ children, headerFontColor, headerSubTitle, bodyClass }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -22,6 +22,7 @@ const Layout = ({ children, headerFontColor, headerSubTitle }) => (
     render={data => (
       <>
         <Helmet
+          bodyAttributes={{class: bodyClass}}
           title={data.site.siteMetadata.title}
           meta={[
             { name: 'description', content: 'Sample' },
