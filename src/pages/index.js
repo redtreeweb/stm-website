@@ -1,3 +1,6 @@
+
+import Lethargy from "exports-loader?this.Lethargy!lethargy/lethargy";
+
 import React from 'react';
 import { Link } from 'gatsby';
 
@@ -8,8 +11,7 @@ import Slider from "react-slick";
 
 import _ from 'lodash';
 
-// import '../styles/_slick.css';
-// import '../styles/_slick-theme.css';
+import imgSlide1 from '../images/nathan-jamie-ties-1-large.jpg';
 
 import '../styles/slick/slick.scss';
 
@@ -31,7 +33,9 @@ class IndexPage extends React.Component {
   // }
 
   componentDidMount() {
-    window.addEventListener('wheel', this.handleScrollEvent);
+    window.addEventListener('wheel', this.handleScrollEvent, false);
+    // window.addEventListener('wheel', _.debounce(this.handleScrollEvent, 0, {leading: false, trailing: true}));
+    this.lethargy = new Lethargy(5, 50, .05); //helps with the scroll
   }
 
   // componentWillUnmount() {
@@ -44,11 +48,17 @@ class IndexPage extends React.Component {
   }
 
   handleScrollEvent(e) {
-    if (e.cancelable) {
+    
+      // console.log(e)
+      // console.log(this.lethargy.check(e))
 
+      if (this.lethargy.check(e)) {
+      // console.log(this.lethargy.check(e))
+      window.removeEventListener('wheel', this.handleScrollEvent)
       const scrollDirection =  e.deltaY / Math.abs(e.deltaY);
 
       this.setState({scrollPosition: Math.max(Math.min(this.state.scrollPosition + (scrollDirection * 1), 3),0)});
+      setTimeout(() => window.addEventListener('wheel', this.handleScrollEvent, false), 1200);
     }
   }
 
@@ -89,6 +99,7 @@ class IndexPage extends React.Component {
       <div class="fullpage-viewport" >
         <div class="fullpage-wrapper" style={{transform: transformWrapper}} onScroll={this.handleScrollEvent}>
           <div id="section0" className="index-slide section" ref={section => this.section = section}>
+            <Image className="section-0-img"/>
             <div class="layer">
               <h1 class="title">Create. Distinguish. Matter.</h1>
             </div>

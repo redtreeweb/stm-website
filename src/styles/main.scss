@@ -1105,13 +1105,17 @@ img.tapes {
 }
 
 #section0 {
-	background-image: url('../images/nathan-jamie-ties-1-small.jpg');
+	// background-image: url('../images/nathan-jamie-ties-1-small.jpg');
 	background-color: #20313d;
-		@media (min-width:500px){
-			background-image: url('../images/nathan-jamie-ties-1.jpg');
-	}
-		@media (min-width:1500px){
-			background-image: url('../images/nathan-jamie-ties-1-large.jpg');
+	// 	@media (min-width:500px){
+	// 		background-image: url('../images/nathan-jamie-ties-1.jpg');
+	// }
+	// 	@media (min-width:1500px){
+	// 		background-image: url('../images/nathan-jamie-ties-1-large.jpg');
+	// }
+
+	.gatsby-image-wrapper {
+		position: static !important;
 	}
 }
 
