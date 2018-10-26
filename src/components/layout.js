@@ -38,7 +38,7 @@ const Layout = ({ children, headerFontColor, headerSubTitle }) => (
           fontColor={headerFontColor}
           subTitle={headerSubTitle}
         />
-        <div>
+        <div class="site-content">
           {children}
         </div>
       </>

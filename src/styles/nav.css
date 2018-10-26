@@ -135,7 +135,8 @@ header h1 {
   border-bottom: 1px solid #eff2f6; }
 
 #cd-nav li:last-child a {
-  border-bottom: none; }
+  /* border-bottom: none;  */
+}
 
 @media only screen and (min-width: 900px) {
   #cd-nav ul {
