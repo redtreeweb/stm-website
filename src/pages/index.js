@@ -22,6 +22,7 @@ class IndexPage extends React.Component {
       super(props)
     this.state = {
       scrollPosition: 0,
+      initialPhotoLoad: false
     }
 
     this.handleButtonPress = this.handleButtonPress.bind(this);
@@ -93,7 +94,7 @@ class IndexPage extends React.Component {
     dataCMS.sort((a,b) => a.menu_order - b.menu_order)
     console.log(dataCMS)
 
-
+console.log(this.state.initialPhotoLoad)
 
     return (
       <Layout
@@ -105,7 +106,7 @@ class IndexPage extends React.Component {
           <div id="section0" className="index-slide section" ref={section => this.section = section}>
             {/* <Image className="section-0-img"/> */}
             {/* <img src={dataCMS[0].acf.background_image.source_url} className="section-0-img" /> */}
-            <Img fluid={dataCMS[0].acf.background_image.localFile.childImageSharp.fluid} />
+            <Img fluid={dataCMS[0].acf.background_image.localFile.childImageSharp.fluid} onLoad={() => this.setState({initialPhotoLoad: true})}/>
             <div className="layer">
               <h1 className="title">{dataCMS[0].content}</h1>
             </div>
@@ -116,7 +117,7 @@ class IndexPage extends React.Component {
             <div className="section-wrapper section-banner get-the-skinny">
               <h1 className="section-title title-white">{dataCMS[1].content}</h1>
               <div className="btn"><a href="/get-the-skinny">GET THE SKINNY</a></div>
-              <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} critical={true}/>
+              <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={this.state.initialPhotoLoad}/>
             </div>
             <button className="arrow down" onClick={this.handleButtonPress}/>
           </div>
@@ -148,7 +149,7 @@ class IndexPage extends React.Component {
         <div className="btn"><a href="/the-catalog">THE CATALOG</a></div> 
           </div >
           <button className="arrow down" onClick={this.handleButtonPress}/>
-          <Img fluid={dataCMS[2].acf.background_image.localFile.childImageSharp.fluid} critical={true}/>
+          <Img fluid={dataCMS[2].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={this.state.initialPhotoLoad}/>
         </div >
         </div>
 
@@ -166,7 +167,7 @@ class IndexPage extends React.Component {
               </div>
             </section>
             </div>
-            <Img fluid={dataCMS[3].acf.background_image.localFile.childImageSharp.fluid} critical={true} imgStyle={{height: window.outerHeight}}/>
+            <Img fluid={dataCMS[3].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={this.state.initialPhotoLoad} imgStyle={{height: window.outerHeight}}/>
         </div>
       </div>
       </div>
