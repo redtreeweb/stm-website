@@ -7,7 +7,7 @@ import imgLogoWhite from '../images/logo.svg';
 import '../styles/components/header.scss';
 
 const Header = ({ siteTitle, fontColor, subTitle }) => (
-  <div class={`nav-wrapper ${fontColor}`  }>
+  <div className={`nav-wrapper ${fontColor}`  }>
 		<div id="logo-flow">
 			<Link to="/">
         <img 
@@ -29,7 +29,7 @@ const Header = ({ siteTitle, fontColor, subTitle }) => (
 				</ul>
 			</nav>
 		</div>
-		<h3 class="center interior-title">{subTitle}</h3>
+		<h3 className="center interior-title">{subTitle}</h3>
 	</div>
 )
 

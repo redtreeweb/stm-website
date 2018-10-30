@@ -650,6 +650,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 	max-width: 900px;
 	margin-top: 30px;
 	background-color: rgba(0, 0, 0, 0.15);
+	color: #fff;
+
 	& > div {
 		padding-top: 30px;
 		padding-bottom: 30px;
@@ -993,14 +995,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 		height:680px;
 	}
 	&.background-header {
-		background-image: url('../images/about-header.jpg');
+		// background-image: url('../images/about-header.jpg');
 		background-size: cover;
 		background-position: center top;
 		background-attachment:inherit;
 		background-color: #E5DCD3;
 		height:800px;
 		@media (min-width:2000px) {
-			background-image: url('../images/about-header-large.jpg');
+			// background-image: url('../images/about-header-large.jpg');
 		}
 	}
 
@@ -1113,6 +1115,19 @@ img.tapes {
 	// 	@media (min-width:1500px){
 	// 		background-image: url('../images/nathan-jamie-ties-1-large.jpg');
 	// }
+
+	img {
+		// position: static !important;
+		// position: absolute;
+		// top: 0px;
+		// left: 0px;
+		// width: 100%;
+		// height: 100%;
+		// object-fit: cover;
+		// object-position: center center;
+		// opacity: 1;
+		// transition: opacity 0.5s ease 0s;
+	}
 
 	.gatsby-image-wrapper {
 		position: static !important;
