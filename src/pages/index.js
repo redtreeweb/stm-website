@@ -112,12 +112,12 @@ console.log(this.state.initialPhotoLoad)
             </div>
             <button className="arrow down" onClick={this.handleButtonPress}/>
           </div>
-          <div id="section1" className="index-slide section" >
+          { this.state.initialPhotoLoad && <><div id="section1" className="index-slide section" >
             {/* <img src={dataCMS[1].acf.background_image.source_url} className="section-0-img" /> */}
             <div className="section-wrapper section-banner get-the-skinny">
               <h1 className="section-title title-white">{dataCMS[1].content}</h1>
               <div className="btn"><a href="/get-the-skinny">GET THE SKINNY</a></div>
-              <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={false}/>
+              <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={true}/>
             </div>
             <button className="arrow down" onClick={this.handleButtonPress}/>
           </div>
@@ -149,7 +149,7 @@ console.log(this.state.initialPhotoLoad)
         <div className="btn"><a href="/the-catalog">THE CATALOG</a></div> 
           </div >
           <button className="arrow down" onClick={this.handleButtonPress}/>
-          <Img fluid={dataCMS[2].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={false}/>
+          <Img fluid={dataCMS[2].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={true}/>
         </div >
         </div>
 
@@ -167,10 +167,10 @@ console.log(this.state.initialPhotoLoad)
               </div>
             </section>
             </div>
-            <Img fluid={dataCMS[3].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={false} 
+            <Img fluid={dataCMS[3].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={true} 
             //imgStyle={{height: window.outerHeight}}
             />
-        </div>
+          </div></> }
       </div>
       </div>
       </Layout >
@@ -195,7 +195,7 @@ export const query = graphql`
             source_url
             localFile {
               childImageSharp {
-                fluid(maxWidth: 1400, quality: 80) {
+                fluid(maxWidth: 1400, quality: 70) {
                   ...GatsbyImageSharpFluid_noBase64
                 }
               }
