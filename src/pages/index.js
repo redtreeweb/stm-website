@@ -117,7 +117,7 @@ console.log(this.state.initialPhotoLoad)
             <div className="section-wrapper section-banner get-the-skinny">
               <h1 className="section-title title-white">{dataCMS[1].content}</h1>
               <div className="btn"><a href="/get-the-skinny">GET THE SKINNY</a></div>
-              <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={this.state.initialPhotoLoad}/>
+              <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={true}/>
             </div>
             <button className="arrow down" onClick={this.handleButtonPress}/>
           </div>
@@ -149,7 +149,7 @@ console.log(this.state.initialPhotoLoad)
         <div className="btn"><a href="/the-catalog">THE CATALOG</a></div> 
           </div >
           <button className="arrow down" onClick={this.handleButtonPress}/>
-          <Img fluid={dataCMS[2].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={this.state.initialPhotoLoad}/>
+          <Img fluid={dataCMS[2].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={true}/>
         </div >
         </div>
 
@@ -167,7 +167,9 @@ console.log(this.state.initialPhotoLoad)
               </div>
             </section>
             </div>
-            <Img fluid={dataCMS[3].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={this.state.initialPhotoLoad} imgStyle={{height: window.outerHeight}}/>
+            <Img fluid={dataCMS[3].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={true} 
+            //imgStyle={{height: window.outerHeight}}
+            />
         </div>
       </div>
       </div>
