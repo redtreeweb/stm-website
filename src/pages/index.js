@@ -89,7 +89,7 @@ class IndexPage extends React.Component {
 								
     };
     
-    const dataCMS = this.props.data.allWordpressPage.edges.filter(({node}) => node.wordpress_parent === 316).map(({node}) => node)
+    const dataCMS = this.props.data.allWordpressPage.edges.filter(({node}) => node.wordpress_parent === 316).map(({node}) => node) //filter(({node}) => node.wordpress_parent === 316).
     dataCMS.sort((a,b) => a.menu_order - b.menu_order)
     console.log(dataCMS)
 
@@ -112,9 +112,11 @@ class IndexPage extends React.Component {
             <button className="arrow down" onClick={this.handleButtonPress}/>
           </div>
           <div id="section1" className="index-slide section" >
+            {/* <img src={dataCMS[1].acf.background_image.source_url} className="section-0-img" /> */}
             <div className="section-wrapper section-banner get-the-skinny">
               <h1 className="section-title title-white">{dataCMS[1].content}</h1>
               <div className="btn"><a href="/get-the-skinny">GET THE SKINNY</a></div>
+              <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} critical={true}/>
             </div>
             <button className="arrow down" onClick={this.handleButtonPress}/>
           </div>
@@ -146,6 +148,7 @@ class IndexPage extends React.Component {
         <div className="btn"><a href="/the-catalog">THE CATALOG</a></div> 
           </div >
           <button className="arrow down" onClick={this.handleButtonPress}/>
+          <Img fluid={dataCMS[2].acf.background_image.localFile.childImageSharp.fluid} critical={true}/>
         </div >
         </div>
 
@@ -163,7 +166,7 @@ class IndexPage extends React.Component {
               </div>
             </section>
             </div>
-
+            <Img fluid={dataCMS[3].acf.background_image.localFile.childImageSharp.fluid} critical={true} imgStyle={{height: window.outerHeight}}/>
         </div>
       </div>
       </div>
@@ -186,9 +189,10 @@ export const query = graphql`
         menu_order,
         acf {
           background_image {
+            source_url
             localFile {
               childImageSharp {
-                fluid(maxWidth: 1400) {
+                fluid(maxWidth: 1400, quality: 80) {
                   ...GatsbyImageSharpFluid_noBase64
                 }
               }

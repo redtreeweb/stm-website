@@ -584,9 +584,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 	list-style: none;
 }
 
-.section-wrapper {
+.section-wrapper, .footer-content-wrapper {
 	max-width: 1000px;
 	margin: 0 auto;
+	z-index: 1;
+
+	.section-title, .btn {
+		z-index: 1;
+	}
 }
 
 .social-links {
@@ -614,6 +619,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 .testimonial-wrapper {
 	max-width: 1000px;
 	margin: 0 auto;
+	z-index: 1;
 	@media (max-width: 900px ) {
 		width: 600px;	
 	}
@@ -1104,6 +1110,10 @@ img.tapes {
 #section3{
 	background-size: cover;
 	background-position: center top;
+
+	.gatsby-image-wrapper {
+		position: static !important;
+	}
 }
 
 #section0 {
@@ -1129,34 +1139,57 @@ img.tapes {
 		// transition: opacity 0.5s ease 0s;
 	}
 
-	.gatsby-image-wrapper {
-		position: static !important;
-	}
+
 }
 
+#section #section1, #section2, #section3 {
+	// img {
+	// 	position: absolute;
+	// 	top: 0px;
+	// 	left: 0px;
+	// 	width: 100%;
+	// 	height: 100%;
+	// 	object-fit: cover;
+	// 	object-position: center center;
+	// }
+}
+
+
 #section1 {
-	background-image: url('../images/services-bk.jpg');
+	// background-image: url('../images/services-bk.jpg');
+
+	img {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center center;
+	}
+
+
 	background-color: #20313d;
 	@media (min-width:1500px){
-		background-image: url('../images/services-bk-large.jpg');
+		// background-image: url('../images/services-bk-large.jpg');
 	}
 }
 #section2 {
-	background-image: url('../images/testimonials-bk-1.jpg');
+	// background-image: url('../images/testimonials-bk-1.jpg');
 	background-color: #20313d;
 	@media (min-width:1500px){
-		background-image: url('../images/testimonials-bk-1-large.jpg');
+		// background-image: url('../images/testimonials-bk-1-large.jpg');
 	}
 }
 
 #section3 {
-	background-image: url('../images/footer-bk-1-small.jpg');
+	// background-image: url('../images/footer-bk-1-small.jpg');
 	background-color: #20313d;
 	@media (min-width:500px){
-		background-image: url(../images/footer-bk-1.jpg);
+		// background-image: url(../images/footer-bk-1.jpg);
 	}
 	@media (min-width:1500px){
-		background-image: url(../images/footer-bk-1-large.jpg);
+		// background-image: url(../images/footer-bk-1-large.jpg);
 	}
 }
 
