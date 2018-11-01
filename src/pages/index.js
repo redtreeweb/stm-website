@@ -15,6 +15,8 @@ import _ from 'lodash';
 
 import '../styles/slick/slick.scss';
 
+import ImageCache from '../components/ImageCache';
+
 
 class IndexPage extends React.Component {
 
@@ -29,9 +31,6 @@ class IndexPage extends React.Component {
     this.handleScrollEvent = this.handleScrollEvent.bind(this);
   }
 
-  // componentWillMount() {
-  //   // document.body.className = 'disable-scroll'
-  // }
 
   componentDidMount() {
     window.addEventListener('wheel', this.handleScrollEvent, false);
@@ -39,22 +38,14 @@ class IndexPage extends React.Component {
     this.lethargy = new Lethargy(5, 50, .05); //helps with the scroll
   }
 
-  // componentWillUnmount() {
-  //   // document.body.className = ''
-  // }
-
-
   handleButtonPress() {
     this.setState({scrollPosition: Math.min(this.state.scrollPosition + 1, 3)});
   }
 
   handleScrollEvent(e) {
     
-      // console.log(e)
-      // console.log(this.lethargy.check(e))
-
       if (this.lethargy.check(e)) {
-      // console.log(this.lethargy.check(e))
+
       window.removeEventListener('wheel', this.handleScrollEvent)
       const scrollDirection =  e.deltaY / Math.abs(e.deltaY);
 
@@ -93,8 +84,6 @@ class IndexPage extends React.Component {
     const dataCMS = this.props.data.allWordpressPage.edges.filter(({node}) => node.wordpress_parent === 316).map(({node}) => node) //filter(({node}) => node.wordpress_parent === 316).
     dataCMS.sort((a,b) => a.menu_order - b.menu_order)
     console.log(dataCMS)
-
-console.log(this.state.initialPhotoLoad)
 
     return (
       <Layout
@@ -173,6 +162,7 @@ console.log(this.state.initialPhotoLoad)
           </div></> }
       </div>
       </div>
+      { this.state.initialPhotoLoad && <ImageCache />}
       </Layout >
     )
   }
