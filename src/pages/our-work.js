@@ -13,6 +13,10 @@ import imgCrossroads from '../images/crossroads-gallery.jpg';
 
 import ImageCache from '../components/ImageCache';
 
+
+import WorkItem from '../components/WorkItem';
+
+
 class OurWork extends React.Component {
 
   constructor(props) {
@@ -23,6 +27,13 @@ class OurWork extends React.Component {
   }
 
   render() {
+
+    const dataCMS = this.props.data.allWordpressPage.edges.map(({node}) => node) //filter(({node}) => node.wordpress_parent === 316).
+
+    const workItems = dataCMS.slice(1).map((d,i) => {
+      return <WorkItem {...(d.acf)} index={i} />
+    })
+
     return (
       <Layout
         headerFontColor="dark"
@@ -48,30 +59,13 @@ class OurWork extends React.Component {
 
           {/* <!-- FEATURED VIDEO --> */}
           <div class="wrapper featured-video">
-            <div class="row">
-
-              <div class="large-12 columns flex-video vimeo widescreen">
-
-                <iframe src="https://player.vimeo.com/video/265289033?color=d94c00&title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-              </div>
-
-              <div class="large-1 columns featured-tag">
-                <img src={imgFeature} />
-              </div>
-
-              <div class="large-11 columns featured-video-description">
-                <h3>Matthews International – Inspired Possibilities</h3>
-                <p>Matthews International is a diverse corporation that employs approximately 12,000 people worldwide and is comprised of three unique business segments – Brand Solutions, Memorialization and Industrial. Sensing a disconnect in how employees found common ground between their businesses, Matthews developed Inspired Possibilities, a new cultural viewpoint to help align employee perspectives and foster a more unified workforce. Working alongside Matthews for over a year to hone the objectives and direction of this new culture, Skinny Tie Media ultimately produced a centerpiece video for the Inspired Possibilities launch. The project took the Skinny Tie team to eleven sites across six counties in North America, Europe and Asia over the summer of 2017. Following location production, Skinny Tie was equipped with an extensive, multinational library of footage from which to create an emotive and stirring story for employees to see that what they share in common, regardless of the business segment they work for, is the Inspired Possibilities they can create for themselves, their customers, and one another.</p>
-                <div class="vimeo-link"><a href="https://vimeo.com/265289033" target="_blank">VIEW ON VIMEO</a></div>
-
-
-              </div>
-            </div>
+              <WorkItem {...(dataCMS[0].acf)} />
           </div>
 
           <div class="wrapper catalog-videos">
             <div class="row">
 
+              {workItems}
 
 
               <div class="large-12 columns video-wrapper">
@@ -314,3 +308,26 @@ class OurWork extends React.Component {
 }
 
 export default OurWork
+
+export const query = graphql`{
+  allWordpressPage(filter: {wordpress_parent: {eq: 353}}, sort: {fields: [menu_order],  order: ASC}) {
+    edges {
+      node {
+        slug,
+        wordpress_parent,
+        wordpress_id,
+        content,
+        menu_order,
+        acf {
+          work_title,
+          work_description,
+          work_type,
+          work_url,
+          action_button
+        }
+      }
+    }
+  }
+}`
+
+

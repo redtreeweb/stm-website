@@ -83,6 +83,7 @@ class IndexPage extends React.Component {
     
     const dataCMS = this.props.data.allWordpressPage.edges.filter(({node}) => node.wordpress_parent === 316).map(({node}) => node) //filter(({node}) => node.wordpress_parent === 316).
     dataCMS.sort((a,b) => a.menu_order - b.menu_order)
+
     console.log(dataCMS)
 
     return (
@@ -172,7 +173,7 @@ export default IndexPage
 
 export const query = graphql`
 {
-  allWordpressPage {
+  allWordpressPage(filter: {wordpress_parent: {eq: 316}}) {
     edges {
       node {
         slug,

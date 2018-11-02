@@ -885,6 +885,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 	}
 	& .vimeo-link{
 		margin-top: 20px;
+		text-transform: uppercase;
 	}
 	& .vimeo-link a {
 		
@@ -951,6 +952,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 	}
 	}
 	& .vimeo-link a {
+		text-transform: uppercase;
 		padding: 10px 13px 10px 13px;
 		color: #fff;
 		background-color: #3e3e3e;
