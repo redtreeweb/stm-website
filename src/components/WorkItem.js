@@ -15,11 +15,30 @@ export default (props) => {
         work_type,
         work_description,
         work_url,
+        work_badges,
         action_button,
         index
     } = props;
 
     console.log(props)
+
+    let work_badges_img = null;
+
+    if (work_badges) {
+
+        work_badges_img = work_badges.map(d => {
+        
+            switch (d) {
+                case 'Telly_Bronze':
+                    return <div key={d} class="telly bronze"><img src={imgTellyBronze} /></div>;
+                case 'Telly_Silver':
+                    return <div class="telly silver"><img src={imgTellySilver} /></div>;
+                default:
+                    return null;
+            }
+        })
+    }
+
 
     switch (work_type) {
 
@@ -28,7 +47,7 @@ export default (props) => {
                 <div class="row">
                     {/* need way more stuff here */}
                     <div class="large-12 columns flex-video vimeo widescreen">
-                        <iframe src="https://player.vimeo.com/video/265289033?color=d94c00&title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        <iframe src={`https://player.vimeo.com/video/${work_url}?color=d94c00&title=0&byline=0&portrait=0`} width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                     </div>
 
                     <div class="large-1 columns featured-tag">
@@ -38,21 +57,38 @@ export default (props) => {
                     <div class="large-11 columns featured-video-description">
                         <h3>{work_title}</h3>
                         <p>{work_description}</p>
-                        <div class="vimeo-link"><a href="https://vimeo.com/265289033" target="_blank">{action_button}</a></div>
+                        <div class="vimeo-link"><a href={'https://vimeo.com/' + work_url} target="_blank">{action_button}</a></div>
+                        {work_badges_img}
                     </div>
                 </div>
             );
         case 'video':
             return (
                 <div class="large-12 columns video-wrapper">
-                    <div class={'large-6 columns flex-video vimeo widescreen thumb' + (index % 2 === 0 ? '' : ' right' )}>
+                    <div class={'large-6 columns flex-video vimeo widescreen thumb' + (index % 2 === 0 ? '' : ' right')}>
                         <iframe src={'https://player.vimeo.com/video/' + work_url} width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                     </div>
                     <div class="large-6 columns video-description">
                         <h3>{work_title}</h3>
-                        <p>Maintaining a visual presence – especially as a start-up – is critical to gaining awareness from potential customers. As BOSS Controls began going-to-market, they knew a key strategy was to keep marketing their name, identity and value propositions across multiple settings from the web, to meetings, to tradeshows. Working in partnership with BOSS’s business support services company, C-leveled, Skinny Tie Media produced this trade show video as an eye-catching, value-proposition piece that could be re-purposed to serve other platforms for BOSS in the future.</p>
+                        <p>{work_description}</p>
                         <div class="vimeo-link"><a href={'https://vimeo.com/' + work_url} target="_blank">{action_button}</a></div>
+                        {work_badges_img}
                     </div>
+                </div>
+            )
+        case 'photo':
+            return (
+                <div class="large-12 columns video-wrapper">
+                    <div class={'large-6 columns flex-video vimeo widescreen thumb' + (index % 2 === 0 ? '' : ' right')}>
+                        <a href="https://www.flickr.com/photos/130258915@N06/sets/72157650997362449/" target="_blank"><img src={imgCrossroads} alt="crossroads-gallery" /></a>
+                    </div>
+                    <div class="large-6 columns video-description">
+                        <h3>{work_title}</h3>
+                        <p>{work_description}</p>
+                        <div class="vimeo-link"><a href="https://www.flickr.com/photos/130258915@N06/sets/72157650997362449/" target="_blank">VIEW ON FLICKR</a></div>
+                        {work_badges_img}
+                    </div>
+
                 </div>
             )
         default:
@@ -62,9 +98,10 @@ export default (props) => {
                         <iframe src="https://player.vimeo.com/video/145694989" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                     </div>
                     <div class="large-6 columns video-description">
-                        <h3>BOSS Controls</h3>
-                        <p>Maintaining a visual presence – especially as a start-up – is critical to gaining awareness from potential customers. As BOSS Controls began going-to-market, they knew a key strategy was to keep marketing their name, identity and value propositions across multiple settings from the web, to meetings, to tradeshows. Working in partnership with BOSS’s business support services company, C-leveled, Skinny Tie Media produced this trade show video as an eye-catching, value-proposition piece that could be re-purposed to serve other platforms for BOSS in the future.</p>
+                        <h3>{work_title}</h3>
+                        <p>{work_description}</p>
                         <div class="vimeo-link"><a href="https://vimeo.com/145694989 " target="_blank">WATCH ON VIMEO</a></div>
+                        {work_badges_img}
                     </div>
                 </div>
             )

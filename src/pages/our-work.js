@@ -108,7 +108,7 @@ class OurWork extends React.Component {
 
 
 
-              <div class="large-12 columns video-wrapper">
+              {/* <div class="large-12 columns video-wrapper">
                 <div class="large-12 columns video-wrapper">
                   <div class="large-6 columns right thumb">
                     <a href="https://www.flickr.com/photos/130258915@N06/sets/72157653945657150" target="_blank"><img class="img-marg-thumb" src={imgMatthews} alt="crossroads-gallery" /></a>
@@ -120,7 +120,7 @@ class OurWork extends React.Component {
                     <div class="telly bronze"><img src={imgTellyBronze} /></div><div class="telly silver"><img src={imgTellySilver} /></div>
                   </div>
 
-                </div>
+                </div> */}
 
 
 
@@ -129,7 +129,7 @@ class OurWork extends React.Component {
 
 
 
-                <div class="large-12 columns video-wrapper">
+                {/* <div class="large-12 columns video-wrapper">
 
                   <div class="large-6 columns flex-video vimeo widescreen thumb">
                     <a href="https://www.flickr.com/photos/130258915@N06/sets/72157650997362449/" target="_blank"><img src={imgCrossroads} alt="crossroads-gallery" /></a>
@@ -141,13 +141,13 @@ class OurWork extends React.Component {
                     <div class="vimeo-link"><a href="https://www.flickr.com/photos/130258915@N06/sets/72157650997362449/" target="_blank">VIEW ON FLICKR</a></div>
                   </div>
 
-                </div>
+                </div> */}
 
 
 
 
 
-                <div class="large-12 columns video-wrapper">
+                {/* <div class="large-12 columns video-wrapper">
 
                   <div class="large-6 columns flex-video vimeo widescreen right thumb">
                     <iframe src="https://player.vimeo.com/video/95430795?color=d94c00" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -162,7 +162,7 @@ class OurWork extends React.Component {
                     <div class="telly bronze"><img src={imgTellyBronze} /></div>
                   </div>
 
-                </div>
+                </div> */}
 
 
 
@@ -182,7 +182,7 @@ class OurWork extends React.Component {
 
 
 
-                <div class="large-12 columns video-wrapper">
+                {/* <div class="large-12 columns video-wrapper">
 
                   <div class="large-6 columns flex-video vimeo widescreen thumb">
                     <iframe src="https://player.vimeo.com/video/96278016?color=d94c00" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -195,7 +195,7 @@ class OurWork extends React.Component {
                     <div class="vimeo-link"><a href="https://vimeo.com/96278016" target="_blank">WATCH ON VIMEO</a></div>
                   </div>
 
-                </div>
+                </div> */}
 
 
 
@@ -209,7 +209,7 @@ class OurWork extends React.Component {
 
 
 
-                <div class="large-12 columns video-wrapper">
+                {/* <div class="large-12 columns video-wrapper">
 
                   <div class="large-6 columns flex-video vimeo widescreen right thumb">
                     <iframe src="https://player.vimeo.com/video/94747824?color=d94c00" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -221,7 +221,7 @@ class OurWork extends React.Component {
                     <div class="vimeo-link"><a href="https://vimeo.com/94747824" target="_blank">WATCH ON VIMEO</a></div>
                   </div>
 
-                </div>
+                </div> */}
 
 
 
@@ -231,7 +231,7 @@ class OurWork extends React.Component {
 
 
 
-                <div class="large-12 columns video-wrapper">
+                {/* <div class="large-12 columns video-wrapper">
 
                   <div class="large-6 columns flex-video vimeo widescreen thumb">
                     <iframe src="https://player.vimeo.com/video/96272166?color=d94c00" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -243,7 +243,7 @@ class OurWork extends React.Component {
                     <div class="vimeo-link"><a href="https://vimeo.com/96272166" target="_blank">WATCH ON VIMEO</a></div>
                   </div>
 
-                </div>
+                </div> */}
 
 
 
@@ -258,7 +258,7 @@ class OurWork extends React.Component {
 
 
 
-                <div class="large-12 columns video-wrapper">
+                {/* <div class="large-12 columns video-wrapper">
 
                   <div class="large-6 columns flex-video vimeo widescreen right thumb">
                     <iframe src="https://player.vimeo.com/video/96279697?color=d94c00" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -270,7 +270,7 @@ class OurWork extends React.Component {
                     <div class="vimeo-link"><a href="https://vimeo.com/96279697" target="_blank">WATCH ON VIMEO</a></div>
                   </div>
 
-                </div>
+                </div> */}
 
 
 
@@ -283,7 +283,7 @@ class OurWork extends React.Component {
 
 
 
-                <div class="large-12 columns video-wrapper">
+                {/* <div class="large-12 columns video-wrapper">
 
                   <div class="large-6 columns flex-video vimeo widescreen thumb">
                     <iframe src="https://player.vimeo.com/video/94702433?color=d94c00&title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -295,8 +295,8 @@ class OurWork extends React.Component {
                     <div class="vimeo-link"><a href="https://vimeo.com/94702433" target="_blank">WATCH ON VIMEO</a></div>
                   </div>
 
-                </div>
-              </div>
+                </div> 
+              </div>*/}
             </div>
           </div>
         </div>
@@ -323,6 +323,7 @@ export const query = graphql`{
           work_description,
           work_type,
           work_url,
+          work_badges,
           action_button
         }
       }
