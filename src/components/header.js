@@ -29,7 +29,7 @@ const Header = ({ siteTitle, fontColor, subTitle }) => (
 				</ul>
 			</nav>
 		</div>
-		<h3 className="center interior-title">{subTitle}</h3>
+		<h3 className="center interior-title large-title">{subTitle}</h3>
 	</div>
 )
 

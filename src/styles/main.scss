@@ -773,8 +773,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 	padding: 50px 0 50px 0;
 	background-color: #131313;
 	
-	& .name  {
+	& .staff-name  {
 		display: inline-block;
+		text-transform: uppercase;
 		padding: 9px 18px;
 		background-color: #2E2E2E;
 		margin-bottom: 15px;
@@ -1003,7 +1004,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 		height:680px;
 	}
 	&.background-header {
-		// background-image: url('../images/about-header.jpg');
+		background-image: url('../images/about-header.jpg');
 		background-size: cover;
 		background-position: center top;
 		background-attachment:inherit;

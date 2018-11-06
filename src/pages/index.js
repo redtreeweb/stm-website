@@ -106,7 +106,7 @@ class IndexPage extends React.Component {
             {/* <img src={dataCMS[1].acf.background_image.source_url} className="section-0-img" /> */}
             <div className="section-wrapper section-banner get-the-skinny">
               <h1 className="section-title title-white">{dataCMS[1].content}</h1>
-              <div className="btn"><a href="/get-the-skinny">GET THE SKINNY</a></div>
+              <div className="btn"><Link to="our-approach">GET THE SKINNY</Link></div>
               <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={true}/>
             </div>
             <button className="arrow down" onClick={this.handleButtonPress}/>
@@ -136,7 +136,7 @@ class IndexPage extends React.Component {
               </div>
           </Slider>
             </div>
-        <div className="btn"><a href="/the-catalog">THE CATALOG</a></div> 
+        <div className="btn"><Link to="our-work">THE CATALOG</Link></div> 
           </div >
           <button className="arrow down" onClick={this.handleButtonPress}/>
           <Img fluid={dataCMS[2].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={true}/>
@@ -146,7 +146,7 @@ class IndexPage extends React.Component {
         <div id="section3" className="index-slide section">
           <div className="footer-content-wrapper section-banner">
             <h1 className="section-title title-white" dangerouslySetInnerHTML={{__html: dataCMS[3].content}}></h1>
-            <div className="btn"><a href="/try-us-on">TRY US ON</a></div>
+            <div className="btn"><Link to="our-background">TRY US ON</Link></div>
             <section id="set-3" className="social-links">
               <div className="hi-icon-wrap hi-icon-effect-3 hi-icon-effect-3b">
                 <a href="https://instagram.com/skinnytiemedia" target="_blank" className="hi-icon icon-instagram">Instagram</a>
