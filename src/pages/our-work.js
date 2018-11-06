@@ -68,7 +68,7 @@ class OurWork extends React.Component {
               {workItems}
 
 
-              <div class="large-12 columns video-wrapper">
+              {/* <div class="large-12 columns video-wrapper">
                 <div class="large-6 columns flex-video vimeo widescreen thumb">
                   <iframe src="https://player.vimeo.com/video/145694989" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                 </div>
@@ -77,10 +77,10 @@ class OurWork extends React.Component {
                   <p>Maintaining a visual presence – especially as a start-up – is critical to gaining awareness from potential customers. As BOSS Controls began going-to-market, they knew a key strategy was to keep marketing their name, identity and value propositions across multiple settings from the web, to meetings, to tradeshows. Working in partnership with BOSS’s business support services company, C-leveled, Skinny Tie Media produced this trade show video as an eye-catching, value-proposition piece that could be re-purposed to serve other platforms for BOSS in the future.</p>
                   <div class="vimeo-link"><a href="https://vimeo.com/145694989 " target="_blank">WATCH ON VIMEO</a></div>
                 </div>
-              </div>
+              </div> */}
 
 
-              <div class="large-12 columns video-wrapper">
+              {/* <div class="large-12 columns video-wrapper">
                 <div class="large-6 columns flex-video vimeo widescreen right thumb">
                   <iframe src="https://player.vimeo.com/video/145695235" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
@@ -90,11 +90,11 @@ class OurWork extends React.Component {
                   <p>Whether or not it was Pittsburgh’s best-kept secret in 2015, Pittsburgh’s inaugural Diner en Blanc was certainly the most intriguing secret of 2015. At the last minute (and we mean THE last minute), the location was revealed to nearly 1,000 “by invitation only” friends and acquaintances  – waiting and dressed all in white – to meet for a mass chic picnic around the fountain at Gateway Center. To help them capture and showcase this grand event, the DEB Pittsburgh team collaborated with Skinny Tie Media to create a highlight video that attendees could watch to reminisce about the event, and those not in attendance hopeful that they get an invite for 2016.</p>
                   <div class="vimeo-link"><a href="https://vimeo.com/145695235" target="_blank">WATCH ON VIMEO</a></div>
                 </div>
-              </div>
+              </div> */}
 
 
 
-              <div class="large-12 columns video-wrapper">
+              {/* <div class="large-12 columns video-wrapper">
                 <div class="large-6 columns flex-video vimeo widescreen thumb">
                   <iframe src="https://player.vimeo.com/video/135692205?color=d94c00&title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                 </div>
@@ -103,7 +103,7 @@ class OurWork extends React.Component {
                   <p>Having the opportunity to create plaques for National Baseball Hall of Fame inductees is an honor. Being the exclusive provider in doing so for more than 30 years is a responsibility. Thanks to the quality and craftsmanship that Matthews Architecture brings to this, and many other projects, they are proud to have this distinction. Produced in conjunction with the 2015 Hall of Fame induction ceremony, this video showcases the beauty created when art and manufacturing come together.</p>
                   <div class="vimeo-link"><a href="https://vimeo.com/135692205" target="_blank">WATCH ON VIMEO</a></div>
                 </div>
-              </div>
+              </div> */}
 
 
 
