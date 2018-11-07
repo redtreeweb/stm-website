@@ -37,6 +37,7 @@ class OurWork extends React.Component {
     return (
       <Layout
         headerFontColor="dark"
+        headerFontSize="large"
         headerSubTitle="DELIVERING INSIGHT AND EXPERIENCE"
       >
         <div className="content-featured-image-fixed our-work">
@@ -324,6 +325,9 @@ export const query = graphql`{
           work_type,
           work_url,
           work_badges,
+          work_thumbnail {
+            source_url
+          },
           action_button
         }
       }

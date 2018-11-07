@@ -8,7 +8,7 @@ import Header from './header'
 import '../styles/main.scss';
 
 
-const Layout = ({ children, headerFontColor, headerSubTitle, bodyClass }) => (
+const Layout = ({ children, headerFontColor, headerFontSize, headerSubTitle, bodyClass }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -37,6 +37,7 @@ const Layout = ({ children, headerFontColor, headerSubTitle, bodyClass }) => (
         <Header 
           siteTitle={data.site.siteMetadata.title} 
           fontColor={headerFontColor}
+          fontSize={headerFontSize}
           subTitle={headerSubTitle}
         />
         <div className="site-content">

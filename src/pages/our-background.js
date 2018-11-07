@@ -27,7 +27,7 @@ class OurBackground extends React.Component {
       return (
         <div className={'large-5 columns ' + (i === 0 ? 'jamie-bio' : 'nathan-bio')}>
           <h5 className={'name staff-name ' + (i === 0 ? 'jamie-name' : 'nathan-name')}>{d.staff_name}</h5>
-          <p>As co-founder and Executive Producer at Skinny Tie Media, Jamie brings together and manages all the pieces needed to take a project from conception to delivery. His experience is truly built from the ground up – starting as a tape librarian at a Pittsburgh-based production company and moving up to Executive Producer and manager of a video department at a higher education agency. He’s had experiences with a myriad of corporate, non-profit and higher education clients that have taken him not only all around the domestic United States, but earning his wings working in the likes of Malaysia, Singapore, Nova Scotia, Turkey, and more.</p>
+          <p>{d.staff_blurb}</p>
         </div>
       )
     })
@@ -36,6 +36,7 @@ class OurBackground extends React.Component {
     return (
       <Layout
         headerFontColor="dark"
+        headerFontSize="large"
         headerSubTitle="WHO WE ARE + WHAT WE DO"
       >
         <div className="" style={{ flex: 1 }}>

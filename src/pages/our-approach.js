@@ -27,7 +27,7 @@ render() {
         headerSubTitle="WE LIKE TO MAKE S#*T THAT LOOKS GOOD – AND MATTERS"
       >
         {/* figure out if this image approach is the best */}
-        <img src={imageHat} className="content-featured-image-fixed our-approach" onLoad={() => this.setState({initialPhotoLoad: true})}/> 
+        <div className="content-featured-image-fixed our-approach" onLoad={() => this.setState({initialPhotoLoad: true})}></div> 
         <div className="" style={{ flex: 1 }}>
         <div className="content-featured-image-fixed our-approach spacer"></div>
           <div class="wrapper content-wrapper skinny">

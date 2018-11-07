@@ -941,8 +941,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 		padding-bottom: 30px;
 		padding-top: 30px;
 		border-bottom: 1px solid #acacac;
+		display: flex;
+		align-items: center;
+
+		&.right {
+			flex-direction: row-reverse;
+		}
+
+
 		& .thumb.right {
-			float: right;
+			// float: right;
+			// align-self: auto;
 		}
 		
 		&:last-child {

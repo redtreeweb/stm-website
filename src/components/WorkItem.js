@@ -16,6 +16,7 @@ export default (props) => {
         work_description,
         work_url,
         work_badges,
+        work_thumbnail,
         action_button,
         index
     } = props;
@@ -64,7 +65,7 @@ export default (props) => {
             );
         case 'video':
             return (
-                <div class="large-12 columns video-wrapper">
+                <div class={'large-12 columns video-wrapper' + (index % 2 === 0 ? '' : ' right')}>
                     <div class={'large-6 columns flex-video vimeo widescreen thumb' + (index % 2 === 0 ? '' : ' right')}>
                         <iframe src={'https://player.vimeo.com/video/' + work_url} width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                     </div>
@@ -78,9 +79,9 @@ export default (props) => {
             )
         case 'photo':
             return (
-                <div class="large-12 columns video-wrapper">
-                    <div class={'large-6 columns flex-video vimeo widescreen thumb' + (index % 2 === 0 ? '' : ' right')}>
-                        <a href="https://www.flickr.com/photos/130258915@N06/sets/72157650997362449/" target="_blank"><img src={imgCrossroads} alt="crossroads-gallery" /></a>
+                <div class={'large-12 columns video-wrapper' + (index % 2 === 0 ? '' : ' right')}>
+                    <div class={'large-6 columns flex-video vimeo widescreen thumb'}>
+                        <a href="https://www.flickr.com/photos/130258915@N06/sets/72157650997362449/" target="_blank"><img src={work_thumbnail.source_url} alt="crossroads-gallery" /></a>
                     </div>
                     <div class="large-6 columns video-description">
                         <h3>{work_title}</h3>
@@ -93,7 +94,7 @@ export default (props) => {
             )
         default:
             return (
-                <div class="large-12 columns video-wrapper">
+                <div class={'large-12 columns video-wrapper' + (index % 2 === 0 ? '' : ' right')}>
                     <div class="large-6 columns flex-video vimeo widescreen thumb">
                         <iframe src="https://player.vimeo.com/video/145694989" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                     </div>
