@@ -2,22 +2,25 @@ import React, { Component } from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 // // import PostIcons from "../components/PostIcons"
-// // import Img from "gatsby-image"
+import Img from "gatsby-image"
+import ImageFallback from '../components/ImageFallback';
 import Layout from "../components/layout"
 import Footer from '../components/footer';
+
 
 // import Header from '../components/header';
 
 // import { rhythm } from "../utils/typography"
 
-// import '../styles/post.scss';
-// import '../styles/crayon.css';
+import '../styles/post.scss';
+
+
 
 class PostTemplate extends Component {
 
   componentDidMount() {
-      // console.log(document.getElementById('post-content').children)
-      // document.getElementById('post-content').children
+    // console.log(document.getElementById('post-content').children)
+    // document.getElementById('post-content').children
   }
 
 
@@ -26,22 +29,34 @@ class PostTemplate extends Component {
     const post = this.props.data.wordpressPost;
     const entryDate = new Date(post.date);
 
-    
+    const featuredImage = post.featured_media && post.featured_media.localFile && post.featured_media.localFile.childImageSharp.fluid
+
+
     return (
-            <Layout
-                    headerFontColor="dark"
-                    headerSubTitle={post.title}
-                >          
-            <div className="post-wrapper" style={{padding: '16em 10em', backgroundColor: '#fff'}}>
-              {/* <h1 dangerouslySetInnerHTML={{ __html: post.title }} /> */}
-              <div className="post-timestamp">
+      <Layout
+        headerFontColor="dark"
+        headerSubTitle={post.title}
+      >
+        <div className="post-wrapper" >
+          <div className="post-header post-featured-image">
+         {!!featuredImage ? <Img fluid={featuredImage} /> : <ImageFallback /> }
+          </div>
+          <div className="post-content" >
+            <div className="post-meta">
+              <div className="post-meta-time-stamp">
                 <span>📅</span>
-                <time className="entry-date" dateTime={post.date}>{entryDate.toLocaleString('en-us', { month: 'long' , day: 'numeric', year: 'numeric'})}</time>
+                <time className="entry-date" dateTime={post.date}>{entryDate.toLocaleString('en-us', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
               </div>
-              <div id="post-content" dangerouslySetInnerHTML={{ __html: post.content }} />
+              {post.acf.location && <div className="post-meta-location">
+                <span>🌎</span>
+                <span>{post.acf.location}</span>
+              </div>}
             </div>
-            <Footer />
-        </Layout>
+            <div className="post-content-copy" dangerouslySetInnerHTML={{ __html: post.content }} />
+          </div>
+        </div>
+        <Footer />
+      </Layout>
     )
   }
 }
@@ -58,7 +73,20 @@ export const pageQuery = graphql`
     wordpressPost(id: { eq: $id }) {
       title,
       content,
-      date
+      date,
+      acf {
+        location
+      },
+      featured_media {
+        source_url,
+        localFile {
+          childImageSharp {
+              fluid(maxWidth: 1400, quality: 70) {
+                ...GatsbyImageSharpFluid_noBase64
+              }
+            }
+        }
+      }
     }
     site {
       siteMetadata {

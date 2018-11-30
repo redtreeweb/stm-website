@@ -98,14 +98,14 @@ class IndexPage extends React.Component {
             {/* <img src={dataCMS[0].acf.background_image.source_url} className="section-0-img" /> */}
             <Img fluid={dataCMS[0].acf.background_image.localFile.childImageSharp.fluid} onLoad={() => this.setState({initialPhotoLoad: true})}/>
             <div className="layer">
-              <h1 className="title">{dataCMS[0].content}</h1>
+              <h1 className="title">{dataCMS[0].acf.header}</h1>
             </div>
             <button className="arrow down" onClick={this.handleButtonPress}/>
           </div>
           { this.state.initialPhotoLoad && <><div id="section1" className="index-slide section" >
             {/* <img src={dataCMS[1].acf.background_image.source_url} className="section-0-img" /> */}
             <div className="section-wrapper section-banner get-the-skinny">
-              <h1 className="section-title title-white">{dataCMS[1].content}</h1>
+              <h1 className="section-title title-white">{dataCMS[1].acf.header}</h1>
               <div className="btn"><Link to="our-approach">GET THE SKINNY</Link></div>
               <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={true}/>
             </div>
@@ -113,7 +113,7 @@ class IndexPage extends React.Component {
           </div>
           <div id="section2" className="index-slide section">
             <div className="section-wrapper section-banner">
-              <h1 className="section-title title-white" dangerouslySetInnerHTML={{__html: dataCMS[2].content}}></h1>
+              <h1 className="section-title title-white" dangerouslySetInnerHTML={{__html: dataCMS[2].acf.header}}></h1>
             <div className="testimonial-sub-head">
             </div>
           <div className="testimonial-wrapper">
@@ -145,7 +145,7 @@ class IndexPage extends React.Component {
 
         <div id="section3" className="index-slide section">
           <div className="footer-content-wrapper section-banner">
-            <h1 className="section-title title-white" dangerouslySetInnerHTML={{__html: dataCMS[3].content}}></h1>
+            <h1 className="section-title title-white" dangerouslySetInnerHTML={{__html: dataCMS[3].acf.header}}></h1>
             <div className="btn"><Link to="our-background">TRY US ON</Link></div>
             <section id="set-3" className="social-links">
               <div className="hi-icon-wrap hi-icon-effect-3 hi-icon-effect-3b">
@@ -182,6 +182,7 @@ export const query = graphql`
         content,
         menu_order,
         acf {
+          header,
           background_image {
             source_url
             localFile {

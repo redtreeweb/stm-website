@@ -21,8 +21,6 @@ export default (props) => {
         index
     } = props;
 
-    console.log(props)
-
     let work_badges_img = null;
 
     if (work_badges) {

@@ -23,7 +23,7 @@ class OurBackground extends React.Component {
     const dataCMS = this.props.data.allWordpressPage.edges.map(({ node }) => node)
 
     const itemsBios = dataCMS.map(({acf: d}, i) => {
-      console.log(d.staff_name)
+
       return (
         <div className={'large-5 columns ' + (i === 0 ? 'jamie-bio' : 'nathan-bio')}>
           <h5 className={'name staff-name ' + (i === 0 ? 'jamie-name' : 'nathan-name')}>{d.staff_name}</h5>

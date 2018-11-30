@@ -26,6 +26,7 @@ const Header = ({ siteTitle, fontColor, subTitle, fontSize }) => (
 					<li><Link to="/our-approach">Our Approach</Link></li>
 					<li><Link to="/our-work">Our Work</Link></li>
 					<li><Link to="/our-background">Our Background</Link></li>
+					<li><Link to="/blog">Blog</Link></li>
 				</ul>
 			</nav>
 		</div>
