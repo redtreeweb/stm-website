@@ -22,9 +22,14 @@ class Blog extends React.Component {
 
     render() {
 
-        const dataCMS = this.props.data.allWordpressPost.edges.map(({ node }) => node)
+        const dataCMSPosts = this.props.data.allWordpressPost.edges.map(({ node }) => node)
+        const dataCMSPage = this.props.data.allWordpressPage.edges[0].node;
 
-        const blogRoll = dataCMS.map((post, i) => (
+        const headerImage = dataCMSPage.acf.header_image.localFile.childImageSharp.fluid;
+
+        console.log(dataCMSPosts)
+
+        const blogRoll = dataCMSPosts.map((post, i) => (
             <Link to={ '/blog/' + post.slug } className="item-blog-roll-link-wrapper">
                 <div className="item-blog-roll">
                     <div className="item-blog-roll-title">{post.title}</div>
@@ -44,12 +49,16 @@ class Blog extends React.Component {
                 headerSubTitle="BLOG"
             >
                 <div className="" style={{ flex: 1 }}>
-                    <div style={{ backgroundColor: 'red', width: '100%', height: '800px', justifyContent: 'center', alignItems: 'center', display: 'flex' }}>photo placeholder?</div>
+                    <div className="blog-header-image-wrapper" style={{  }}>
+                    {headerImage && <Img fluid={headerImage} /> }
+                    </div>
                     <div className="post-wrapper" >
                         <div className="post-header post-featured-image">
                             {/* <Img fluid={featuredImage} /> */}
                         </div>
-                        { blogRoll }
+                        <div className="blog-roll-wrapper">
+                            { blogRoll }
+                        </div>
                     </div>
                 </div>
                 <Footer />
@@ -80,5 +89,28 @@ export const query = graphql`{
           }
         }
       }
-    }
+    },
+    allWordpressPage(filter: {wordpress_id: {eq: 467}}, sort: {fields: [menu_order],  order: ASC}) {
+        edges {
+          node {
+            slug,
+            wordpress_parent,
+            wordpress_id,
+            content,
+            menu_order,
+            acf {
+              header_image {
+                localFile {
+                  childImageSharp {
+                    id
+                    fluid(maxWidth: 1400, quality: 70) {
+                        ...GatsbyImageSharpFluid_noBase64
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
   }`

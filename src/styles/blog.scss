@@ -8,48 +8,94 @@
 
 .item-blog-roll-link-wrapper {
     margin: auto;
+    width: 100%;
+    max-width: 54em;
 }
 
-.item-blog-roll {
-    display: inline-flex;
-    flex-wrap: wrap;
-    max-width: 54em;
-    font-size: .9em;
-    padding: 1em;
+.blog-header-image-wrapper {
+    display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
-    border-bottom: 1px solid #acacac;
-
+    height: 22em;
+    width: 100%;
 
     .gatsby-image-wrapper {
-        height: 12em;
-        width: 20em;
-        flex: 0 0 auto;
-    }
-
-    &-title {
-        color: $color-primary-orange;
         width: 100%;
-        font-size: 1.2em;
+        height: 100%;
     }
-
-    &-copy {
-        flex: 1;
-        padding: 0 1em;
-        width: 100em; //not sure why exactly I want this.
-    }
+}
 
 
-    p {
-        margin: 1.6em 0;
-        line-height: 1.5;
-        padding: 0;
-        color: #333;
-    }
+.blog-roll-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 1em auto;
+    
 
+    .item-blog-roll {
+        display: inline-flex;
+        flex-wrap: wrap;
+        width: 100%;
+        max-width: 54em;
+        font-size: .9em;
+        padding: 1em;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        border-bottom: 1px solid #acacac;
 
-    .link-more {
-        display: none;
+        @media screen and (max-width: 480px) {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+    
+    
+        .gatsby-image-wrapper {
+            height: 12em;
+            width: 20em;
+            flex: 0 0 auto;
+
+            @media screen and (max-width: 480px) {
+                // height: 6em;
+                // width: 10em;
+                width: 100%;
+                margin-bottom: .6em;
+            }
+        }
+    
+        &-title {
+            color: $color-primary-orange;
+            width: 100%;
+            font-size: 1.2em;
+            margin-bottom: .6em;
+
+            @media screen and (max-width: 480px) {
+                font-size: 1em;
+            }
+        }
+    
+        &-copy {
+            flex: 1;
+            padding: 0 1em;
+            // width: 100em; //not sure why exactly I want this.
+
+            @media screen and (max-width: 480px) {
+                width: initial;
+                padding: initial;
+            }
+        }
+    
+    
+        p {
+            // margin: 1.6em 0;
+            line-height: 1.5;
+            padding: 0;
+            color: #333;
+        }
+    
+    
+        .link-more {
+            display: none;
+        }
     }
 }

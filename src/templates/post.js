@@ -29,7 +29,11 @@ class PostTemplate extends Component {
     const post = this.props.data.wordpressPost;
     const entryDate = new Date(post.date);
 
+    console.log(post)
+
     const featuredImage = post.featured_media && post.featured_media.localFile && post.featured_media.localFile.childImageSharp.fluid
+
+    console.log(featuredImage)
 
 
     return (

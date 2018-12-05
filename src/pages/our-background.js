@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import Img from 'gatsby-image';
 
 import Layout from '../components/layout';
 import Footer from '../components/footer';
@@ -8,6 +9,8 @@ import imgFounders from '../images/about-header-large.jpg';
 import imgCollage from '../images/collage.png';
 
 import ImageCache from '../components/ImageCache';
+
+import '../styles/our-background.scss';
 
 class OurBackground extends React.Component {
 
@@ -22,7 +25,7 @@ class OurBackground extends React.Component {
 
     const dataCMS = this.props.data.allWordpressPage.edges.map(({ node }) => node)
 
-    const itemsBios = dataCMS.map(({acf: d}, i) => {
+    const itemsBiosFeatured = dataCMS.filter(({ acf: d }) => { return d.staff_type === 'featured' }).map(({ acf: d }, i) => {
 
       return (
         <div className={'large-5 columns ' + (i === 0 ? 'jamie-bio' : 'nathan-bio')}>
@@ -31,6 +34,25 @@ class OurBackground extends React.Component {
         </div>
       )
     })
+
+    const itemsBiosDefault = dataCMS.filter(({ acf: d }) => { return d.staff_type === 'default' }).map(({ acf: d }, i) => {
+
+      return (
+        <div className={'grid-staff-member'}>
+          <h5 className={'grid-staff-member-name'}>{d.staff_name}</h5>
+          <div className="grid-staff-member-modal">
+            <Img fluid={d.staff_image.localFile.childImageSharp.fluid} />
+            <div className="grid-staff-member-title">{d.staff_title}</div>
+            <div className="grid-staff-member-blurb"><p>{d.staff_blurb}</p></div>
+          </div>
+          {/* <div className="grid-staff-member-modal">
+           
+          </div> */}
+        </div>
+      )
+    })
+
+
 
 
     return (
@@ -43,26 +65,19 @@ class OurBackground extends React.Component {
           <div className="header-wrapper background-header" src={imgFounders} onLoad={() => this.setState({ initialPhotoLoad: true })} />
           <div className="wrapper background">
             <div className="row">
-
               <div className="large-12 columns">
-                {itemsBios}
-                {/* <div className="large-5 columns jamie-bio">
-                  <h5 className="jamie-name name">JAMIE HOLLERAN</h5>
-                  <p>As co-founder and Executive Producer at Skinny Tie Media, Jamie brings together and manages all the pieces needed to take a project from conception to delivery. His experience is truly built from the ground up – starting as a tape librarian at a Pittsburgh-based production company and moving up to Executive Producer and manager of a video department at a higher education agency. He’s had experiences with a myriad of corporate, non-profit and higher education clients that have taken him not only all around the domestic United States, but earning his wings working in the likes of Malaysia, Singapore, Nova Scotia, Turkey, and more.</p>
-                </div>
-
-                <div className="large-5 columns nathan-bio">
-                  <h5 className="nathan-name name">NATHAN WADDING</h5>
-                  <p>As co-founder and CEO, Nathan brings energy and unbridled enthusiasm to every aspect of his role at Skinny Tie Media. While he started his career in video production in technical roles at Waynesburg University and the Pittsburgh Penguins, he learned how to marry his technical expertise with creative strategy at a Pittsburgh-based production agency, eventually becoming Director of Post Production. Today, Nathan takes pride not only in partnering with clients to help them solve their challenges, but in putting his passion into creating a culture and environment at Skinny Tie for employees and contractors to want to come to work.</p>
-                </div> */}
+                {itemsBiosFeatured}
               </div>
-
-
+            </div>
+            <div className="row">
+              <div className="grid-staff">
+                {[itemsBiosDefault, itemsBiosDefault, itemsBiosDefault]}
+              </div>
+            </div>
+            <div className="row">
               <div className="large-12 columns collage">
                 <img src={imgCollage} />
               </div>
-
-
             </div>
           </div>
         </div>
@@ -86,7 +101,18 @@ export const query = graphql`{
         menu_order,
         acf {
           staff_name,
-          staff_blurb
+          staff_blurb,
+          staff_type,
+          staff_title,
+          staff_image {
+            localFile {
+              childImageSharp {
+                  fluid(maxWidth: 500, quality: 70) {
+                      ...GatsbyImageSharpFluid_noBase64
+                  }
+              }
+          }
+        }
         }
       }
     }
