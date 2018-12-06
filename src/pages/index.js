@@ -2,13 +2,12 @@
 import Lethargy from "exports-loader?this.Lethargy!lethargy/lethargy";
 
 import React from 'react';
+import Helmet from 'react-helmet';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 
 
 import Layout from '../components/layout';
-import {Helmet} from 'react-helmet';
-import Image from '../components/image';
 import Slider from "react-slick";
 
 import _ from 'lodash';
@@ -17,6 +16,7 @@ import '../styles/slick/slick.scss';
 
 import ImageCache from '../components/ImageCache';
 
+const imgMobile = require('../images/nathan-jamie-ties-1-small.jpg');
 
 class IndexPage extends React.Component {
 
@@ -24,18 +24,25 @@ class IndexPage extends React.Component {
       super(props)
     this.state = {
       scrollPosition: 0,
-      initialPhotoLoad: false
+      initialPhotoLoad: false,
+      windowWidth: null
+
     }
 
     this.handleButtonPress = this.handleButtonPress.bind(this);
     this.handleScrollEvent = this.handleScrollEvent.bind(this);
+    this.handleResize = this.handleResize.bind(this);
   }
 
 
   componentDidMount() {
+    this.handleResize();
     window.addEventListener('wheel', this.handleScrollEvent, false);
+
     // window.addEventListener('wheel', _.debounce(this.handleScrollEvent, 0, {leading: false, trailing: true}));
     this.lethargy = new Lethargy(5, 50, .05); //helps with the scroll
+
+    window.addEventListener('resize', this.handleResize, false);
   }
 
   handleButtonPress() {
@@ -54,12 +61,15 @@ class IndexPage extends React.Component {
     }
   }
 
+  handleResize() {
+    console.log('resize')
+    this.setState({windowWidth: window.innerWidth});
+  }
 
 
   render() {
 
-    
-
+  
     const scrollPositionWrapper = this.section ? this.state.scrollPosition * this.section.getBoundingClientRect().height: 0;
     const transformWrapper = `translate3d(0, ${-scrollPositionWrapper}px, 0)`
 
@@ -69,7 +79,7 @@ class IndexPage extends React.Component {
 			autoplaySpeed: 8000,
 			adaptiveHeight: true,
 			pauseOnHover: true,
-				responsive: [
+      responsive: [
 				{
 					breakpoint: 1024,
 					settings: {
@@ -77,26 +87,26 @@ class IndexPage extends React.Component {
 					arrows: false
 					}
 				}
-							]
-								
+      ]				
     };
     
     const dataCMS = this.props.data.allWordpressPage.edges.filter(({node}) => node.wordpress_parent === 316).map(({node}) => node) //filter(({node}) => node.wordpress_parent === 316).
     dataCMS.sort((a,b) => a.menu_order - b.menu_order)
-
-    console.log(dataCMS)
 
     return (
       <Layout
         headerFontColor="light"
         bodyClass="disable-scroll"
       >
+      <Helmet>
+				<html className="body-freeze" />
+				<body className="body-freeze" />
+			</Helmet>
       <div className="fullpage-viewport" >
         <div className="fullpage-wrapper" style={{transform: transformWrapper}} onScroll={this.handleScrollEvent}>
           <div id="section0" className="index-slide section" ref={section => this.section = section}>
-            {/* <Image className="section-0-img"/> */}
-            {/* <img src={dataCMS[0].acf.background_image.source_url} className="section-0-img" /> */}
-            <Img fluid={dataCMS[0].acf.background_image.localFile.childImageSharp.fluid} onLoad={() => this.setState({initialPhotoLoad: true})}/>
+            { this.state.windowWidth < 480 ? <Img fluid={dataCMS[0].acf.background_image_mobile.localFile.childImageSharp.fluid} onLoad={() => this.setState({initialPhotoLoad: true})}/> :  
+            <Img fluid={dataCMS[0].acf.background_image.localFile.childImageSharp.fluid} onLoad={() => this.setState({initialPhotoLoad: true})}/> }
             <div className="layer">
               <h1 className="title">{dataCMS[0].acf.header}</h1>
             </div>
@@ -157,9 +167,8 @@ class IndexPage extends React.Component {
               </div>
             </section>
             </div>
-            <Img fluid={dataCMS[3].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={true} 
-            //imgStyle={{height: window.outerHeight}}
-            />
+            { this.state.windowWidth < 480 ? <Img fluid={dataCMS[3].acf.background_image_mobile.localFile.childImageSharp.fluid} fadeIn={false} critical={true} />  :
+            <Img fluid={dataCMS[3].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={true} /> }        
           </div></> }
       </div>
       </div>
@@ -184,6 +193,16 @@ export const query = graphql`
         acf {
           header,
           background_image {
+            source_url
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 1400, quality: 70) {
+                  ...GatsbyImageSharpFluid_noBase64
+                }
+              }
+            }
+          }
+          background_image_mobile {
             source_url
             localFile {
               childImageSharp {

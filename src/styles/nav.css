@@ -54,89 +54,8 @@ header h1 {
     font-size: 40px;
     font-size: 2.5rem;
     font-weight: 300; } }
-#cd-nav ul {
-  /* mobile first */
-  position: fixed;
-  width: 90%;
-  max-width: 400px;
-  right: 5%;
-  bottom: 20px;
-  border-radius: 0.25em;
-  box-shadow: 0 0 10px rgba(232, 74, 100, 0.4);
-  background: white;
-  visibility: hidden;
-  /* remove overflow:hidden if you want to create a drop-down menu - but then remember to fix/eliminate the list items animation */
-  overflow: hidden;
-  z-index: 6;
-  /* Force Hardware Acceleration in WebKit */
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transform: scale(0);
-  -moz-transform: scale(0);
-  -ms-transform: scale(0);
-  -o-transform: scale(0);
-  transform: scale(0);
-  -webkit-transform-origin: 100% 100%;
-  -moz-transform-origin: 100% 100%;
-  -ms-transform-origin: 100% 100%;
-  -o-transform-origin: 100% 100%;
-  transform-origin: 100% 100%;
-  -webkit-transition: -webkit-transform 0.3s, visibility 0s 0.3s;
-  -moz-transition: -moz-transform 0.3s, visibility 0s 0.3s;
-  transition: transform 0.3s, visibility 0s 0.3s; }
 
-#cd-nav ul li {
-  /* Force Hardware Acceleration in WebKit */
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden; }
-
-#cd-nav ul.is-visible {
-  visibility: visible;
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
-  transform: scale(1);
-  -webkit-transition: -webkit-transform 0.3s, visibility 0s 0s;
-  -moz-transition: -moz-transform 0.3s, visibility 0s 0s;
-  transition: transform 0.3s, visibility 0s 0s; }
-
-#cd-nav ul.is-visible li:nth-child(1) {
-  /* list items animation */
-  -webkit-animation: cd-slide-in 0.2s;
-  -moz-animation: cd-slide-in 0.2s;
-  animation: cd-slide-in 0.2s; }
-
-#cd-nav ul.is-visible li:nth-child(2) {
-  -webkit-animation: cd-slide-in 0.3s;
-  -moz-animation: cd-slide-in 0.3s;
-  animation: cd-slide-in 0.3s; }
-
-#cd-nav ul.is-visible li:nth-child(3) {
-  -webkit-animation: cd-slide-in 0.4s;
-  -moz-animation: cd-slide-in 0.4s;
-  animation: cd-slide-in 0.4s; }
-
-#cd-nav ul.is-visible li:nth-child(4) {
-  -webkit-animation: cd-slide-in 0.5s;
-  -moz-animation: cd-slide-in 0.5s;
-  animation: cd-slide-in 0.5s; }
-
-#cd-nav ul.is-visible li:nth-child(5) {
-  -webkit-animation: cd-slide-in 0.6s;
-  -moz-animation: cd-slide-in 0.6s;
-  animation: cd-slide-in 0.6s; }
-
-#cd-nav li.interior-nav a {
-  color: #333333; }
-#cd-nav li a {
-  display: block;
-  padding: 1.6em;
-  border-bottom: 1px solid #eff2f6; }
-
-#cd-nav li:last-child a {
-  /* border-bottom: none;  */
-}
+/* REMOVED OLD MENU STUFF GO TO SOURCE CONTROL IF I END UP NEEDING IT */
 
 @media only screen and (min-width: 900px) {
   #cd-nav ul {
@@ -205,7 +124,7 @@ header h1 {
   */
   #cd-nav.is-fixed ul {
     /* when the user scrolls down, the navigation moves to the bottom right in Fixed position - as on touch devices */
-    position: fixed;
+    /* position: fixed;
     width: 90%;
     max-width: 400px;
     bottom: 20px;
@@ -217,25 +136,29 @@ header h1 {
     -moz-transform: scale(0);
     -ms-transform: scale(0);
     -o-transform: scale(0);
-    transform: scale(0); }
+    transform: scale(0);  */
+  }
 
   #cd-nav.is-fixed ul li {
-    display: block; }
+    /* display: block;  */
+  }
 
   #cd-nav.is-fixed ul li a {
-    padding: 1.6em;
+    /* padding: 1.6em;
     margin-left: 0;
-    border-bottom: 1px solid #eff2f6; }
+    border-bottom: 1px solid #eff2f6;  */
+  }
 
   #cd-nav ul.has-transitions {
     /* this class is used to bring back transitions when the navigation moves at the bottom right */
-    -webkit-transition: -webkit-transform 0.3s, visibility 0s 0.3s;
+    /* -webkit-transition: -webkit-transform 0.3s, visibility 0s 0.3s;
     -moz-transition: -moz-transform 0.3s, visibility 0s 0.3s;
-    transition: transform 0.3s, visibility 0s 0.3s; }
+    transition: transform 0.3s, visibility 0s 0.3s;  */
+  }
 
   #cd-nav ul.is-visible {
     /* this class is used to bring back the navigation animation - as on touch devices */
-    visibility: visible;
+    /* visibility: visible;
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
     -ms-transform: scale(1);
@@ -243,7 +166,8 @@ header h1 {
     transform: scale(1);
     -webkit-transition: -webkit-transform 0.3s, visibility 0s 0s;
     -moz-transition: -moz-transform 0.3s, visibility 0s 0s;
-    transition: transform 0.3s, visibility 0s 0s; }
+    transition: transform 0.3s, visibility 0s 0s;  */
+  }
 
   #cd-nav ul.is-hidden {
     /* this class is used to animate the scale down the navigation when the user scrolls down with the navigation still open */

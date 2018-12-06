@@ -28,28 +28,26 @@ const Layout = ({ children, headerFontColor, headerFontSize, headerSubTitle, bod
             { name: 'keywords', content: 'sample, something' },
           ]}
           link={[
-            {rel: 'stylesheet', type: 'text/css', href:'//cloud.typography.com/7803112/799324/css/fonts.css'}
+            { rel: 'stylesheet', type: 'text/css', href: '//cloud.typography.com/7803112/799324/css/fonts.css' }
           ]}
         >
           <html lang="en" />
           <body className={bodyClass} />
         </Helmet>
-        <Header 
-          siteTitle={data.site.siteMetadata.title} 
-          fontColor={headerFontColor}
-          fontSize={headerFontSize}
-          subTitle={headerSubTitle}
-        />
-        <div className="site-content">
-          {children}
+        <div className="site-wrapper">
+            <Header
+              siteTitle={data.site.siteMetadata.title}
+              fontColor={headerFontColor}
+              fontSize={headerFontSize}
+              subTitle={headerSubTitle}
+            />
+            <div className="site-content">
+              {children}
+            </div>
         </div>
       </>
     )}
   />
 )
-
-// Layout.propTypes = {
-//   children: PropTypes.node.isRequired,
-// }
 
 export default Layout
