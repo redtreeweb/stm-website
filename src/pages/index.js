@@ -18,6 +18,8 @@ import ImageCache from '../components/ImageCache';
 
 const imgMobile = require('../images/nathan-jamie-ties-1-small.jpg');
 
+
+
 class IndexPage extends React.Component {
 
   constructor(props) {
@@ -25,8 +27,8 @@ class IndexPage extends React.Component {
     this.state = {
       scrollPosition: 0,
       initialPhotoLoad: false,
-      windowWidth: null
-
+      windowWidth: null,
+      isTouchable: false
     }
 
     this.handleButtonPress = this.handleButtonPress.bind(this);
@@ -43,6 +45,24 @@ class IndexPage extends React.Component {
     this.lethargy = new Lethargy(5, 50, .05); //helps with the scroll
 
     window.addEventListener('resize', this.handleResize, false);
+
+    function is_touch_device() {
+      var prefixes = ' -webkit- -moz- -o- -ms- '.split(' ');
+      var mq = function(query) {
+        return window.matchMedia(query).matches;
+      }
+    
+      if (('ontouchstart' in window)) {
+        return true;
+      }
+    
+      // include the 'heartz' as a way to have a non matching MQ to help terminate the join
+      // https://git.io/vznFH
+      var query = ['(', prefixes.join('touch-enabled),('), 'heartz', ')'].join('');
+      return mq(query);
+    }   
+    
+    this.setState({isTouchable: is_touch_device()})
   }
 
   handleButtonPress() {
@@ -50,8 +70,8 @@ class IndexPage extends React.Component {
   }
 
   handleScrollEvent(e) {
-    
-      if (this.lethargy.check(e)) {
+
+    if (this.lethargy.check(e)) {
 
       window.removeEventListener('wheel', this.handleScrollEvent)
       const scrollDirection =  e.deltaY / Math.abs(e.deltaY);
@@ -72,6 +92,8 @@ class IndexPage extends React.Component {
   
     const scrollPositionWrapper = this.section ? this.state.scrollPosition * this.section.getBoundingClientRect().height: 0;
     const transformWrapper = `translate3d(0, ${-scrollPositionWrapper}px, 0)`
+
+    const {isTouchable} = this.state;
 
     const settings = {
 			dots: false,
@@ -96,14 +118,18 @@ class IndexPage extends React.Component {
     return (
       <Layout
         headerFontColor="light"
-        bodyClass="disable-scroll"
+        bodyClass={!isTouchable ? 'disable-scroll' : ''}
       >
       <Helmet>
-				<html className="body-freeze" />
-				<body className="body-freeze" />
+				{/* <html className="overflow-hidden" />
+				<body className="overflow-hidden" /> */}
 			</Helmet>
-      <div className="fullpage-viewport" >
-        <div className="fullpage-wrapper" style={{transform: transformWrapper}} onScroll={this.handleScrollEvent}>
+      <div className={'fullpage-viewport' + (isTouchable ? ' enable-scroll' : '') }>
+        <div 
+        className="fullpage-wrapper" 
+        style={{transform: !isTouchable ? transformWrapper : ''}} 
+        onScroll={this.handleScrollEvent}
+        >
           <div id="section0" className="index-slide section" ref={section => this.section = section}>
             { this.state.windowWidth < 480 ? <Img fluid={dataCMS[0].acf.background_image_mobile.localFile.childImageSharp.fluid} onLoad={() => this.setState({initialPhotoLoad: true})}/> :  
             <Img fluid={dataCMS[0].acf.background_image.localFile.childImageSharp.fluid} onLoad={() => this.setState({initialPhotoLoad: true})}/> }

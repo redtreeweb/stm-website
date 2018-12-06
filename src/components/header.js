@@ -46,8 +46,8 @@ class Header extends React.Component {
 
 		return (<>
 			<Helmet>
-				<html className={isSidebarOpen ? 'body-freeze' : ''} />
-				<body className={isSidebarOpen ? 'body-freeze' : ''} />
+				<html className={isSidebarOpen ? 'overflow-hidden' : ''} />
+				<body className={isSidebarOpen ? 'overflow-hidden' : ''} />
 			</Helmet>
 		  <div className={`nav-wrapper ${fontColor}`  }>
 				<div id="logo-flow">
@@ -71,7 +71,8 @@ class Header extends React.Component {
 				{ mobileClose }
 				{ navUl }
 				<img src={tieLogo} className="logo-tie" />		
-			</div></>
+			</div>
+			</>
 		)
 	}
 }

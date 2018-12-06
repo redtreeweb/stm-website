@@ -1204,6 +1204,11 @@ body.disable-scroll {
 	height: 100vh;
 	overflow: hidden;
 
+	&.enable-scroll {
+		height: initial;
+		overflow: auto;
+	}
+
 	.fullpage-wrapper {
 
 		height: 100%;
@@ -1267,6 +1272,47 @@ body.disable-scroll {
 }
 
 
-body.body-freeze {
-	overflow: hidden;
+body.overflow-hidden, html.overflow-hidden {
+	// overflow: hidden;
+
+	// height: 100%;
+	// width: 100%;
+	// overflow: auto;
+
+	// position: fixed;
+	// overflow: hidden;
 }
+
+body.overflow-hidden {
+	// position: static;
+	// overflow-y: scroll;
+	// -webkit-overflow-scrolling: touch;
+}
+
+.fullpage-viewport {
+	// width: 100vw;
+	// height: 100vh;
+	// overflow-y: scroll;
+	// -webkit-overflow-scrolling: touch;
+}
+
+// html.overflow-hidden {
+// 	height  : 100%;
+// 	overflow: hidden;
+// }
+
+// body.overflow-hidden {
+// 	height  : 100%;
+// 		overflow: auto;
+// }
+
+// .overflow-hidden {
+// 	&html {
+// 		height  : 100%;
+// 		overflow: hidden;
+// 	}
+// 	&body {
+// 		height  : 100%;
+// 		overflow: auto;
+// 	}
+// }
