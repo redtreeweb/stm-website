@@ -540,9 +540,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 
 	@media (max-width:800px) {
 		  margin: 0 auto;
-		  margin-left: 1em;
-  		
+		  margin-left: 1em;	
   }
+  @media (max-width:400px) {
+	margin: 0 auto;
+	margin-left: .2em;	
+}
 }
  
 
@@ -565,23 +568,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 		color: #d94c00;
 	}
 }
-
-// .footer .social-media a {
-// 	color: #fff;
-// 	font-size: 16px;
-// 	padding-left: 5px;
-// 	padding-right: 5px;
-// 	&:hover {
-// 		color: #d94c00;
-// 	}
-// }
-
-/*
-.footer .row .large-12.columns p {
-	color: #fff;
-}
-*/
-
 
 .no-style {
 	list-style: none;
@@ -949,6 +935,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 
 		&.right {
 			flex-direction: row-reverse;
+
+			@media (max-width: 500px) {
+				flex-direction: column;
+			}
 		}
 
 
@@ -960,6 +950,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 		&:last-child {
 			border-bottom: none;
 		}
+
+		@media (max-width: 500px) {
+			flex-direction: column;
+		}
+
+
 	& .gallery {
 		padding: 0;
 	}
@@ -1249,6 +1245,10 @@ body.disable-scroll {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 
+	@media (max-width:400px) {
+	    background-attachment: inherit;
+    }
+
 
 	&.our-approach {
 		background-image: url('../images/hat.jpg');
@@ -1269,6 +1269,32 @@ body.disable-scroll {
 	background-color: #fff;
 	padding: 70px 0 90px 0;
 
+	&.skinny {
+		.row {
+			display: flex;
+			padding: 0 1em;
+			align-items: flex-start;
+
+			.quote {
+				flex: 1 1 auto;
+			}
+
+			@media (max-width: 700px) {
+				flex-direction: column;
+				padding: 0 2em;
+			}
+		}
+	}
+
+	@media (max-width: 700px) {
+		.skinny-copy {
+			padding: 0 0 2em;
+	
+			p {
+				padding: 1em 0;
+			}
+		}
+	}
 }
 
 
