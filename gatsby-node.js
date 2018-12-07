@@ -127,22 +127,22 @@ exports.createPages = ({ graphql, actions }) => {
             console.log(result.errors)
             reject(result.errors)
           }
-        //   const postTemplate = path.resolve("./src/templates/category.js")
+          const postTemplate = path.resolve("./src/templates/category.js")
         //   // this programmatically creates a page
         //   // if I want to create a home...I wouldn't need to do this.
         //   // We want to create a detailed page for each
         //   // post node. We'll just use the WordPress Slug for the slug.
         //   // The Post ID is prefixed with 'POST_'
-        //   _.each(result.data.allWordpressCategory.edges, edge => {
-        //     createPage({
-        //       path: `category/${edge.node.slug}/`,
-        //       component: slash(postTemplate),
-        //       context: {
-        //         id: edge.node.id,
-                
-        //       },
-        //     })
-        //   })
+          _.each(result.data.allWordpressCategory.edges, edge => {
+            createPage({
+              path: `blog/category/${edge.node.slug}/`,
+              component: slash(postTemplate),
+              context: {
+                id: edge.node.id,
+                name: edge.node.name
+              },
+            })
+          })
           resolve()
         })
       })

@@ -27,7 +27,7 @@ class Blog extends React.Component {
 
         const headerImage = dataCMSPage.acf.header_image.localFile.childImageSharp.fluid;
 
-        console.log(dataCMSPosts)
+        
 
         const blogRoll = dataCMSPosts.map((post, i) => (
             <Link to={ '/blog/' + post.slug } className="item-blog-roll-link-wrapper">

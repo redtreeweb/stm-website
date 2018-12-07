@@ -99,7 +99,7 @@ class IndexPage extends React.Component {
 			dots: false,
 			autoplay: true,
 			autoplaySpeed: 8000,
-			adaptiveHeight: true,
+			adaptiveHeight: false,
 			pauseOnHover: true,
       responsive: [
 				{

@@ -4,16 +4,11 @@ import PropTypes from "prop-types"
 // // import PostIcons from "../components/PostIcons"
 import Img from "gatsby-image"
 import ImageFallback from '../components/ImageFallback';
-import Layout from "../components/layout"
+import Layout from "../components/layout";
+import BlogSidebar from '../components/blog/BlogSidebar';
 import Footer from '../components/footer';
 
-
-// import Header from '../components/header';
-
-// import { rhythm } from "../utils/typography"
-
 import '../styles/post.scss';
-
 
 
 class PostTemplate extends Component {
@@ -29,12 +24,7 @@ class PostTemplate extends Component {
     const post = this.props.data.wordpressPost;
     const entryDate = new Date(post.date);
 
-    console.log(post)
-
     const featuredImage = post.featured_media && post.featured_media.localFile && post.featured_media.localFile.childImageSharp.fluid
-
-    console.log(featuredImage)
-
 
     return (
       <Layout
@@ -57,6 +47,7 @@ class PostTemplate extends Component {
               </div>}
             </div>
             <div className="post-content-copy" dangerouslySetInnerHTML={{ __html: post.content }} />
+            <BlogSidebar />
           </div>
         </div>
         <Footer />
