@@ -604,7 +604,8 @@ header {
   align-items: center;
   position: fixed;
   top: 0;
-  right: -100%;
+  // right: -100%;
+  right: 0;
   width: 0;
   width: 16em;
   height: 100%;
@@ -612,11 +613,15 @@ header {
   z-index: 1000;
   white-space: pre;
   overflow: hidden;
-  transition: cubic-bezier(0.455, 0.03, 0.515, 0.955) 500ms right;
+  transform: translateX(100%);
+
+  // transition: cubic-bezier(0.455, 0.03, 0.515, 0.955) 500ms right;
+  transition: 500ms transform cubic-bezier(0.455, 0.03, 0.515, 0.955);
 
 
   &.is-visible {
-    right: 0;
+    // right: 0;
+    transform: translateX(0);
     box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.16), 0 3px 3px 0 rgba(0, 0, 0, 0.16), 0 2px 0 2px rgba(0, 0, 0, 0.08);
   }
 
