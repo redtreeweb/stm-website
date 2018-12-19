@@ -1317,14 +1317,14 @@ body.disable-scroll {
 
 
 body.overflow-hidden, html.overflow-hidden {
-	// overflow: hidden;
+	overflow: hidden;
 
-	// height: 100%;
-	// width: 100%;
-	// overflow: auto;
+	height: 100%;
+	width: 100%;
+	overflow: auto;
 
-	// position: fixed;
-	// overflow: hidden;
+	position: fixed;
+	overflow: hidden;
 }
 
 body.overflow-hidden {

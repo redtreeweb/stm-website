@@ -121,8 +121,8 @@ class IndexPage extends React.Component {
         bodyClass={!isTouchable ? 'disable-scroll' : ''}
       >
       <Helmet>
-				{/* <html className="overflow-hidden" />
-				<body className="overflow-hidden" /> */}
+				<html className="overflow-hidden" />
+				<body className="overflow-hidden" />
 			</Helmet>
       <div className={'fullpage-viewport' + (isTouchable ? ' enable-scroll' : '') }>
         <div 
