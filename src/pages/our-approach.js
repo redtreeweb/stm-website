@@ -5,6 +5,7 @@ import Layout from '../components/layout';
 import Footer from '../components/footer';
 
 import imageHat from '../images/hat.jpg';
+import imageClientWall from '../images/STM_ClientLogos_1.jpg';
 
 import ImageCache from '../components/ImageCache';
 
@@ -35,6 +36,12 @@ render() {
               <div class="large-8 columns skinny-copy" dangerouslySetInnerHTML={{__html: dataCMS.node.content}}></div>
               <div class="large-4 columns quote" dangerouslySetInnerHTML={{__html: dataCMS.node.acf.service_list}}></div>
             </div>
+            <div class="row client-wall">
+              <img src={imageClientWall} />
+            </div>
+            <hr />
+            <p>(above image file ^)<br/>(below new grid V)</p>
+            <hr />
           </div>
         {/* </div> */}
         {this.state.initialPhotoLoad && <ImageCache />}

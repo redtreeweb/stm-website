@@ -1283,6 +1283,18 @@ body.disable-scroll {
 	}
 }
 
+.catalog-videos {
+	.row {
+		&.row-featured-inline {
+			clear: both;
+			padding: 3em 0;
+			border-bottom: 1px solid #acacac;
+			background-color: #efefefef;
+			margin:  0;
+		}
+	}
+}
+
 .content-wrapper {
 	background-color: #fff;
 	padding: 70px 0 90px 0;
@@ -1297,12 +1309,18 @@ body.disable-scroll {
 				flex: 1 1 auto;
 			}
 
+			&.client-wall {
+				padding: 3em 0;
+			}
+
 			@media (max-width: 700px) {
 				flex-direction: column;
 				padding: 0 2em;
 			}
 		}
 	}
+
+
 
 	@media (max-width: 700px) {
 		.skinny-copy {

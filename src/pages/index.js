@@ -222,17 +222,17 @@ export const query = graphql`
             source_url
             localFile {
               childImageSharp {
-                fluid(maxWidth: 1400, quality: 70) {
+                fluid(maxWidth: 2400, quality: 100) {
                   ...GatsbyImageSharpFluid_noBase64
                 }
               }
             }
-          }
+          },
           background_image_mobile {
             source_url
             localFile {
               childImageSharp {
-                fluid(maxWidth: 1400, quality: 70) {
+                fluid(maxWidth: 1400, quality: 90) {
                   ...GatsbyImageSharpFluid_noBase64
                 }
               }

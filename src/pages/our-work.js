@@ -59,8 +59,9 @@ class OurWork extends React.Component {
           </div>
 
           {/* <!-- FEATURED VIDEO --> */}
+          {/* A PROP ON THIS MAKES THIS SEPARATE FROM THE NORMAL WorkItems */}
           <div class="wrapper featured-video">
-              <WorkItem {...(dataCMS[0].acf)} />
+              <WorkItem {...(dataCMS[0].acf)} type="featured-top"/>
           </div>
 
           <div class="wrapper catalog-videos">
