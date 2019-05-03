@@ -106,6 +106,7 @@ export const query = graphql`{
           staff_title,
           staff_image {
             localFile {
+              #sourceUrl,
               childImageSharp {
                   fluid(maxWidth: 500, quality: 70) {
                       ...GatsbyImageSharpFluid_noBase64
