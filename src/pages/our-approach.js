@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import Layout from '../components/layout';
 import Footer from '../components/footer';
 
+import Img from 'gatsby-image';
 import imageHat from '../images/hat.jpg';
 import imageClientWall from '../images/STM_ClientLogos_1.jpg';
 
@@ -21,6 +22,22 @@ class OurApproach extends React.Component {
 
 render() {
   const dataCMS = this.props.data.allWordpressPage.edges.find(({node}) => node.wordpress_id === 343);
+
+  console.log(this.props)
+
+  const dataClientLogos = this.props.data.clients.edges.map(({node}) => node) //.find(({node}) => )
+
+  console.log(dataClientLogos)
+
+const clientWall = dataClientLogos.map(d => <div className={'grid-client-logo'}>
+  <Img 
+    fluid={d.acf.client_logo.localFile.childImageSharp.fluid}
+    objectFit="cover"
+    objectPosition="50% 50%"
+  />
+</div>)
+
+
 
     return (
       <Layout
@@ -42,6 +59,9 @@ render() {
             <hr />
             <p>(above image file ^)<br/>(below new grid V)</p>
             <hr />
+            <div className="grid-client">
+              {[clientWall,clientWall,clientWall]}
+            </div>
           </div>
         {/* </div> */}
         {this.state.initialPhotoLoad && <ImageCache />}
@@ -67,6 +87,29 @@ export const query = graphql`
         acf {
           service_list
         }    
+      }
+    }
+  },
+  clients: allWordpressPage(filter: {wordpress_parent: {eq: 343}}, sort: {fields: [menu_order],  order: ASC}) {
+    edges {
+      node {
+        slug,
+        wordpress_parent,
+        wordpress_id,
+        content,
+        menu_order,
+        acf {
+          client_name
+          client_logo {
+            localFile {
+              childImageSharp {
+                  fluid(maxWidth: 500, quality: 100) {
+                      ...GatsbyImageSharpFluid_noBase64
+                  }
+              }
+            }
+          }
+        }
       }
     }
   }
