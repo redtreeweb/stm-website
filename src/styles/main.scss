@@ -1085,12 +1085,23 @@ img.tapes {
 #section0,
 #section1,
 #section2,
-#section3{
+#section3,
+#section4,
+#section5,
+#contact {
 	background-size: cover;
 	background-position: center top;
 
 	.gatsby-image-wrapper {
 		position: static !important;
+
+		// img {
+		// 	z-index: -1; // not sure why I need this, but otherwise it won't show form stuff
+		// }
+	}
+
+	form {
+		z-index: 1;
 	}
 }
 

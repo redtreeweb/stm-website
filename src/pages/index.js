@@ -18,6 +18,8 @@ import ImageCache from '../components/ImageCache';
 
 const imgMobile = require('../images/nathan-jamie-ties-1-small.jpg');
 
+const numSlides = 5;
+
 
 
 class IndexPage extends React.Component {
@@ -66,7 +68,7 @@ class IndexPage extends React.Component {
   }
 
   handleButtonPress() {
-    this.setState({scrollPosition: Math.min(this.state.scrollPosition + 1, 3)});
+    this.setState({scrollPosition: Math.min(this.state.scrollPosition + 1, numSlides)});
   }
 
   handleScrollEvent(e) {
@@ -76,7 +78,7 @@ class IndexPage extends React.Component {
       window.removeEventListener('wheel', this.handleScrollEvent)
       const scrollDirection =  e.deltaY / Math.abs(e.deltaY);
 
-      this.setState({scrollPosition: Math.max(Math.min(this.state.scrollPosition + (scrollDirection * 1), 3),0)});
+      this.setState({scrollPosition: Math.max(Math.min(this.state.scrollPosition + (scrollDirection * 1), numSlides),0)});
       setTimeout(() => window.addEventListener('wheel', this.handleScrollEvent, false), 1200);
     }
   }
@@ -195,7 +197,68 @@ class IndexPage extends React.Component {
             </div>
             { this.state.windowWidth < 480 ? <Img fluid={dataCMS[3].acf.background_image_mobile.localFile.childImageSharp.fluid} fadeIn={false} critical={true} />  :
             <Img fluid={dataCMS[3].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={true} /> }        
-          </div></> }
+          </div>
+
+
+          <div id="section4" className="index-slide section">
+          <div className="footer-content-wrapper section-banner">
+            {/* <h1 className="section-title title-white" dangerouslySetInnerHTML={{__html: dataCMS[3].acf.header}}></h1> */}
+            <h1 className="section-title title-white">FILLER</h1>
+            <div className="btn"><Link to="our-background">TEMPORARY</Link></div>
+            {/* <section id="set-3" className="social-links">
+              <div className="hi-icon-wrap hi-icon-effect-3 hi-icon-effect-3b">
+                <a href="https://instagram.com/skinnytiemedia" target="_blank" className="hi-icon icon-instagram">Instagram</a>
+                <a href="https://vimeo.com/skinnytiemedia" target="_blank" className="hi-icon icon-vimeo">Vimeo</a>
+                <a href="https://twitter.com/skinnytiemedia" target="_blank" className="hi-icon icon-twitter">Twitter</a>
+                <a href="https://www.linkedin.com/company/skinny-tie-media" target="_blank" className="hi-icon icon-linkedin">LinkedIn</a>
+                <a href="mailto:Hello@SkinnyTieMedia.com" target="_blank" className="hi-icon icon-envelope">Email</a>
+              </div>
+            </section> */}
+            </div>
+            { this.state.windowWidth < 480 ? <Img fluid={dataCMS[3].acf.background_image_mobile.localFile.childImageSharp.fluid} fadeIn={false} critical={true} />  :
+            <Img fluid={dataCMS[3].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={true} /> }        
+          </div>
+
+          <div id="contact" className="index-slide section" style={{backgroundColor: '#aaa'}}>
+          <div className="footer-content-wrapper section-banner">
+            {/* <h1 className="section-title title-white" dangerouslySetInnerHTML={{__html: dataCMS[3].acf.header}}></h1> */}
+            <h1 className="section-title title-white">Contact</h1>
+
+            {/* <div className="btn"><Link to="our-background">TRY US ON2</Link></div> */}
+
+            <form className="contact-form" id="contact-form">
+              <label for="contact-form-name">Nice to meet you _______</label>
+              <input id="contact-form-name" type="text" value="Name" placeholder="First and Last Name"/>
+
+              <label for="contact-form-name">What can we do for you?</label>
+              <textarea id="contact-form-text" placeholder="Let's Collaborate on Something!"></textarea>
+
+              <label>How should we follow up?</label>
+              <input type="radio" name="contact-form-follow-up" id="contact-form-follow-up__email" value="email"/>
+              <label for="contact-form-follow-up__email">Email</label>
+
+              <input type="radio" name="contact-form-follow-up" id="contact-form-follow-up__phone" value="phone"/>
+              <label for="contact-form-follow-up__phone">Phone</label>
+
+              <button id="contact-form-submit" type="submit">Submit</button>
+            </form>
+
+
+            <section id="set-3" className="social-links">
+              <div className="hi-icon-wrap hi-icon-effect-3 hi-icon-effect-3b">
+                <a href="https://instagram.com/skinnytiemedia" target="_blank" className="hi-icon icon-instagram">Instagram</a>
+                <a href="https://vimeo.com/skinnytiemedia" target="_blank" className="hi-icon icon-vimeo">Vimeo</a>
+                <a href="https://twitter.com/skinnytiemedia" target="_blank" className="hi-icon icon-twitter">Twitter</a>
+                <a href="https://www.linkedin.com/company/skinny-tie-media" target="_blank" className="hi-icon icon-linkedin">LinkedIn</a>
+                <a href="mailto:Hello@SkinnyTieMedia.com" target="_blank" className="hi-icon icon-envelope">Email</a>
+              </div>
+            </section>
+            </div>
+            {/* { this.state.windowWidth < 480 ? <Img fluid={dataCMS[3].acf.background_image_mobile.localFile.childImageSharp.fluid} fadeIn={false} critical={true} />  :
+            <Img fluid={dataCMS[3].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={true} /> }         */}
+          </div>
+
+          </> }
       </div>
       </div>
       { this.state.initialPhotoLoad && <ImageCache />}
