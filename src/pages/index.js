@@ -9,6 +9,7 @@ import Img from 'gatsby-image';
 
 import Layout from '../components/layout';
 import Slider from "react-slick";
+import ContactForm from '../components/ContactForm';
 
 import _ from 'lodash';
 
@@ -226,7 +227,7 @@ class IndexPage extends React.Component {
 
             {/* <div className="btn"><Link to="our-background">TRY US ON2</Link></div> */}
 
-            <form className="contact-form" id="contact-form">
+            {/* <form className="contact-form" id="contact-form">
               <label for="contact-form-name">Nice to meet you _______</label>
               <input id="contact-form-name" type="text" value="Name" placeholder="First and Last Name"/>
 
@@ -241,7 +242,9 @@ class IndexPage extends React.Component {
               <label for="contact-form-follow-up__phone">Phone</label>
 
               <button id="contact-form-submit" type="submit">Submit</button>
-            </form>
+            </form> */}
+
+            <ContactForm />
 
 
             <section id="set-3" className="social-links">
