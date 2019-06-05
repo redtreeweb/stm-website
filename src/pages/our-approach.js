@@ -28,17 +28,17 @@ render() {
 
   console.log(this.props)
 
-  const dataClientLogos = this.props.data.clients.edges.map(({node}) => node) //.find(({node}) => )
+  // const dataClientLogos = this.props.data.clients.edges.map(({node}) => node) //.find(({node}) => )
 
-  console.log(dataClientLogos)
+  // console.log(dataClientLogos)
 
-const clientWall = dataClientLogos.map(d => <div className={'grid-client-logo'}>
-  <Img 
-    fluid={d.acf.client_logo.localFile.childImageSharp.fluid}
-    objectFit="cover"
-    objectPosition="50% 50%"
-  />
-</div>)
+// const clientWall = dataClientLogos.map(d => <div className={'grid-client-logo'}>
+//   <Img 
+//     fluid={d.acf.client_logo.localFile.childImageSharp.fluid}
+//     objectFit="cover"
+//     objectPosition="50% 50%"
+//   />
+// </div>)
 
 
 

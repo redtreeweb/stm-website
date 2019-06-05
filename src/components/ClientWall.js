@@ -42,7 +42,7 @@ import '../styles/components/contact-form.scss';
 const ClientWall = () => <StaticQuery
     query={graphql`
     query {
-        clients: allWordpressPage(filter: {wordpress_parent: {eq: 343}}, sort: {fields: [menu_order],  order: ASC}) {
+        clients: allWordpressPage(filter: {wordpress_parent: {eq: 674}}, sort: {fields: [menu_order],  order: ASC}) {
             edges {
               node {
                 slug,
