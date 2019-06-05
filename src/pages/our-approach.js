@@ -11,7 +11,7 @@ import imageClientWall from '../images/STM_ClientLogos_1.jpg';
 import ImageCache from '../components/ImageCache';
 
 // has the grid
-import '../styles/our-background.scss';
+import '../styles/grid-wall.scss';
 
 
 class OurApproach extends React.Component {
@@ -56,7 +56,7 @@ const clientWall = dataClientLogos.map(d => <div className={'grid-client-logo'}>
               <div class="large-8 columns skinny-copy" dangerouslySetInnerHTML={{__html: dataCMS.node.content}}></div>
               <div class="large-4 columns quote" dangerouslySetInnerHTML={{__html: dataCMS.node.acf.service_list}}></div>
             </div>
-            <div class="row client-wall">
+            {/* <div class="row client-wall">
               <img src={imageClientWall} />
             </div>
             <hr />
@@ -64,7 +64,7 @@ const clientWall = dataClientLogos.map(d => <div className={'grid-client-logo'}>
             <hr />
             <div className="grid-client">
               {[clientWall,clientWall,clientWall]}
-            </div>
+            </div> */}
           </div>
         {/* </div> */}
         {this.state.initialPhotoLoad && <ImageCache />}

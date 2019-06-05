@@ -1,4 +1,3 @@
-
 import Lethargy from "exports-loader?this.Lethargy!lethargy/lethargy";
 
 import React from 'react';
@@ -10,14 +9,16 @@ import Img from 'gatsby-image';
 import Layout from '../components/layout';
 import Slider from "react-slick";
 import ContactForm from '../components/ContactForm';
+import ClientWall from '../components/ClientWall';
 
 import _ from 'lodash';
 
 import '../styles/slick/slick.scss';
+import '../styles/grid-wall.scss';
 
 import ImageCache from '../components/ImageCache';
 
-const imgMobile = require('../images/nathan-jamie-ties-1-small.jpg');
+// const imgMobile = require('../images/nathan-jamie-ties-1-small.jpg');
 
 const numSlides = 5;
 
@@ -201,23 +202,15 @@ class IndexPage extends React.Component {
           </div>
 
 
-          <div id="section4" className="index-slide section">
+          <div id="section4" className="index-slide section" style={{backgroundColor: '#aaa'}}>
           <div className="footer-content-wrapper section-banner">
             {/* <h1 className="section-title title-white" dangerouslySetInnerHTML={{__html: dataCMS[3].acf.header}}></h1> */}
-            <h1 className="section-title title-white">FILLER</h1>
-            <div className="btn"><Link to="our-background">TEMPORARY</Link></div>
-            {/* <section id="set-3" className="social-links">
-              <div className="hi-icon-wrap hi-icon-effect-3 hi-icon-effect-3b">
-                <a href="https://instagram.com/skinnytiemedia" target="_blank" className="hi-icon icon-instagram">Instagram</a>
-                <a href="https://vimeo.com/skinnytiemedia" target="_blank" className="hi-icon icon-vimeo">Vimeo</a>
-                <a href="https://twitter.com/skinnytiemedia" target="_blank" className="hi-icon icon-twitter">Twitter</a>
-                <a href="https://www.linkedin.com/company/skinny-tie-media" target="_blank" className="hi-icon icon-linkedin">LinkedIn</a>
-                <a href="mailto:Hello@SkinnyTieMedia.com" target="_blank" className="hi-icon icon-envelope">Email</a>
-              </div>
-            </section> */}
-            </div>
-            { this.state.windowWidth < 480 ? <Img fluid={dataCMS[3].acf.background_image_mobile.localFile.childImageSharp.fluid} fadeIn={false} critical={true} />  :
-            <Img fluid={dataCMS[3].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={true} /> }        
+            {/* <h1 className="section-title title-white">FILLER</h1> */}
+            {/* <div className="btn"><Link to="our-background">TEMPORARY</Link></div> */}
+            <ClientWall />
+          </div>
+            {/* { this.state.windowWidth < 480 ? <Img fluid={dataCMS[3].acf.background_image_mobile.localFile.childImageSharp.fluid} fadeIn={false} critical={true} />  :
+            <Img fluid={dataCMS[3].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={true} /> }         */}
           </div>
 
           <div id="contact" className="index-slide section" style={{backgroundColor: '#aaa'}}>

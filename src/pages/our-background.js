@@ -10,7 +10,7 @@ import imgCollage from '../images/collage.png';
 
 import ImageCache from '../components/ImageCache';
 
-import '../styles/our-background.scss';
+import '../styles/grid-wall.scss';
 
 class OurBackground extends React.Component {
 
@@ -71,7 +71,8 @@ class OurBackground extends React.Component {
             </div>
             <div className="row">
               <div className="grid-staff">
-                {[itemsBiosDefault, itemsBiosDefault, itemsBiosDefault]}
+                {/* {[itemsBiosDefault, itemsBiosDefault, itemsBiosDefault]} */}
+                {itemsBiosDefault}
               </div>
             </div>
             <div className="row">

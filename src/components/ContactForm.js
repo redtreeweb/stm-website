@@ -39,16 +39,15 @@ const ContactForm = () => {
         Phone</label>
      </fieldset>
 
-
-
     <button 
+        className="fill-in-effect-orange"
         id="contact-form-submit" 
         type="submit"
         onClick={(e) => {
             e.preventDefault();
             alert('submitted');
         }}
-    >Submit</button>
+    >SUBMIT</button>
   </form>
 }
 

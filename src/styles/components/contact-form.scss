@@ -6,12 +6,20 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 36em;
+    width: 100%;
+    max-width: 36em;
     padding: 0 4em;
 
     font-size: 1em;
 
+    @media (max-width: 640px) {
+        padding: 0 1em;
+    }
 
+
+    .fieldset {
+        width: 100%;
+    }
 
 
     input, textarea, button {
@@ -29,7 +37,8 @@
 
     input, textarea {
         padding: .5em;
-        width: 28em;
+        width: 100%;
+        max-width: 28em;
     }
 
     textarea {
@@ -66,11 +75,14 @@
         color: #666;
         // top: 10px;
         height: 1.4em;
-        width: 1.4em;
+        width: 100%;
+        max-width: 1.4em;
         // border: 0;
         cursor: pointer;     
         // margin-right: 7px;
-        // outline: none;
+        outline: none;
+        
+        transition: background-color 150ms ease-in-out;
 
         &:checked
         {
@@ -91,6 +103,73 @@
         margin: 1em 0;
         padding: .6em 2em;
         align-self: center;
+        cursor: pointer;
+        font-family: 'Gotham SSm A', 'Gotham SSm B'; 
+
+        &.fill-in-effect-orange {
+            background-color: rgba(0,0,0,0);
+            position: relative;
+            color: #000;
+
+            &:after {
+                content: '';
+                color: #fff;
+                box-shadow: 0 0 0 2px #d94d00;
+                background: #d94d00;
+                border: 0;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: -1;
+                // transform: scale(1.1);
+                opacity: 0;
+                transition: transform 250ms ease-in-out, opacity 500ms ease, color 500ms ease; 
+            }
+
+
+            &:hover {
+                // background: #d94d00;
+                color: #fff;
+                border-color: rgba(0,0,0,0);
+
+
+                &:after {
+                    opacity: 1;
+                    transform: scale(1);
+
+                    
+                    // content: '';
+                    // color: #fff;
+                    // box-shadow: 0 0 0 2px #d94d00;
+                    // background: #d94d00;
+                    // border: 0;
+                    // height: 100%;
+                    // width: 100%;
+                    // position: absolute;
+                    // left: 0;
+                    // top: 0;
+                    // z-index: -1;
+                }
+            }
+
+            
+
+            
+           
+            // &:after {
+            //   top: -2px;
+            //   left: -2px;
+            //   padding: 2px;
+            //   z-index: -1;
+            //   background: #d94d00;
+            //   box-shadow: 0 0 0 2px #d94d00;
+            //   -webkit-transition: -webkit-transform 0.2s, opacity 0.3s;
+            //   -moz-transition: -moz-transform 0.2s, opacity 0.3s;
+            //   transition: transform 0.2s, opacity 0.3s; 
+            // }
+          }
     }
 
   

@@ -145,7 +145,8 @@
   box-shadow: 0 0 0 2px #d94d00;
   -webkit-transition: -webkit-transform 0.2s, opacity 0.3s;
   -moz-transition: -moz-transform 0.2s, opacity 0.3s;
-  transition: transform 0.2s, opacity 0.3s; }
+  transition: transform 0.2s, opacity 0.3s; 
+}
 
 /* Effect 3b */
 .hi-icon-effect-3b .hi-icon {
@@ -167,3 +168,6 @@
   -ms-transform: scale(1);
   transform: scale(1);
   opacity: 1; }
+
+
+  
