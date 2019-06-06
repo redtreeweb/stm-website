@@ -28,16 +28,12 @@ const ContactForm = () => {
         const newState = {}
 
 
-        newState[`contact-form-follow-up__email`] = true;
+        newState[`contact-form-follow-up__email`] = false;
         newState[`contact-form-follow-up__phone`] = false;
-        newState['test'] = true
 
-        // newState[`contact-form-follow-up__${value}`] = true;
+        newState[`contact-form-follow-up__${value}`] = true;
         console.log(newState)
-        setShowFields(prev => {
-            console.log(prev)
-            return newState
-        });
+        setShowFields(newState);
     }
    
 
