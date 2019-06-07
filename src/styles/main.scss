@@ -1122,6 +1122,15 @@ img.tapes {
 	form {
 		z-index: 1;
 	}
+
+	.text-background-black {
+		position: absolute;
+		background-color: rgba(0, 0, 0, 0.2);
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		z-index: 1;
+	}
 }
 
 #section0 {
@@ -1210,7 +1219,11 @@ img.tapes {
 
 #contact {
 	.section-title {
-		padding-top: 0;
+		padding-top: 2em;
+	}
+
+	.section-banner {
+		justify-content: flex-start;
 	}
 }
 

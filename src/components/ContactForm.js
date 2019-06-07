@@ -23,16 +23,12 @@ const ContactForm = () => {
         console.log(e.target.value)
         const {value} = e.target;
 
-        // const newState = Object.assign({}, showFields);
-
         const newState = {}
-
 
         newState[`contact-form-follow-up__email`] = false;
         newState[`contact-form-follow-up__phone`] = false;
 
         newState[`contact-form-follow-up__${value}`] = true;
-        console.log(newState)
         setShowFields(newState);
     }
    
@@ -53,12 +49,15 @@ const ContactForm = () => {
         <label for="contact-form-follow-up__email" onChange={onFollowUpChange}>
         <input type="radio" name="contact-form-follow-up" id="contact-form-follow-up__email" value="email"/>
         Email</label>
-        {!!showFields['contact-form-follow-up__email'] && <input id="contact-form-follow-up__email__value" type="text" placeholder="Email Address"/>}
-        <br/>
+        <div className={'contact-form-follow-up-input ' + (!!showFields['contact-form-follow-up__email'] ? 'is-visible' : null)} >
+            <input id="contact-form-follow-up__email__value" type="text" placeholder="Email Address"/>
+        </div>
         <label for="contact-form-follow-up__phone">
         <input type="radio" name="contact-form-follow-up" id="contact-form-follow-up__phone" value="phone" onChange={onFollowUpChange}/>
         Phone</label>
-        {!!showFields['contact-form-follow-up__phone'] && <input id="contact-form-follow-up__phone__value" type="text" placeholder="Phone Number"/> }
+        <div className={'contact-form-follow-up-input ' + (!!showFields['contact-form-follow-up__phone'] ? 'is-visible' : null)} >
+            <input id="contact-form-follow-up__phone__value" type="text" placeholder="Phone Number"/>
+        </div>
      </fieldset>
 
     <button 
