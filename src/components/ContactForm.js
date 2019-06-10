@@ -15,12 +15,35 @@ const ContactForm = () => {
 
     const [showFields, setShowFields] = useState({'contact-form-follow-up__phone': false, 'contact-form-follow-up__email': false});
 
-    const submitData = () => {
-        axios.post()
+  
+    const onFormSubmission = (e) => {
+        e.preventDefault();
+    
+        const name = document.getElementById('contact-form-name').value;
+        const contactFormText = document.getElementById('contact-form-text').value;
+
+        const followUpEmail = document.getElementById('contact-form-follow-up__email__value').value;
+        const followUpPhone = document.getElementById('contact-form-follow-up__phone__value').value;
+
+        const followUp = !!showFields['contact-form-follow-up__phone'] ? 'phone' : 'email';
+    
+        axios.post('https://cms.skinnytiemedia.com/form-email.php', 
+            { name, contactFormText, followUpEmail, followUpPhone, followUp},
+            ).then(res => {
+    
+            if (res.status === 200) {
+                alert('submitted!');
+                return
+            }
+    
+            alert('something went wrong, please try to submitting again, if the problem continues, please contact using normal email')
+    
+        })
+    
+    
     }
 
-    const onFollowUpChange = (e) => {
-        console.log(e.target.value)
+    const onFollowUpChange = (e) => {        
         const {value} = e.target;
 
         const newState = {}
@@ -32,8 +55,6 @@ const ContactForm = () => {
         setShowFields(newState);
     }
    
-
-    console.log(showFields)
 
     return <form className="contact-form" id="contact-form">
     <fieldset>
@@ -64,10 +85,7 @@ const ContactForm = () => {
         className="fill-in-effect-orange"
         id="contact-form-submit" 
         type="submit"
-        onClick={(e) => {
-            e.preventDefault();
-            alert('submitted');
-        }}
+        onClick={onFormSubmission}
     >SUBMIT</button>
   </form>
 }
