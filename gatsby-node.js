@@ -4,14 +4,15 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-const _ = require(`lodash`)
-const Promise = require(`bluebird`)
-const path = require(`path`)
-const slash = require(`slash`)
+const _ = require(`lodash`);
+const Promise = require(`bluebird`);
+const path = require(`path`);
+const slash = require(`slash`);
 
 
 exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions
+
     return new Promise((resolve, reject) => {
       // The “graphql” function allows us to run arbitrary
       // queries against the local WordPress graphql schema. Think of

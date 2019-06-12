@@ -28,6 +28,15 @@ class IndexPage extends React.Component {
 
   constructor(props) {
       super(props)
+
+    // console.log(window.location.hash)
+    // let scrollPosition = 0;
+
+    // if (props.location && props.location.state) {
+    //   scrollPosition = props.location.state.scrollPosition;
+    // }
+
+
     this.state = {
       scrollPosition: 0,
       initialPhotoLoad: false,
@@ -69,7 +78,41 @@ class IndexPage extends React.Component {
     this.setState({isTouchable: is_touch_device()})
   }
 
+  // static getDerivedStateFromProps(nextProps, prevState) {
+  //   console.log(nextProps, prevState)
+  // }
+
+  componentDidUpdate(prevProps, prevState) {
+
+    console.log(prevProps, prevState)
+
+    if (this.props.location.hash === '#contact' && prevState.scrollPosition !== 5) {
+      // return Object.assign({}, prevState, {scrollPosition: 5})
+      document.getElementById('fullpage-wrapper').style.transition = 'none';
+      this.setState({scrollPosition: 5}, () => {
+
+        window.setTimeout(() => document.getElementById('fullpage-wrapper').style.transition = '', 500);
+
+      });
+    }
+
+    // console.log(this.props);
+
+    // if (this.props.location.state.hasOwnProperty('scrollPosition')) {
+
+    //   const {scrollPosition} = this.props.location.state;
+
+    //   console.log(scrollPosition)
+    //   if (scrollPosition !== this.state.scrollPosition) {
+    //     console.log(scrollPosition)
+    //     this.setState({scrollPosition})
+
+    //   }
+    // }
+  }
+
   handleButtonPress() {
+    window.location.hash = '';
     this.setState({scrollPosition: Math.min(this.state.scrollPosition + 1, numSlides)});
   }
 
@@ -80,13 +123,15 @@ class IndexPage extends React.Component {
       window.removeEventListener('wheel', this.handleScrollEvent)
       const scrollDirection =  e.deltaY / Math.abs(e.deltaY);
 
+
+      window.location.hash = '';
+      console.log(Math.max(Math.min(this.state.scrollPosition + (scrollDirection * 1), numSlides),0))
       this.setState({scrollPosition: Math.max(Math.min(this.state.scrollPosition + (scrollDirection * 1), numSlides),0)});
       setTimeout(() => window.addEventListener('wheel', this.handleScrollEvent, false), 1200);
     }
   }
 
   handleResize() {
-    console.log('resize')
     this.setState({windowWidth: window.innerWidth});
   }
 
@@ -123,6 +168,7 @@ class IndexPage extends React.Component {
       <Layout
         headerFontColor="light"
         bodyClass={!isTouchable ? 'disable-scroll' : ''}
+        pageName='index'
       >
       <Helmet>
 				<html className="overflow-hidden" />
@@ -130,6 +176,7 @@ class IndexPage extends React.Component {
 			</Helmet>
       <div className={'fullpage-viewport' + (isTouchable ? ' enable-scroll' : '') }>
         <div 
+        id="fullpage-wrapper"
         className="fullpage-wrapper" 
         style={{transform: !isTouchable ? transformWrapper : ''}} 
         onScroll={this.handleScrollEvent}
@@ -199,7 +246,6 @@ class IndexPage extends React.Component {
         </div >
         </div>
 
-
           {/* SLIDE 5  -- HARD CODED FOR CLIENT WALL */}
           <div id="section5" className="index-slide section" style={{backgroundColor: '#aaa'}}>
           <div className="footer-content-wrapper section-banner">
@@ -214,10 +260,7 @@ class IndexPage extends React.Component {
           <div className="footer-content-wrapper section-banner">
             <h1 className="section-title title-white">Contact</h1>
 
-         
-
             <ContactForm />
-
 
             <section id="set-3" className="social-links">
               <div className="hi-icon-wrap hi-icon-effect-3 hi-icon-effect-3b">
