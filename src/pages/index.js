@@ -303,7 +303,7 @@ export const query = graphql`
             source_url
             localFile {
               childImageSharp {
-                fluid(maxWidth: 2400, quality: 100) {
+                fluid(maxWidth: 2400, quality: 50) {
                   ...GatsbyImageSharpFluid_noBase64
                 }
               }
