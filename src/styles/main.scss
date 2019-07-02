@@ -760,57 +760,64 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 
 .wrapper.background {
 	padding: 50px 0 50px 0;
+	padding-top: 18em;
 	background-color: #131313;
-	
-	& .staff-name  {
-		display: inline-block;
-		text-transform: uppercase;
-		padding: 9px 18px;
-		background-color: #2E2E2E;
-		margin-bottom: 15px;
-		font-family: 'Knockout 30 A', 'Knockout 30 B'; 
-		font-weight: 400; 
-		font-style: normal;
-		letter-spacing: 2px;
-		z-index: 2;
-		&.nathan-name {
-			@media (max-width:1024px){
-				margin-top: 20px;
-			}
-		}
-		&.nathan-name::after {
-			position: absolute;
+
+
+	.staff-member-featured {
+		& .staff-name  {
+			display: inline-block;
+			position: relative;
+			text-transform: uppercase;
+			padding: 9px 18px;
 			background-color: #2E2E2E;
-			content: "";
-			right:18px;
-			top:-9px;
-			width: 18px;
-			height: 18px;
-			-ms-transform: rotate(45deg); /* IE 9 */
-			-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
-			transform: rotate(45deg);
-			z-index: 0;
-			@media (max-width:1024px){
-				display: none;
+			margin-bottom: 15px;
+			font-family: 'Knockout 30 A', 'Knockout 30 B'; 
+			font-weight: 400; 
+			font-style: normal;
+			letter-spacing: 2px;
+			z-index: 2;
+			&.nathan-name {
+				@media (max-width:1024px){
+					margin-top: 20px;
+				}
 			}
-		}
-		&.jamie-name::after {
-			position: absolute;
-			background-color: #2E2E2E;
-			content: "";
-			left:18px;
-			top:-9px;
-			width: 18px;
-			height: 18px;
-			-ms-transform: rotate(45deg); /* IE 9 */
-			-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
-			transform: rotate(45deg);
-			z-index: 0;
-			@media (max-width:1024px){
-				display: none;
+			&.nathan-name::after {
+				position: absolute;
+				background-color: #2E2E2E;
+				content: "";
+				right:18px;
+				top:-9px;
+				width: 18px;
+				height: 18px;
+				-ms-transform: rotate(45deg); /* IE 9 */
+				-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+				transform: rotate(45deg);
+				z-index: 0;
+				@media (max-width:1024px){
+					display: none;
+				}
+			}
+			&.jamie-name::after {
+				position: absolute;
+				background-color: #2E2E2E;
+				content: "";
+				left:18px;
+				top:-9px;
+				width: 18px;
+				height: 18px;
+				-ms-transform: rotate(45deg); /* IE 9 */
+				-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+				transform: rotate(45deg);
+				z-index: 0;
+				@media (max-width:1024px){
+					display: none;
+				}
 			}
 		}
 	}
+	
+	
 	
 	& p {
 		font-size: .9em;
@@ -819,14 +826,28 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 	}
 	& .nathan-bio {
 		text-align: right;
-		padding-right: 0;
+		padding-left: 2em;
+		margin-top: 1em;
+		
+
 		@media (max-width:1024px){
 			text-align: left;
 			margin-top: 30px;
 		}
+
+		p {
+			text-align: justify;
+			hyphens: auto;
+		}
 	}
 	& .jamie-bio {
+		hyphens: auto;
 		padding-left: 0;
+		text-align: justify;
+
+		padding-right: 2em;
+		margin-top: 1em;
+
 		@media (max-width:1024px){
 			padding-left: 0.9375em;
 			}

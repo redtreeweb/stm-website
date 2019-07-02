@@ -28,9 +28,12 @@ class OurBackground extends React.Component {
     const itemsBiosFeatured = dataCMS.filter(({ acf: d }) => { return d.staff_type === 'featured' }).map(({ acf: d }, i) => {
 
       return (
-        <div className={'large-5 columns ' + (i === 0 ? 'jamie-bio' : 'nathan-bio')}>
-          <h5 className={'name staff-name ' + (i === 0 ? 'jamie-name' : 'nathan-name')}>{d.staff_name}</h5>
-          <p>{d.staff_blurb}</p>
+        <div className="staff-member-featured">
+          <Img fluid={d.staff_image.localFile.childImageSharp.fluid} style={{maxHeight: '30em'}} />
+          <div className={(i === 0 ? 'jamie-bio' : 'nathan-bio')}>
+            <h5 className={'name staff-name ' + (i === 0 ? 'jamie-name' : 'nathan-name')}>{d.staff_name}</h5>
+            <p>{d.staff_blurb}</p>
+          </div>
         </div>
       )
     })
@@ -62,10 +65,11 @@ class OurBackground extends React.Component {
         headerSubTitle="WHO WE ARE + WHAT WE DO"
       >
         <div className="" style={{ flex: 1 }}>
-          <div className="header-wrapper background-header" src={imgFounders} onLoad={() => this.setState({ initialPhotoLoad: true })} />
+          {/* <div className="header-wrapper background-header"  onLoad={() => this.setState({ initialPhotoLoad: true })} /> */}
           <div className="wrapper background">
-            <div className="row">
-              <div className="large-12 columns">
+            <div className="row" style={{maxWidth: '80em'}}>
+              {/* <div style={{height: '12em', width: '100%', backgroundColor: '#fff'}}></div> */}
+              <div style={{display: 'flex'}}>
                 {itemsBiosFeatured}
               </div>
             </div>
