@@ -26,9 +26,9 @@ class Header extends React.Component {
 		const { isSidebarOpen } = this.state;
 
 		const navUl = <ul>
-			<li><Link to="/our-approach">Our Approach</Link></li>
-			<li><Link to="/our-work">Our Work</Link></li>
-			<li><Link to="/our-background">Our Background</Link></li>
+			<li><Link to="/approach">Approach</Link></li>
+			<li><Link to="/work">Work</Link></li>
+			<li><Link to="/background">Background</Link></li>
 			<li><Link to="/blog">Blog</Link></li>
 			<li><Link to="/#contact">Contact</Link></li>
 		</ul>

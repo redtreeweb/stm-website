@@ -195,7 +195,7 @@ class IndexPage extends React.Component {
             <div className="section-wrapper section-banner get-the-skinny">
             <div className="text-background-black"></div>
               <h1 className="section-title title-white">{dataCMS[1].acf.header}</h1>
-              <div className="btn"><Link to="our-work">GET THE SKINNY</Link></div>
+              <div className="btn"><Link to="work">GET THE SKINNY</Link></div>
               <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={true}/>
             </div>
             <button className="arrow down" onClick={this.handleButtonPress}/>
@@ -206,7 +206,7 @@ class IndexPage extends React.Component {
           <div className="footer-content-wrapper section-banner">
             <div className="text-background-black"></div>
             <h1 className="section-title title-white" dangerouslySetInnerHTML={{__html: dataCMS[2].acf.header}}></h1>
-            <div className="btn"><Link to="our-approach">OUR PHILOSOPHY</Link></div>
+            <div className="btn"><Link to="approach">OUR PHILOSOPHY</Link></div>
             </div>
             <button className="arrow down" onClick={this.handleButtonPress}/>
             { this.state.windowWidth < 480 ? <Img fluid={dataCMS[2].acf.background_image_mobile.localFile.childImageSharp.fluid} fadeIn={false} critical={true} />  :
@@ -239,7 +239,7 @@ class IndexPage extends React.Component {
               </div>
           </Slider>
             </div>
-        <div className="btn"><Link to="our-background">WHO WE ARE</Link></div> 
+        <div className="btn"><Link to="background">WHO WE ARE</Link></div> 
           </div >
           <button className="arrow down" onClick={this.handleButtonPress}/>
           <Img fluid={dataCMS[3].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={true}/>
