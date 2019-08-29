@@ -589,6 +589,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 	left:0;
 	right:0;
 	margin: 0 auto;
+
+	.hi-icon-wrap {
+		@media (max-height: 820px) {
+			padding: 1em 0 2em;
+		}
+
+		@media (max-height: 780px) {
+			padding: 1em 0 .4em;
+		}
+
+		@media (max-height: 720px) {
+			display: none;
+		}
+	}
+	
 }
 
 
@@ -1241,6 +1256,14 @@ img.tapes {
 #contact {
 	.section-title {
 		padding-top: 2em;
+
+		@media (max-height: 860px) {
+			padding-top: 1em;
+		}
+		@media (max-height: 770px) {
+			// padding-top: 1em;
+			font-size: 50px;
+		}
 	}
 
 	.section-banner {

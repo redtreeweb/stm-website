@@ -41,10 +41,12 @@ class IndexPage extends React.Component {
       scrollPosition: 0,
       initialPhotoLoad: false,
       windowWidth: null,
-      isTouchable: false
+      isTouchable: false,
+      posTouchStart: 0
     }
 
     this.handleButtonPress = this.handleButtonPress.bind(this);
+    this.handleTouchStart = this.handleTouchStart.bind(this);
     this.handleScrollEvent = this.handleScrollEvent.bind(this);
     this.handleResize = this.handleResize.bind(this);
   }
@@ -53,6 +55,10 @@ class IndexPage extends React.Component {
   componentDidMount() {
     this.handleResize();
     window.addEventListener('wheel', this.handleScrollEvent, false);
+    window.addEventListener('touchstart', this.handleTouchStart, false);
+    window.addEventListener('touchmove', this.handleScrollEvent, false);
+    // window.addEventListener('scroll', this.handleScrollEvent, false);
+
 
     // window.addEventListener('wheel', _.debounce(this.handleScrollEvent, 0, {leading: false, trailing: true}));
     this.lethargy = new Lethargy(5, 50, .05); //helps with the scroll
@@ -116,19 +122,39 @@ class IndexPage extends React.Component {
     this.setState({scrollPosition: Math.min(this.state.scrollPosition + 1, numSlides)});
   }
 
+  handleTouchStart(e) {
+    this.setState({posTouchStart: e.touches[0].clientY})
+  }
+
   handleScrollEvent(e) {
-    console.log(e)
+    console.log(e, this.lethargy.check(e))
 
-    if (this.lethargy.check(e)) {
+  
 
-      window.removeEventListener('wheel', this.handleScrollEvent)
-      const scrollDirection =  e.deltaY / Math.abs(e.deltaY);
+    if (this.lethargy.check(e) || e.type === 'touchmove') {
+
+      window.removeEventListener('wheel', this.handleScrollEvent);
+
+      window.removeEventListener('touchmove', this.handleScrollEvent);
+
+      console.log('running', e.deltaY)
+      let scrollDirection =  e.deltaY / Math.abs(e.deltaY);
+
+      if (e.type === 'touchmove') {
+        console.log(e)
+        const {posTouchStart} = this.state;
+        const posTouchChange = e.touches[0].clientY; //e.touches[0].originalEvent.changedTouches[0].clientY
+        console.log(posTouchChange)
+        scrollDirection =  (posTouchStart - posTouchChange) / Math.abs((posTouchStart - posTouchChange))
+        console.log(scrollDirection)
+      }
 
 
       window.location.hash = '';
       // console.log(Math.max(Math.min(this.state.scrollPosition + (scrollDirection * 1), numSlides),0))
       this.setState({scrollPosition: Math.max(Math.min(this.state.scrollPosition + (scrollDirection * 1), numSlides),0)});
       setTimeout(() => window.addEventListener('wheel', this.handleScrollEvent, false), 1200);
+      setTimeout(() => window.addEventListener('touchmove', this.handleScrollEvent, false), 1200);
     }
   }
 
