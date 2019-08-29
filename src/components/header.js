@@ -54,7 +54,7 @@ class Header extends React.Component {
 		}
 
 		return (<>
-			{console.log(this.props)}
+			{/* {console.log(this.props)} */}
 			{/* {console.log(location)} */}
 			<Helmet>
 				<html className={isSidebarOpen ? 'overflow-hidden' : ''} />

@@ -84,7 +84,7 @@ class IndexPage extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
 
-    console.log(prevProps, prevState)
+    // console.log(prevProps, prevState)
 
     if (this.props.location.hash === '#contact' && prevState.scrollPosition !== 5) {
       // return Object.assign({}, prevState, {scrollPosition: 5})
@@ -117,6 +117,7 @@ class IndexPage extends React.Component {
   }
 
   handleScrollEvent(e) {
+    console.log(e)
 
     if (this.lethargy.check(e)) {
 
@@ -125,7 +126,7 @@ class IndexPage extends React.Component {
 
 
       window.location.hash = '';
-      console.log(Math.max(Math.min(this.state.scrollPosition + (scrollDirection * 1), numSlides),0))
+      // console.log(Math.max(Math.min(this.state.scrollPosition + (scrollDirection * 1), numSlides),0))
       this.setState({scrollPosition: Math.max(Math.min(this.state.scrollPosition + (scrollDirection * 1), numSlides),0)});
       setTimeout(() => window.addEventListener('wheel', this.handleScrollEvent, false), 1200);
     }
@@ -142,7 +143,8 @@ class IndexPage extends React.Component {
     const scrollPositionWrapper = this.section ? this.state.scrollPosition * this.section.getBoundingClientRect().height: 0;
     const transformWrapper = `translate3d(0, ${-scrollPositionWrapper}px, 0)`
 
-    const {isTouchable} = this.state;
+    // const {isTouchable} = this.state;
+    const isTouchable = false;
 
     const settings = {
 			dots: false,
@@ -167,7 +169,7 @@ class IndexPage extends React.Component {
     return (
       <Layout
         headerFontColor="light"
-        bodyClass={!isTouchable ? 'disable-scroll' : ''}
+        //bodyClass={!isTouchable ? 'disable-scroll' : ''}
         pageName='index'
       >
       <Helmet>
