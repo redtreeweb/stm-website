@@ -79,7 +79,7 @@ const ClientWall = () => <StaticQuery
          />
      </div>)
 
-        return <div className="grid-client" style={{zIndex: 1}}>{[clientWall,clientWall, clientWall]}</div>
+        return <div className="grid-client" style={{zIndex: 1}}>{clientWall}</div>
     }}
 />
 
