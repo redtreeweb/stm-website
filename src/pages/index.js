@@ -29,12 +29,11 @@ class IndexPage extends React.Component {
   constructor(props) {
       super(props)
 
-    console.log(window.location.hash)
-    let scrollPosition = 0;
 
-    if (window.location.hash === '#contact') {
-      scrollPosition = 5;
-    }
+      let scrollPosition = 0;
+      if (this.props.location.hash === '#contact') {
+        scrollPosition = 5;        
+      }
 
 
     this.state = {
