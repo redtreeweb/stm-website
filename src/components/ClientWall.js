@@ -76,6 +76,7 @@ const ClientWall = () => <StaticQuery
              objectFit="contain"
              objectPosition="50% 50%"
              imgStyle={{objectFit: 'contain'}}
+             fadeIn={false}
          />
      </div>)
 
