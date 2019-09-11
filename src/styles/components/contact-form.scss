@@ -48,12 +48,21 @@
     textarea {
         // width: 28em;
         height: 10em;
+
+
+        @media (max-width: 400px) {
+            height: 4em;
+        }
     }
 
     label {
         display: block;
         padding: 1em 0;
         text-align: left;
+
+        @media (max-width: 400px) {
+            padding: .6em 0;
+        }
     }
 
     input[type="text"] {
@@ -95,6 +104,13 @@
             // top: 5px;
             // content: 'X';
             background-color: $color-primary-orange;
+        }
+
+        @media (max-width: 400px) {
+            height: 1em;
+            max-width: 1em;
+            font-size: .8em;
+            margin-top: .2em;
         }
     }
 
@@ -159,20 +175,11 @@
             }
 
             
-
+            @media (max-width: 400px) {
+                margin: .8em 0;
+                font-size: .8em;
+            }
             
-           
-            // &:after {
-            //   top: -2px;
-            //   left: -2px;
-            //   padding: 2px;
-            //   z-index: -1;
-            //   background: #d94d00;
-            //   box-shadow: 0 0 0 2px #d94d00;
-            //   -webkit-transition: -webkit-transform 0.2s, opacity 0.3s;
-            //   -moz-transition: -moz-transform 0.2s, opacity 0.3s;
-            //   transition: transform 0.2s, opacity 0.3s; 
-            // }
           }
     }
 

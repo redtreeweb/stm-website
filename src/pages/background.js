@@ -67,11 +67,11 @@ class OurBackground extends React.Component {
         <div className="" style={{ flex: 1 }}>
           {/* <div className="header-wrapper background-header"  onLoad={() => this.setState({ initialPhotoLoad: true })} /> */}
           <div className="wrapper background">
-            <div className="row" style={{maxWidth: '80em'}}>
+            <div className="row wrapper-staff-member-featured" style={{maxWidth: '80em'}}>
               {/* <div style={{height: '12em', width: '100%', backgroundColor: '#fff'}}></div> */}
-              <div style={{display: 'flex'}}>
+              {/* <div style={{display: 'flex'}}> */}
                 {itemsBiosFeatured}
-              </div>
+              {/* </div> */}
             </div>
             <div className="row">
               <div className="grid-staff">

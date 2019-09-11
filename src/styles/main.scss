@@ -778,6 +778,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 	padding-top: 18em;
 	background-color: #131313;
 
+	.wrapper-staff-member-featured {
+		display: flex;
+		padding: 0 2em;
+
+		@media (max-width: 600px) {
+			flex-direction: column;
+		}
+
 
 	.staff-member-featured {
 		& .staff-name  {
@@ -794,7 +802,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 			z-index: 2;
 			&.nathan-name {
 				@media (max-width:1024px){
-					margin-top: 20px;
+					// margin-top: 20px;
 				}
 			}
 			&.nathan-name::after {
@@ -830,8 +838,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 				}
 			}
 		}
+
+		@media (max-width: 600px) {
+			
+			&:not(:last-child) {
+				margin-bottom: 3em; 
+			}
+		}
 	}
-	
+}
 	
 	
 	& p {
@@ -846,8 +861,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 		
 
 		@media (max-width:1024px){
+			// text-align: left;
+			// margin-top: 30px;
+		}
+
+		@media (max-width: 600px) {
 			text-align: left;
-			margin-top: 30px;
+			padding-left: 0; 
+			// padding-right: 2em;
 		}
 
 		p {
@@ -864,8 +885,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 		margin-top: 1em;
 
 		@media (max-width:1024px){
-			padding-left: 0.9375em;
+			// padding-left: 0.9375em;
 			}
+		@media (max-width: 600px) {
+			padding-right: 0; 
+		}
 	}
 	& .collage {
 		margin-top: 50px;
@@ -1264,10 +1288,16 @@ img.tapes {
 			// padding-top: 1em;
 			font-size: 50px;
 		}
+		@media (max-width: 800px) {
+			// padding-top: 1em;
+			font-size: 2em;
+			margin-bottom: .2em;
+		}
 	}
 
 	.section-banner {
 		justify-content: flex-start;
+		padding-top: 3em;
 	}
 }
 

@@ -29,16 +29,16 @@ class IndexPage extends React.Component {
   constructor(props) {
       super(props)
 
-    // console.log(window.location.hash)
-    // let scrollPosition = 0;
+    console.log(window.location.hash)
+    let scrollPosition = 0;
 
-    // if (props.location && props.location.state) {
-    //   scrollPosition = props.location.state.scrollPosition;
-    // }
+    if (window.location.hash === '#contact') {
+      scrollPosition = 5;
+    }
 
 
     this.state = {
-      scrollPosition: 0,
+      scrollPosition,
       initialPhotoLoad: false,
       windowWidth: null,
       isTouchable: false,
@@ -127,9 +127,6 @@ class IndexPage extends React.Component {
   }
 
   handleScrollEvent(e) {
-    console.log(e, this.lethargy.check(e))
-
-  
 
     if (this.lethargy.check(e) || e.type === 'touchmove') {
 
@@ -137,16 +134,13 @@ class IndexPage extends React.Component {
 
       window.removeEventListener('touchmove', this.handleScrollEvent);
 
-      console.log('running', e.deltaY)
       let scrollDirection =  e.deltaY / Math.abs(e.deltaY);
 
       if (e.type === 'touchmove') {
-        console.log(e)
         const {posTouchStart} = this.state;
         const posTouchChange = e.touches[0].clientY; //e.touches[0].originalEvent.changedTouches[0].clientY
-        console.log(posTouchChange)
+
         scrollDirection =  (posTouchStart - posTouchChange) / Math.abs((posTouchStart - posTouchChange))
-        console.log(scrollDirection)
       }
 
 
@@ -343,7 +337,7 @@ export const query = graphql`
             source_url
             localFile {
               childImageSharp {
-                fluid(maxWidth: 1400, quality: 90) {
+                fluid(srcSetBreakpoints: [ 1400, 2400 ], maxWidth: 2400, quality: 90) {
                   ...GatsbyImageSharpFluid_noBase64
                 }
               }
