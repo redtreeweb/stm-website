@@ -25,6 +25,8 @@ class OurBackground extends React.Component {
 
     const dataCMS = this.props.data.allWordpressPage.edges.map(({ node }) => node)
 
+    const itemBottomImage = dataCMS.find(({ acf: d }) => { return d.staff_type === 'bottom_image' });
+
     const itemsBiosFeatured = dataCMS.filter(({ acf: d }) => { return d.staff_type === 'featured' }).map(({ acf: d }, i) => {
 
       return (
@@ -55,6 +57,8 @@ class OurBackground extends React.Component {
       )
     })
 
+    console.log(itemBottomImage)
+
 
 
 
@@ -81,7 +85,8 @@ class OurBackground extends React.Component {
             </div>
             <div className="row">
               <div className="large-12 columns collage">
-                <img src={imgCollage} />
+                {/* <img src={imgCollage} /> */}
+                <Img fluid={itemBottomImage.acf.staff_image.localFile.childImageSharp.fluid} />
               </div>
             </div>
           </div>

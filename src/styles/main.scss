@@ -893,8 +893,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 	}
 	& .collage {
 		margin-top: 50px;
-		& img {
-			width: 100%;
+		& .gatsby-image-wrapper {
+			// width: 100%;
+			max-width: 46em;
+			margin: auto;
 		}
 		
 	}
@@ -1181,6 +1183,10 @@ img.tapes {
 
 	form {
 		z-index: 1;
+	}
+
+	@media (max-width: 640px) {
+		padding: 0 .8em;
 	}
 
 	.text-background-black {
