@@ -183,6 +183,9 @@ class IndexPage extends React.Component {
     };
     
     const dataCMS = this.props.data.allWordpressPage.edges.filter(({node}) => node.wordpress_parent === 316).map(({node}) => node) //filter(({node}) => node.wordpress_parent === 316).
+    const dataFirstItem = this.props.data.firstItem.edges.map(({node}) => node) //filter(({node}) => node.wordpress_parent === 316).
+
+    
     dataCMS.sort((a,b) => a.menu_order - b.menu_order)
 
     return (
@@ -203,8 +206,8 @@ class IndexPage extends React.Component {
         onScroll={this.handleScrollEvent}
         >
           <div id="section0" className="index-slide section" ref={section => this.section = section}>
-            { this.state.windowWidth < 480 ? <Img fluid={dataCMS[0].acf.background_image_mobile.localFile.childImageSharp.fluid} onLoad={() => this.setState({initialPhotoLoad: true})}/> :  
-            <Img fluid={dataCMS[0].acf.background_image.localFile.childImageSharp.fluid} onLoad={() => this.setState({initialPhotoLoad: true})}/> }
+            { this.state.windowWidth < 480 ? <Img fluid={dataFirstItem[0].acf.background_image_mobile.localFile.childImageSharp.fluid} onLoad={() => this.setState({initialPhotoLoad: true})}/> :  
+            <Img fluid={dataFirstItem[0].acf.background_image.localFile.childImageSharp.fluid} onLoad={() => this.setState({initialPhotoLoad: true})}/> }
             <div className="layer">
               <h1 className="title">{dataCMS[0].acf.header}</h1>
             </div>
@@ -312,6 +315,40 @@ export default IndexPage
 
 export const query = graphql`
 {
+  firstItem: allWordpressPage(filter: {wordpress_id: {eq: 315}}) {
+    edges {
+      node {
+        slug,
+        wordpress_parent,
+        wordpress_id,
+        content,
+        menu_order,
+        acf {
+          header,
+          background_image {
+            source_url
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 2100, quality: 100) {
+                  ...GatsbyImageSharpFluid_noBase64
+                }
+              }
+            }
+          },
+          background_image_mobile {
+            source_url
+            localFile {
+              childImageSharp {
+                fluid(srcSetBreakpoints: [ 1400, 1800 ], maxWidth: 2100, quality: 100) {
+                  ...GatsbyImageSharpFluid_noBase64
+                }
+              }
+            }
+          }
+        }    
+      }
+    }
+  },
   allWordpressPage(filter: {wordpress_parent: {eq: 316}}) {
     edges {
       node {
@@ -326,7 +363,7 @@ export const query = graphql`
             source_url
             localFile {
               childImageSharp {
-                fluid(maxWidth: 1800, quality: 80) {
+                fluid(maxWidth: 1800, quality: 50) {
                   ...GatsbyImageSharpFluid_noBase64
                 }
               }
@@ -336,7 +373,7 @@ export const query = graphql`
             source_url
             localFile {
               childImageSharp {
-                fluid(srcSetBreakpoints: [ 1400, 1800 ], maxWidth: 1800, quality: 70) {
+                fluid(srcSetBreakpoints: [ 1400, 1800 ], maxWidth: 1800, quality: 50) {
                   ...GatsbyImageSharpFluid_noBase64
                 }
               }
