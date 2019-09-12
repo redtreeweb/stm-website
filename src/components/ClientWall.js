@@ -69,7 +69,7 @@ const ClientWall = () => <StaticQuery
     `}
     render={data => {
         const dataClientLogos = data.clients.edges.map(({node}) => node) //.find(({node}) => )
-
+      {console.log(dataClientLogos)}
         const clientWall = dataClientLogos.map(d => <div className={'grid-client-logo'} style={{position: 'relative'}}>
         <Img
              fluid={d.acf.client_logo.localFile.childImageSharp.fluid}
@@ -77,6 +77,8 @@ const ClientWall = () => <StaticQuery
              objectPosition="50% 50%"
              imgStyle={{objectFit: 'contain'}}
              fadeIn={false}
+            //  loading="eager" // for future
+            critical={true}
          />
      </div>)
 
