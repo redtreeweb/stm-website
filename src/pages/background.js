@@ -57,9 +57,6 @@ class OurBackground extends React.Component {
       )
     })
 
-    console.log(itemBottomImage)
-
-
 
 
     return (
