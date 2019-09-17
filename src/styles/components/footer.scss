@@ -25,7 +25,14 @@ footer {
 		font-family: 'Knockout 30 A', 'Knockout 30 B';
 		font-size:13px;
 		letter-spacing: 1px; 
-    }
+		padding: .4em 0;
+	}
+	
+	a {
+		color: #fff;
+	}
+
+	
     
     .social-media a {
         color: #fff;
@@ -35,7 +42,16 @@ footer {
         &:hover {
             color: #d94c00;
         }
-    }
+	}
+	
+	.copyright {
+		// line-height: 1.2em;
+
+		&__symbol {
+			// font-size: 1.2em;
+
+		}
+	}
 }
 
 // .footer section-title.footer-title {
