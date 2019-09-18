@@ -289,12 +289,12 @@ class IndexPage extends React.Component {
 
             <section id="set-3" className="social-links">
               <div className="hi-icon-wrap hi-icon-effect-3 hi-icon-effect-3b">
-                <a href="https://instagram.com/skinnytiemedia" target="_blank" className="hi-icon icon-instagram">Instagram</a>
+                {/* <a href="https://instagram.com/skinnytiemedia" target="_blank" className="hi-icon icon-instagram">Instagram</a> */}
                 <a href="https://vimeo.com/skinnytiemedia" target="_blank" className="hi-icon icon-vimeo">Vimeo</a>
-                <a href="https://twitter.com/skinnytiemedia" target="_blank" className="hi-icon icon-twitter">Twitter</a>
+                {/* <a href="https://twitter.com/skinnytiemedia" target="_blank" className="hi-icon icon-twitter">Twitter</a> */}
                 <a href="https://www.linkedin.com/company/skinny-tie-media" target="_blank" className="hi-icon icon-linkedin">LinkedIn</a>
-                <a href="mailto:Hello@SkinnyTieMedia.com" target="_blank" className="hi-icon icon-envelope">Email</a>
-                <a href="tel:+4125025054" target="_blank" className="hi-icon icon-phone">Phone<i class="material-icons">local_phone</i></a>
+                {/* <a href="mailto:Hello@SkinnyTieMedia.com" target="_blank" className="hi-icon icon-envelope">Email</a> */}
+                <a href="tel:+14125025054" target="_blank" className="hi-icon icon-phone">Phone<i class="material-icons">local_phone</i></a>
               </div>
             </section>
             </div>

@@ -57,6 +57,9 @@ const ContactForm = () => {
    
 
     return <form className="contact-form" id="contact-form">
+        <div className="contact-form_phone-number">
+            Drop us a line at <a href="tel:+14125025054" target="_blank">412.502.5054</a>
+        </div>
     <fieldset>
         <label for="contact-form-name">Nice to meet you _______</label>
         <input id="contact-form-name" type="text" placeholder="First and Last Name"/>

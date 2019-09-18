@@ -28,7 +28,7 @@ class Header extends React.Component {
 		const navUl = <ul>
 			<li><Link to="/approach">Approach</Link></li>
 			<li><Link to="/work">Work</Link></li>
-			<li><Link to="/background">Background</Link></li>
+			<li><Link to="/us">Us</Link></li>
 			<li><Link to="/blog">Blog</Link></li>
 			<li><Link to="/#contact">Contact</Link></li>
 		</ul>

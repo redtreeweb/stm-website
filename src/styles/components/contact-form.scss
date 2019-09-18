@@ -16,6 +16,15 @@
         padding: 0 1em;
     }
 
+    .contact-form_phone-number {
+        padding-top: 1em;
+        // text-align: center;
+        // width: 100%;
+
+        a {
+            color: inherit;
+        }
+    }
 
     fieldset {
         width: 100%;
@@ -49,6 +58,9 @@
         // width: 28em;
         height: 10em;
 
+        @media (max-height: 800px) {
+            height: 4em;
+        }
 
         @media (max-width: 400px) {
             height: 4em;
