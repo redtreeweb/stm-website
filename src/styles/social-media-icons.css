@@ -49,6 +49,13 @@
       bottom: 8px;
       width: 35px;
       height: 35px; } }
+  @media (max-height: 700px) {
+    .hi-icon {
+      margin: 15px 7px;
+      float: left;
+      bottom: 8px;
+      width: 35px;
+      height: 35px; } }
 
 .hi-icon:after {
   pointer-events: none;
@@ -77,6 +84,11 @@
     .hi-icon:before {
       font-size: 20px;
       line-height: 35px; } }
+  @media (max-height: 700px) {
+    .hi-icon:before {
+      font-size: 20px;
+      line-height: 35px; } }
+
 
 .hi-icon.icon-envelope:before {
   font-family: 'icomoon';
@@ -147,6 +159,14 @@
 }
 
 @media (max-width: 600px) {
+  .icon-phone .material-icons {
+    height: 36px;
+    width: 36px;
+    line-height: 36px;
+    font-size: 24px;
+  }
+}
+@media (max-height: 700px) {
   .icon-phone .material-icons {
     height: 36px;
     width: 36px;
