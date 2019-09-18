@@ -21,6 +21,7 @@
     .contact-form__body {
         padding: 0 4em;
         width: 100%;
+        background-color: #fff;
 
         @media (max-width: 640px) {
             padding: 0 1em;
@@ -64,6 +65,7 @@
         padding: .5em;
         width: 100%;
         max-width: 28em;
+        font-family: inherit;
         
         &:focus {
             outline: 3px solid #d94d00;
