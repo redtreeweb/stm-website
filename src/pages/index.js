@@ -18,7 +18,6 @@ import '../styles/grid-wall.scss';
 
 import ImageCache from '../components/ImageCache';
 
-// const imgMobile = require('../images/nathan-jamie-ties-1-small.jpg');
 
 const numSlides = 5;
 
@@ -143,8 +142,10 @@ class IndexPage extends React.Component {
       }
 
 
-      window.location.hash = '';
-      // console.log(Math.max(Math.min(this.state.scrollPosition + (scrollDirection * 1), numSlides),0))
+      // window.location.hash = '';
+      // removes hash
+      window.history.replaceState("", document.title, window.location.pathname + window.location.search);
+
       this.setState({scrollPosition: Math.max(Math.min(this.state.scrollPosition + (scrollDirection * 1), numSlides),0)});
       setTimeout(() => window.addEventListener('wheel', this.handleScrollEvent, false), 1200);
       setTimeout(() => window.addEventListener('touchmove', this.handleScrollEvent, false), 1200);
