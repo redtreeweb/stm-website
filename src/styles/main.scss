@@ -133,7 +133,7 @@ p{
 	
 #section0 {
 	@media (max-width:900px) {
-    background: url('../images/intro-bk.jpg');
+    // background: url('../images/intro-bk.jpg');
 	}
 }
 
@@ -1310,6 +1310,10 @@ img.tapes {
 		// 	// margin-bottom: .2em;
 		// }
 		font-size: 40px;
+
+		@media (max-width: 375px) and (max-height: 628px) {
+			padding-top: 1em;
+		}
 
 		@media (max-width: 610px) {
 			font-size: 28px;
