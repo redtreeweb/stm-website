@@ -31,14 +31,6 @@ const Layout = ({ children, headerFontColor, headerFontSize, headerSubTitle, bod
             { rel: 'stylesheet', type: 'text/css', href: '//cloud.typography.com/7803112/799324/css/fonts.css' }
           ]}
         >
-          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60717411-1"></script>
-          <script>
-            { `window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'UA-60717411-1');` }
-          </script>
           <html lang="en" />
           <body className={bodyClass} />
         </Helmet>

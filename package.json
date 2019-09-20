@@ -8,6 +8,7 @@
     "exports-loader": "^0.7.0",
     "gatsby": "^2.8.5",
     "gatsby-image": "^2.0.15",
+    "gatsby-plugin-google-analytics": "^2.1.17",
     "gatsby-plugin-google-fonts": "0.0.4",
     "gatsby-plugin-manifest": "^2.0.5",
     "gatsby-plugin-offline": "^2.0.5",
