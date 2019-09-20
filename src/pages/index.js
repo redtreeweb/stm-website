@@ -264,7 +264,7 @@ class IndexPage extends React.Component {
               </div>
           </Slider>
             </div>
-        <div className="btn"><Link to="background">WHO WE ARE</Link></div> 
+        <div className="btn"><Link to="us">WHO WE ARE</Link></div> 
           </div >
           <button className="arrow down" onClick={this.handleButtonPress}/>
           <Img fluid={dataCMS[3].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={true}/>
