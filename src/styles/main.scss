@@ -874,11 +874,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 
 		p {
 			text-align: justify;
-			hyphens: auto;
+			// hyphens: auto;
 		}
 	}
 	& .jamie-bio {
-		hyphens: auto;
+		// hyphens: auto;
 		padding-left: 0;
 		text-align: justify;
 
@@ -929,6 +929,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 		color: #fff;
 		font-size: 30px;
 		letter-spacing: 1px;
+		line-height: 1.1;
+    	margin: .2em 0;
+		
 	}
 
 	
@@ -978,6 +981,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 		color: #4A4A4A;
 		font-size: 30px;
 		letter-spacing: 1px;
+		line-height: 1.1;
+    	margin: .2em 0;
 	}
 		& p {
 		padding: 0 0 20px 0;
@@ -1025,7 +1030,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 			border-bottom: none;
 		}
 
-		@media (max-width: 500px) {
+		@media (max-width: 600px) {
 			flex-direction: column;
 		}
 
