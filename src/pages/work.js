@@ -50,7 +50,7 @@ class OurWork extends React.Component {
             <div class="row">
               <div class="large-12 columns center catalog-copy">
 
-                <p class="pad-top-none">We’ve had the opportunity to work with some amazing people and organizations in the 15 years we’ve been a part of this industry, allowing us to produce a catalog of work that’s achieved Telly, Addy, IABC and CASE recognition.</p>
+                <p class="pad-top-none">We’ve had the opportunity to work with some amazing people and organizations in the 20+ years we’ve been a part of this industry, allowing us to produce a catalog of work that’s achieved Telly, Addy, IABC and CASE recognition.</p>
 
                 <p>Feel free to browse some of our recent creations below, or to see an extended catalog, <a href="https://www.vimeo.com/skinnytiemedia" target="blank">click here.</a></p>
               </div>
