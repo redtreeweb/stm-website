@@ -1337,6 +1337,7 @@ img.tapes {
 #contact {
 	.section-title {
 		padding-top: 2em;
+		margin-top: initial;
 
 		// HEIGHT
 		@media (max-height: 820px) and (min-width: 376px) {
