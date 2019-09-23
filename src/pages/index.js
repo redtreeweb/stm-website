@@ -43,6 +43,8 @@ class IndexPage extends React.Component {
       posTouchStart: 0
     }
 
+    this.posTouchStart = 0
+
     this.handleButtonPress = this.handleButtonPress.bind(this);
     this.handleTouchStart = this.handleTouchStart.bind(this);
     this.handleScrollEvent = this.handleScrollEvent.bind(this);
@@ -121,7 +123,9 @@ class IndexPage extends React.Component {
   }
 
   handleTouchStart(e) {
-    this.setState({posTouchStart: e.touches[0].clientY})
+    // consol
+    // this.setState({posTouchStart: e.touches[0].clientY})
+    this.posTouchStart = e.touches[0].clientY
   }
 
   handleScrollEvent(e) {
@@ -135,7 +139,9 @@ class IndexPage extends React.Component {
       let scrollDirection =  e.deltaY / Math.abs(e.deltaY);
 
       if (e.type === 'touchmove') {
-        const {posTouchStart} = this.state;
+        // const {posTouchStart} = this.state;
+        const {posTouchStart} = this;
+
         const posTouchChange = e.touches[0].clientY; //e.touches[0].originalEvent.changedTouches[0].clientY
 
         scrollDirection =  (posTouchStart - posTouchChange) / Math.abs((posTouchStart - posTouchChange))
