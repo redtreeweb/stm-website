@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
+import Helmet from 'react-helmet';
 
 import Layout from '../components/layout';
 import Footer from '../components/footer';
@@ -65,6 +66,9 @@ class OurBackground extends React.Component {
         headerFontSize="large"
         headerSubTitle="WHO WE ARE + WHAT WE DO"
       >
+        <Helmet 
+          title={`Us - Skinny Tie Media`}
+        />
         <div className="" style={{ flex: 1 }}>
           {/* <div className="header-wrapper background-header"  onLoad={() => this.setState({ initialPhotoLoad: true })} /> */}
           <div className="wrapper background">

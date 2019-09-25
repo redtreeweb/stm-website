@@ -191,7 +191,8 @@ class ContactPage extends React.Component {
         //bodyClass={!isTouchable ? 'disable-scroll' : ''}
         pageName='contact'
       >
-      <Helmet>
+      <Helmet
+        title="Contact - Skinny Tie Media">
 				<html className="overflow-hidden" />
 				<body className="overflow-hidden" />
 			</Helmet>

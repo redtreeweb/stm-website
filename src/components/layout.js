@@ -23,10 +23,10 @@ const Layout = ({ children, headerFontColor, headerFontSize, headerSubTitle, bod
       <>
         <Helmet
           title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
+          // meta={[
+          //   { name: 'description', content: 'Sample' },
+          //   { name: 'keywords', content: 'sample, something' },
+          // ]}
           link={[
             { rel: 'stylesheet', type: 'text/css', href: '//cloud.typography.com/7803112/799324/css/fonts.css' }
           ]}

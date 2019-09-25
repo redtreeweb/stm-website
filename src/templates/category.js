@@ -6,6 +6,7 @@ import Footer from '../components/footer';
 
 import Img from 'gatsby-image';
 import ImageFallback from '../components/ImageFallback';
+import Helmet from 'react-helmet';
 
 
 import ImageCache from '../components/ImageCache';
@@ -77,6 +78,9 @@ class Category extends React.Component {
                 headerFontSize="large"
                 headerSubTitle={name}
             >
+              <Helmet 
+                title={`${name} - Skinny Tie Media`}
+              />
                 <div className="" style={{ flex: 1 }}>
                     <div className="blog-header-image-wrapper" style={{  }}>
                     {/* {headerImage && <Img fluid={headerImage} /> } */}

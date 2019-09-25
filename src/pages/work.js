@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import Helmet from 'react-helmet';
 
 import Layout from '../components/layout';
 import Footer from '../components/footer';
@@ -40,6 +41,9 @@ class OurWork extends React.Component {
         headerFontSize="large"
         headerSubTitle="DELIVERING INSIGHT AND EXPERIENCE"
       >
+         <Helmet 
+          title={`Work - Skinny Tie Media`}
+        />
         <div className="content-featured-image-fixed our-work">
           {/* crude way to tell if the image has loaded. */}
           <img src={imgHeader} className="content-featured-image-fixed our-approach" style={{display: 'none'}} onLoad={() => this.setState({initialPhotoLoad: true})} />

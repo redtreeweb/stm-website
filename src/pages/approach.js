@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import Helmet from 'react-helmet';
 
 import Layout from '../components/layout';
 import Footer from '../components/footer';
@@ -26,7 +27,6 @@ class OurApproach extends React.Component {
 render() {
   const dataCMS = this.props.data.allWordpressPage.edges.find(({node}) => node.wordpress_id === 343);
 
-  console.log(this.props)
 
   // const dataClientLogos = this.props.data.clients.edges.map(({node}) => node) //.find(({node}) => )
 
@@ -47,6 +47,9 @@ render() {
         headerFontColor="dark"
         headerSubTitle="WE LIKE TO MAKE S#*T THAT LOOKS GOOD – AND MATTERS"
       >
+         <Helmet 
+          title={`Approach - Skinny Tie Media`}
+        />
         {/* figure out if this image approach is the best */}
         <div className="content-featured-image-fixed our-approach" onLoad={() => this.setState({initialPhotoLoad: true})}></div> 
         {/* <div className="" style={{ flex: 1 }}> */}

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import Helmet from 'react-helmet';
+
 
 import Layout from '../components/layout';
 import Footer from '../components/footer';
@@ -48,6 +50,9 @@ class Blog extends React.Component {
                 headerFontSize="large"
                 headerSubTitle="BLOG"
             >
+              <Helmet 
+                title={`Blog - Skinny Tie Media`}
+              />
                 <div className="" style={{ flex: 1 }}>
                     <div className="blog-header-image-wrapper" style={{  }}>
                     {headerImage && <Img fluid={headerImage} /> }

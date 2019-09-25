@@ -8,6 +8,8 @@ import Layout from "../components/layout";
 import BlogSidebar from '../components/blog/BlogSidebar';
 import Footer from '../components/footer';
 
+import Helmet from 'react-helmet';
+
 import '../styles/post.scss';
 
 
@@ -31,6 +33,9 @@ class PostTemplate extends Component {
         headerFontColor="dark"
         headerSubTitle={post.title}
       >
+        <Helmet 
+          title={`${post.title} - Skinny Tie Media`}
+        />
         <div className="post-wrapper" >
           <div className="post-header post-featured-image">
          {!!featuredImage ? <Img fluid={featuredImage} /> : <ImageFallback /> }
