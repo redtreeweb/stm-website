@@ -52,7 +52,9 @@ class Blog extends React.Component {
             >
               <Helmet 
                 title={`Blog - Skinny Tie Media`}
-              />
+              >
+                <meta name="description" content="We don’t have a blog to brag or to drive traffic. We have this blog to communicate the larger visions we have for our company, ourselves, & our work." />
+              </Helmet>
                 <div className="" style={{ flex: 1 }}>
                     <div className="blog-header-image-wrapper" style={{  }}>
                     {headerImage && <Img fluid={headerImage} /> }

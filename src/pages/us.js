@@ -68,7 +68,9 @@ class OurBackground extends React.Component {
       >
         <Helmet 
           title={`Us - Skinny Tie Media`}
-        />
+        >
+          <meta name="description" content="WHO WE ARE + WHAT WE DO" />
+        </Helmet>
         <div className="" style={{ flex: 1 }}>
           {/* <div className="header-wrapper background-header"  onLoad={() => this.setState({ initialPhotoLoad: true })} /> */}
           <div className="wrapper background">

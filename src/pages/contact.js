@@ -195,6 +195,7 @@ class ContactPage extends React.Component {
         title="Contact - Skinny Tie Media">
 				<html className="overflow-hidden" />
 				<body className="overflow-hidden" />
+        <meta name="description" content="Nice to meet you. What can we do for you?" />
 			</Helmet>
       <div className={'fullpage-viewport'} >
         <div 

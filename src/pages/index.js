@@ -204,6 +204,7 @@ class IndexPage extends React.Component {
       <Helmet>
 				<html className="overflow-hidden" />
 				<body className="overflow-hidden" />
+        <meta name="description" content="Skinny Tie Media is a communications agency formed in 2014 on the foundation of 20+ years of experience." />
 			</Helmet>
       <div className={'fullpage-viewport' + (isTouchable ? ' enable-scroll' : '') }>
         <div 

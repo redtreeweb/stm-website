@@ -11,7 +11,32 @@ const slash = require(`slash`);
 
 
 exports.createPages = ({ graphql, actions }) => {
-    const { createPage } = actions
+    const { createPage, createRedirect } = actions;
+
+    // REDIRECTS
+
+    createRedirect({
+      fromPath: `/get-the-skinny`,
+      isPermanent: true,
+      redirectInBrowser: true,
+      toPath: `/approach`,
+    })
+
+    createRedirect({
+      fromPath: `/the-catalog`,
+      isPermanent: true,
+      redirectInBrowser: true,
+      toPath: `/work`,
+    })
+
+    createRedirect({
+      fromPath: `/try-us-on`,
+      isPermanent: true,
+      redirectInBrowser: true,
+      toPath: `/us`,
+    })
+
+
 
     return new Promise((resolve, reject) => {
       // The “graphql” function allows us to run arbitrary

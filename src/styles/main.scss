@@ -829,7 +829,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 		padding: 0 2em;
 
 		@media (max-width: 600px) {
-			flex-direction: column;
+			flex-direction: column-reverse;
 		}
 
 
@@ -887,7 +887,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 
 		@media (max-width: 600px) {
 			
-			&:not(:last-child) {
+			&:last-child {
 				margin-bottom: 3em; 
 			}
 		}

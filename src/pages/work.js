@@ -43,7 +43,9 @@ class OurWork extends React.Component {
       >
          <Helmet 
           title={`Work - Skinny Tie Media`}
-        />
+        >
+          <meta name="description" content="We’ve had the opportunity to work with some amazing people and organizations in the 20+ years we’ve been a part of this industry, allowing us to produce a catalog of work that’s achieved Telly, Addy, IABC and CASE recognition." />
+        </Helmet>
         <div className="content-featured-image-fixed our-work">
           {/* crude way to tell if the image has loaded. */}
           <img src={imgHeader} className="content-featured-image-fixed our-approach" style={{display: 'none'}} onLoad={() => this.setState({initialPhotoLoad: true})} />

@@ -49,7 +49,9 @@ render() {
       >
          <Helmet 
           title={`Approach - Skinny Tie Media`}
-        />
+        >
+          <meta name="description" content="We hold a firm belief that the craft of producing communication tools is as equally as important as the strategy that goes into it." />
+        </Helmet>
         {/* figure out if this image approach is the best */}
         <div className="content-featured-image-fixed our-approach" onLoad={() => this.setState({initialPhotoLoad: true})}></div> 
         {/* <div className="" style={{ flex: 1 }}> */}
