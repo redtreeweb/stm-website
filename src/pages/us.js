@@ -81,7 +81,7 @@ class OurBackground extends React.Component {
               {/* </div> */}
             </div>
             <div className="row">
-              <div className="grid-staff">
+              <div className="grid-staff col-2">
                 {/* {[itemsBiosDefault, itemsBiosDefault, itemsBiosDefault]} */}
                 {itemsBiosDefault}
               </div>
