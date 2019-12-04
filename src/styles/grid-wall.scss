@@ -16,6 +16,11 @@
             max-width: 24em;
             width: 100%;
         }
+
+        // demo only
+        .grid-staff-member:last-child {
+            display: none;
+        }
     }
 
 
