@@ -56,7 +56,7 @@ class OurBackground extends React.Component {
     }).concat(<div className={'grid-staff-member'}>
       <h5 className={'grid-staff-member-name'}><br /></h5>
       <div className="grid-staff-member-modal" style={{ height: '100%' }}>
-        {/* <div className="grid-staff-member-title">test</div> */}
+        {/* <div className="grid-staff-member-title"></div> */}
         <div className="grid-staff-member-blurb" style={{ top: 0, fontSize: 18 }}>
           <p>We're building a company of great people (like you). 
             If you’re ready to grow and create we should meet.
