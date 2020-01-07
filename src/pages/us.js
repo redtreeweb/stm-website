@@ -63,7 +63,11 @@ class OurBackground extends React.Component {
           </p>
           <br/>
           <p class="p__call-to-action">
-            <a class="button-introduce" href="/contact">Introduce yourself.</a>
+            <a 
+              class="button-introduce"
+              href="mailto:n.wadding@skinnytiemedia.com">
+                Introduce yourself.
+            </a>
           </p>
         </div>
       </div>
