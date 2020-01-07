@@ -209,13 +209,13 @@ class IndexPage extends React.Component {
             {this.state.initialPhotoLoad &&
               <>
                 <div id="section1" className="index-slide section" >
-                  {/* <div className="section-wrapper section-banner get-the-skinny">
+                  <div className="section-wrapper section-banner get-the-skinny">
                     <div className="text-background-black"></div>
                     <h1 className="section-title title-white">{dataCMS[1].acf.header}</h1>
                     <div className="btn"><Link to="work">GET THE SKINNY</Link></div>
                     <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={true} />
-                  </div> */}
-                  <div class="wistia_channel wistia_async_y65t1pr7ah mode=inline" style={{position:'relative'}}></div>
+                  </div>
+                  {/* <div class="wistia_channel wistia_async_y65t1pr7ah mode=inline" style={{position:'relative'}}></div> */}
                   <button className="arrow down" onClick={this.handleButtonPress} />
                 </div>
 
