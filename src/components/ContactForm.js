@@ -37,7 +37,7 @@ const ContactForm = () => {
                 return;
             }
             setFormStatus('ERROR')
-        })
+        });
 
 
     }
