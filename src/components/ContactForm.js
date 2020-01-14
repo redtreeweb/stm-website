@@ -72,7 +72,7 @@ const ContactForm = () => {
             <label for="contact-form-name">What can we do for you?</label>
             <textarea id="contact-form-text" placeholder="Let's Collaborate on Something!" data-test={showFields.test}></textarea>
         </fieldset>
-        <fieldset class="contact-form-follow-up">
+        <fieldset className="contact-form-follow-up">
             <label className="section-label">How should we follow up?</label>
             <label for="contact-form-follow-up__email" onChange={onFollowUpChange}>
                 <input type="radio" name="contact-form-follow-up" id="contact-form-follow-up__email" value="email" />

@@ -14,7 +14,7 @@ import ImageCache from '../components/ImageCache';
 // has the grid
 import '../styles/grid-wall.scss';
 
-import { FormSubscribe } from '../components/FormSubscribe';
+import FormSubscribe from '../components/FormSubscribe';
 
 
 class Temp extends React.Component {
