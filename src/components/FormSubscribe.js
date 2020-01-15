@@ -14,6 +14,12 @@ const FormSubscribe = () => {
         e.preventDefault();
 
         const email = document.getElementById('form-subscribe__email').value;
+        const honeyPot = document.getElementById('form-subscribe__phone').value;
+        
+        if (honeyPot !== '') {
+            console.log('THANK YOU!')
+            return
+        }
 
         // axios.post('https://cms.skinnytiemedia.com/wp-json/newsletter/v1/subscribe',
         //     {

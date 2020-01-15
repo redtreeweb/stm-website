@@ -11,6 +11,7 @@
     color: #fff;
     padding: .4em 8em;
     font-size: 1rem;
+    // margin: 2em 0;
     // transition: height 500ms;
 
     .form-subscribe__fields {
@@ -37,7 +38,7 @@
         border: 1px solid #aaa;
 
         // margin: 1em 0;
-        padding: .2em 1em;
+        padding: .3em 1em;
         align-self: center;
         cursor: pointer;
         font-family: 'Gotham SSm A', 'Gotham SSm B';
@@ -57,30 +58,30 @@
 
     .post-meta__form {
         text-align: center;
-        margin-bottom: 2em;
+        // margin-bottom: 2em;
     }
 }
 
 
-.form-subscriber__fixed {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    z-index: 100;
+// .form-subscriber__fixed {
+//     position: fixed;
+//     bottom: 0;
+//     right: 0;
+//     z-index: 100;
 
-    #form-subscribe {
-        width: initial;
-        height: auto;
-        max-width: 360px;
-        padding: 1em;
-    }
+//     #form-subscribe {
+//         width: initial;
+//         height: auto;
+//         max-width: 360px;
+//         padding: 1em;
+//     }
 
-    .form-subscribe__fields {
-        flex-wrap: wrap;
-    }
+//     .form-subscribe__fields {
+//         flex-wrap: wrap;
+//     }
 
-    button {
-        margin-top: 1em;
-        flex: 0 0 100%;
-    }
-}
+//     button {
+//         margin-top: 1em;
+//         flex: 0 0 100%;
+//     }
+// }

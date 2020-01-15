@@ -5,6 +5,7 @@ import Helmet from 'react-helmet';
 
 import Layout from '../components/layout';
 import Footer from '../components/footer';
+import FormSubscribe from '../components/FormSubscribe';
 
 import Img from "gatsby-image"
 
@@ -68,6 +69,7 @@ class Blog extends React.Component {
                         </div>
                     </div>
                 </div>
+                <FormSubscribe />
                 <Footer />
                 {this.state.initialPhotoLoad && <ImageCache />}
             </Layout>

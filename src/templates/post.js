@@ -45,7 +45,6 @@ class PostTemplate extends Component {
             <div className="post-meta">
               <div className="post-meta__content">
                 <div className="post-meta__form">
-                  <FormSubscribe />
                 </div>
                 <div className="post-meta-time-stamp">
                   <span>📅</span>
@@ -61,8 +60,6 @@ class PostTemplate extends Component {
             <div className="post-content-copy" dangerouslySetInnerHTML={{ __html: post.content }} />
             <BlogSidebar />
           </div>
-        </div>
-        <div className="form-subscriber__fixed">
           <FormSubscribe />
         </div>
         <Footer />

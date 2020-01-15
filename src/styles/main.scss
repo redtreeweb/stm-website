@@ -1643,4 +1643,34 @@ body.overflow-hidden {
 // 	}
 // }
 
+.join-us__wrapper {
+	background-color: $color-gray;
+	// max-width: 30em;
+	margin: auto;
+	padding: 2em;
+	border-bottom: 1px solid #fff;
 
+	p {
+
+	}
+
+
+	.p__call-to-action {
+		text-align: center;
+		a {
+			display: inline-block;
+			background-color: #fff;
+			margin: auto;
+			padding: .6em;
+			color: #000;
+
+			transition: background-color 200ms, color 200ms;
+
+			&:hover {
+				background-color: $color-primary-orange;
+				color: #fff;
+			}
+		}
+		
+	}
+}
