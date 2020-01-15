@@ -66,7 +66,7 @@ module.exports = {
           htaccess_user: "your-htaccess-username",
           htaccess_pass: "your-htaccess-password",
           htaccess_sendImmediately: false,
-  
+
           // If hostingWPCOM is true then you will need to communicate with wordpress.com API
           // in order to do that you need to create an app (of type Web) at https://developer.wordpress.com/apps/
           // then add your clientId, clientSecret, username, and password here
@@ -109,7 +109,7 @@ module.exports = {
         // Blacklisted routes using glob patterns
         excludedRoutes: ["/*/*/posts/1456"],
         // use a custom normalizer which is applied after the built-in ones.
-        normalizer: function({ entities }) {
+        normalizer: function ({ entities }) {
           return entities
         },
       },
@@ -126,6 +126,12 @@ module.exports = {
         anonymize: true,
         // Setting this parameter is also optional
         respectDNT: true,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        endpoint: 'https://skinnytiemedia.us10.list-manage.com/subscribe/post?u=9000c9c71a9eb1030fd6c4320&amp;id=191d4d44cb', // add your MC list endpoint here; see instructions below
       },
     }
   ],

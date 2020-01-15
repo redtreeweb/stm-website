@@ -11,6 +11,8 @@ import imageClientWall from '../images/STM_ClientLogos_1.jpg';
 
 import ImageCache from '../components/ImageCache';
 
+
+
 // has the grid
 import '../styles/grid-wall.scss';
 
@@ -24,6 +26,9 @@ class Temp extends React.Component {
         this.state = {
             initialPhotoLoad: false
         }
+    }
+
+    componentDidMount() {
     }
 
     render() {
@@ -46,6 +51,8 @@ class Temp extends React.Component {
                 <FormSubscribe />
                 {this.state.initialPhotoLoad && <ImageCache />}
                 <Footer />
+            
+
             </Layout>
         )
     }
