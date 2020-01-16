@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { includes } from 'lodash';
 
 import addToMailchimp from 'gatsby-plugin-mailchimp'
 
@@ -40,9 +41,11 @@ const FormSubscribe = () => {
             .then(data => {
                 // I recommend setting data to React state
                 // but you can do whatever you want (including ignoring this `then()` altogether)
-                console.log(data)
                 if (data.result === 'success') {
                     setFormStatus('SUCCESS');
+                }
+                else if (includes(data.msg, 'is already subscribed')) {
+                    setFormStatus('FAIL_ALREADY_SUBSCRIBED');
                 }
                 else {
                     setFormStatus('FAIL');
@@ -67,6 +70,8 @@ const FormSubscribe = () => {
                 {
                     formStatus === 'FAIL' || formStatus === 'RESET' ?
                         'Something went wrong. Please submit a valid email.' :
+                        formStatus === 'FAIL_ALREADY_SUBSCRIBED' ? 
+                        'This email address is already subscribed!':
                         'Get our latest blog posts straight to your inbox!'
                 }
             </div>
