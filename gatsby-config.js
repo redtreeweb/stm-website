@@ -131,7 +131,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-mailchimp',
       options: {
-        endpoint: 'https://skinnytiemedia.us10.list-manage.com/subscribe/post?u=9000c9c71a9eb1030fd6c4320&amp;id=191d4d44cb', // add your MC list endpoint here; see instructions below
+        endpoint: 'https://skinnytiemedia.us10.list-manage.com/subscribe/post?u=9000c9c71a9eb1030fd6c4320&amp;id=d18a0fae0e', // add your MC list endpoint here; see instructions below
       },
     }
   ],
