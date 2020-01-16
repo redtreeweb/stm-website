@@ -5,6 +5,7 @@ import Helmet from 'react-helmet';
 
 import Layout from '../components/layout';
 import Footer from '../components/footer';
+import FormSubscribe from '../components/FormSubscribe';
 
 import Img from "gatsby-image"
 
@@ -68,6 +69,7 @@ class Blog extends React.Component {
                         </div>
                     </div>
                 </div>
+                <FormSubscribe />
                 <Footer />
                 {this.state.initialPhotoLoad && <ImageCache />}
             </Layout>
@@ -78,7 +80,7 @@ export default Blog
 
 
 export const query = graphql`{
-    allWordpressPost {
+    allWordpressPost(sort: {fields: [date],  order: DESC}) {
       edges {
         node {
           date,

@@ -30,9 +30,9 @@ export default (props) => {
         
             switch (d) {
                 case 'Telly_Bronze':
-                    return <div key={d} class="telly bronze"><img src={imgTellyBronze} /></div>;
+                    return <div key={d} className="telly bronze"><img src={imgTellyBronze} /></div>;
                 case 'Telly_Silver':
-                    return <div class="telly silver"><img src={imgTellySilver} /></div>;
+                    return <div className="telly silver"><img src={imgTellySilver} /></div>;
                 default:
                     return null;
             }
@@ -47,20 +47,20 @@ export default (props) => {
             if (type === 'featured-top') {
                 // creates a top 
                 return (
-                    <div class="row">
+                    <div className="row">
                         {/* need way more stuff here */}
-                        <div class="large-12 columns flex-video vimeo widescreen">
+                        <div className="large-12 columns flex-video vimeo widescreen">
                             <iframe src={`https://player.vimeo.com/video/${work_url}?color=d94c00&title=0&byline=0&portrait=0`} width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                         </div>
     
-                        <div class="large-1 columns featured-tag">
+                        <div className="large-1 columns featured-tag">
                             <img src={imgFeature} />
                         </div>
     
-                        <div class="large-11 columns featured-video-description">
+                        <div className="large-11 columns featured-video-description">
                             <h3>{work_title}</h3>
                             <p>{work_description}</p>
-                            <div class="vimeo-link"><a href={'https://vimeo.com/' + work_url} target="_blank">{action_button}</a></div>
+                            <div className="vimeo-link"><a href={'https://vimeo.com/' + work_url} target="_blank">{action_button}</a></div>
                             {work_badges_img}
                         </div>
                     </div>
@@ -69,20 +69,20 @@ export default (props) => {
             else {
                 // INLINE FEATURED ITEM
                 return (
-                    <div class="row row-featured-inline">
+                    <div className="row row-featured-inline">
                         {/* need way more stuff here */}
-                        <div class="large-12 columns flex-video vimeo widescreen">
+                        <div className="large-12 columns flex-video vimeo widescreen">
                             <iframe src={`https://player.vimeo.com/video/${work_url}?color=d94c00&title=0&byline=0&portrait=0`} width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                         </div>
     
-                        <div class="large-1 columns featured-tag">
+                        <div className="large-1 columns featured-tag">
                             <img src={imgFeature} />
                         </div>
     
-                        <div class="large-11 columns featured-video-description">
+                        <div className="large-11 columns featured-video-description">
                             <h3>{work_title}</h3>
                             <p>{work_description}</p>
-                            <div class="vimeo-link"><a href={'https://vimeo.com/' + work_url} target="_blank">{action_button}</a></div>
+                            <div className="vimeo-link"><a href={'https://vimeo.com/' + work_url} target="_blank">{action_button}</a></div>
                             {work_badges_img}
                         </div>
                     </div>
@@ -91,28 +91,28 @@ export default (props) => {
             
         case 'video':
             return (
-                <div class={'large-12 columns video-wrapper' + (index % 2 === 0 ? '' : ' right')}>
-                    <div class={'large-6 columns flex-video vimeo widescreen thumb' + (index % 2 === 0 ? '' : ' right')}>
+                <div className={'large-12 columns video-wrapper' + (index % 2 === 0 ? '' : ' right')}>
+                    <div className={'large-6 columns flex-video vimeo widescreen thumb' + (index % 2 === 0 ? '' : ' right')}>
                         <iframe src={'https://player.vimeo.com/video/' + work_url} width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                     </div>
-                    <div class="large-6 columns video-description">
+                    <div className="large-6 columns video-description">
                         <h3>{work_title}</h3>
                         <p>{work_description}</p>
-                        <div class="vimeo-link"><a href={'https://vimeo.com/' + work_url} target="_blank">{action_button}</a></div>
+                        <div className="vimeo-link"><a href={'https://vimeo.com/' + work_url} target="_blank">{action_button}</a></div>
                         {work_badges_img}
                     </div>
                 </div>
             )
         case 'photo':
             return (
-                <div class={'large-12 columns video-wrapper' + (index % 2 === 0 ? '' : ' right')}>
-                    <div class={'large-6 columns flex-video vimeo widescreen thumb'}>
+                <div className={'large-12 columns video-wrapper' + (index % 2 === 0 ? '' : ' right')}>
+                    <div className={'large-6 columns flex-video vimeo widescreen thumb'}>
                         <a href="https://www.flickr.com/photos/130258915@N06/sets/72157650997362449/" target="_blank"><img src={work_thumbnail.source_url} alt="crossroads-gallery" /></a>
                     </div>
-                    <div class="large-6 columns video-description">
+                    <div className="large-6 columns video-description">
                         <h3>{work_title}</h3>
                         <p>{work_description}</p>
-                        <div class="vimeo-link"><a href="https://www.flickr.com/photos/130258915@N06/sets/72157650997362449/" target="_blank">VIEW ON FLICKR</a></div>
+                        <div className="vimeo-link"><a href="https://www.flickr.com/photos/130258915@N06/sets/72157650997362449/" target="_blank">VIEW ON FLICKR</a></div>
                         {work_badges_img}
                     </div>
 
@@ -120,14 +120,14 @@ export default (props) => {
             )
         default:
             return (
-                <div class={'large-12 columns video-wrapper' + (index % 2 === 0 ? '' : ' right')}>
-                    <div class="large-6 columns flex-video vimeo widescreen thumb">
+                <div className={'large-12 columns video-wrapper' + (index % 2 === 0 ? '' : ' right')}>
+                    <div className="large-6 columns flex-video vimeo widescreen thumb">
                         <iframe src="https://player.vimeo.com/video/145694989" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                     </div>
-                    <div class="large-6 columns video-description">
+                    <div className="large-6 columns video-description">
                         <h3>{work_title}</h3>
                         <p>{work_description}</p>
-                        <div class="vimeo-link"><a href="https://vimeo.com/145694989 " target="_blank">WATCH ON VIMEO</a></div>
+                        <div className="vimeo-link"><a href="https://vimeo.com/145694989 " target="_blank">WATCH ON VIMEO</a></div>
                         {work_badges_img}
                     </div>
                 </div>

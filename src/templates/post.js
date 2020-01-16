@@ -7,6 +7,7 @@ import ImageFallback from '../components/ImageFallback';
 import Layout from "../components/layout";
 import BlogSidebar from '../components/blog/BlogSidebar';
 import Footer from '../components/footer';
+import FormSubscribe from '../components/FormSubscribe';
 
 import Helmet from 'react-helmet';
 
@@ -33,27 +34,33 @@ class PostTemplate extends Component {
         headerFontColor="dark"
         headerSubTitle={post.title}
       >
-        <Helmet 
+        <Helmet
           title={`${post.title} - Skinny Tie Media`}
         />
         <div className="post-wrapper" >
           <div className="post-header post-featured-image">
-         {!!featuredImage ? <Img fluid={featuredImage} /> : <ImageFallback /> }
+            {!!featuredImage ? <Img fluid={featuredImage} /> : <ImageFallback />}
           </div>
           <div className="post-content" >
             <div className="post-meta">
-              <div className="post-meta-time-stamp">
-                <span>📅</span>
-                <time className="entry-date" dateTime={post.date}>{entryDate.toLocaleString('en-us', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
+              <div className="post-meta__content">
+                <div className="post-meta__form">
+                </div>
+                <div className="post-meta-time-stamp">
+                  <span>📅</span>
+                  <time className="entry-date" dateTime={post.date}>{entryDate.toLocaleString('en-us', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
+                </div>
+                {post.acf.location && <div className="post-meta-location">
+                  <span>🌎</span>
+                  <span>{post.acf.location}</span>
+                </div>}
               </div>
-              {post.acf.location && <div className="post-meta-location">
-                <span>🌎</span>
-                <span>{post.acf.location}</span>
-              </div>}
+              {/* <div className="post-meta__spacer"></div> */}
             </div>
             <div className="post-content-copy" dangerouslySetInnerHTML={{ __html: post.content }} />
             <BlogSidebar />
           </div>
+          <FormSubscribe />
         </div>
         <Footer />
       </Layout>
