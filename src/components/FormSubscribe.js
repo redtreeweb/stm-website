@@ -15,7 +15,7 @@ const FormSubscribe = () => {
 
         const email = document.getElementById('form-subscribe__email').value;
         const honeyPot = document.getElementById('form-subscribe__phone').value;
-        
+
         if (honeyPot !== '') {
             console.log('THANK YOU!')
             return
@@ -44,58 +44,71 @@ const FormSubscribe = () => {
                 if (data.result === 'success') {
                     setFormStatus('SUCCESS');
                 }
+                else {
+                    setFormStatus('FAIL');
+                }
             })
             .catch(() => {
-                // unnecessary because Mailchimp only ever
-                // returns a 200 status code
-                // see below for how to handle errors
+                setFormStatus('FAIL');
             })
+    }
 
+    if (formStatus === 'FAIL') {
+        window.setTimeout(() => setFormStatus('RESET'), 400);
     }
 
 
-    return <form className="form-subscribe" id="form-subscribe">
+
+    return <div className="form-subscribe__wrapper">
+        <form
+        className={`form-subscribe ${formStatus === 'FAIL' ? 'failed' : ''}`}
+        id="form-subscribe">
         {formStatus !== 'SUCCESS' ? <><div className="form-subscribe__copy">
-            Get our latest blog posts straight to your inbox!
+            {
+                formStatus === 'FAIL' || formStatus === 'RESET' ?
+                    'Something went wrong. Please submit a valid email.' :
+                    'Get our latest blog posts straight to your inbox!'
+            }
         </div>
-        <div className="form-subscribe__fields">
-            {/* <div className="form-subscribe__field__email"> */}
+            <div className="form-subscribe__fields">
+                {/* <div className="form-subscribe__field__email"> */}
                 <label>Email: </label>
                 <input
                     id="form-subscribe__email"
                     type="email"
                     required
                 />
-            {/* </div> */}
-            {/* HONEY POT */}
-            <div
-                style={{
-                    position: 'absolute',
-                    left: '-5000px'
-                }}
-                aria-hidden="true">
-                <input
-                    id="form-subscribe__phone"
-                    type="text"
-                    name="b_9000c9c71a9eb1030fd6c4320_191d4d44cb"
-                    tabindex="-1"
-                    value=""
-                />
+                {/* </div> */}
+                {/* HONEY POT */}
+                <div
+                    style={{
+                        position: 'absolute',
+                        left: '-5000px'
+                    }}
+                    aria-hidden="true">
+                    <input
+                        id="form-subscribe__phone"
+                        type="text"
+                        name="b_9000c9c71a9eb1030fd6c4320_191d4d44cb"
+                        tabindex="-1"
+                        value=""
+                    />
+                </div>
+                <button
+                    id="contact-form-submit"
+                    className="fill-in-effect-orange"
+                    type="submit"
+                    onClick={onFormSubmission}
+                >SUBSCRIBE</button>
+            </div></> :
+            <>
+                <div className="form-subscribe__copy">
+                    Thank you for subscribing!
             </div>
-            <button
-                id="contact-form-submit"
-                className="fill-in-effect-orange"
-                type="submit"
-                onClick={onFormSubmission}
-            >SUBSCRIBE</button>
-        </div></> :
-        <>
-            <div className="form-subscribe__copy">
-                Thank you for subscribing!
-            </div>
-        </>
-    }
+            </>
+        }
     </form>
+    </div>
 
 };
 
