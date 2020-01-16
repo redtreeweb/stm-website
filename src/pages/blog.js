@@ -80,7 +80,7 @@ export default Blog
 
 
 export const query = graphql`{
-    allWordpressPost {
+    allWordpressPost(sort: {fields: [date],  order: DESC}) {
       edges {
         node {
           date,

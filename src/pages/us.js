@@ -53,24 +53,23 @@ class OurBackground extends React.Component {
           </div>
         </div>
       )
-    }).concat(<div className={'grid-staff-member'}>
-    <h5 className={'grid-staff-member-name'}>Sean Dolinar</h5>
-    <div className="grid-staff-member-modal">
-      {/* <Img fluid={d.staff_image.localFile.childImageSharp.fluid} /> */}
-      <div style={{width: '100%', paddingBottom: '66.6667%', backgroundColor: '#2e3333'}}></div>
-      <div className="grid-staff-member-title">Front-End Developer /<br/> Data Scientist</div>
-      <div className="grid-staff-member-blurb"><p>Sean loves problem solving. Whether it's code or trying to find insight using data, he's passionate about finding a solution.</p></div>
-    </div>
-  </div>) // this is the career reach out
+    })
+    //   .concat(<div className={'grid-staff-member'}>
+    //   <h5 className={'grid-staff-member-name'}>Sean Dolinar</h5>
+    //   <div className="grid-staff-member-modal">
+    //     {/* <Img fluid={d.staff_image.localFile.childImageSharp.fluid} /> */}
+    //     <div style={{width: '100%', paddingBottom: '66.6667%', backgroundColor: '#2e3333'}}></div>
+    //     <div className="grid-staff-member-title">Front-End Developer /<br/> Data Scientist</div>
+    //     <div className="grid-staff-member-blurb"><p>Sean loves problem solving. Whether it's code or trying to find insight using data, he's passionate about finding a solution.</p></div>
+    //   </div>
+    // </div>) // this is the career reach out
     // now a temp Sean
+    {/* JOIN US TEMP FOR DEV */}
+
 
 
     // this changes the grid to fit different sizes
     let itemsBiosDefaultGridSize = itemsBiosDefault.length % 3 === 0 ? 3 : 2;
-
-
-
-
 
     return (
       <Layout
@@ -98,7 +97,8 @@ class OurBackground extends React.Component {
               </div>
             </div>
             <div className="row">
-              <div className="join-us__wrapper" style={{ top: 0, fontSize: 18 }}>
+              {/* JOIN US TEMP FOR DEV */}
+              {/* <div className="join-us__wrapper" style={{ top: 0, fontSize: 18 }}>
                 <p>We're building a company of great people (like you).
                   If you’re ready to grow and create we should meet.
           </p>
@@ -110,7 +110,7 @@ class OurBackground extends React.Component {
                     Introduce yourself.
             </a>
                 </p>
-              </div>
+              </div> */}
               <div className="large-12 columns collage">
                 {/* <img src={imgCollage} /> */}
                 <Img fluid={itemBottomImage.acf.staff_image.localFile.childImageSharp.fluid} />
