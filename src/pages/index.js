@@ -1,6 +1,6 @@
 import Lethargy from "exports-loader?this.Lethargy!lethargy/lethargy";
 
-import React from 'react';
+import React, { createRef } from 'react';
 import Helmet from 'react-helmet';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
@@ -49,6 +49,8 @@ class IndexPage extends React.Component {
     this.handleTouchStart = this.handleTouchStart.bind(this);
     this.handleScrollEvent = this.handleScrollEvent.bind(this);
     this.handleResize = this.handleResize.bind(this);
+
+    this.img = createRef();
   }
 
 
@@ -189,7 +191,8 @@ class IndexPage extends React.Component {
           <html className="overflow-hidden" />
           <body className="overflow-hidden" />
           <meta name="description" content="Skinny Tie Media is a communications agency formed in 2014 on the foundation of 20+ years of experience." />
-          <script src="https://fast.wistia.net/assets/external/channel.js" async></script>
+          <script src="https://fast.wistia.com/embed/medias/8r03pohwtn.jsonp" async></script>
+          <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
         </Helmet>
         <div className={'fullpage-viewport' + (isTouchable ? ' enable-scroll' : '')}>
           <div
@@ -208,14 +211,44 @@ class IndexPage extends React.Component {
             </div>
             {this.state.initialPhotoLoad &&
               <>
+                <div id="section0-video" className="index-slide section" >
+                  <div className="section-wrapper section-banner get-the-skinny">
+                    <div className="text-background-black"></div>
+                    <h1 className="section-title title-white">WE CAN MOVE / CHANGE THE TEXT.</h1>
+                    <div className="btn"><Link to="work">CALL TO ACTION</Link></div>
+                    <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" />
+                    <div className="wistia__container" style={{ position: 'absolute', width: '100%', height: '100%' }}>
+                      <div className="wistia_responsive_padding" style={{
+                        // padding: '56.25% 0 0 0',
+                        padding: '100vw 100vh',
+                        position: 'relative'
+                      }}>
+                        <div className="wistia_responsive_wrapper" style={{ height: '100%', left: 0, position: 'absolute', top: 0, width: '100%' }}>
+                          <div className="wistia_embed wistia_async_8r03pohwtn videoFoam=true autoPlay=true endVideoBehavior=loop controlsVisibleOnLoad=false muted=true playbar=false qualityControl=false settingsControl=false smallPlayButton=false volumeControl=false fullscreenButton=false" style={{ height: '100%', position: 'relative', width: '100%', opacity: 1 }}>
+                            <div className="wistia_swatch" style={{ height: '100%', left: 0, opacity: 0, overflow: 'hidden', position: 'absolute', top: 0, transition: 'opacity 200ms', width: '100%' }}>
+                              <img
+                                ref={this.img}
+                                src="https://fast.wistia.com/embed/medias/8r03pohwtn/swatch"
+                                style={{ filter: 'blur(5px)', height: '100%', objectFit: 'contain', width: '100%' }}
+                                alt="" aria-hidden="true" onLoad={() => this.img.current.parentNode.style.opacity = 1} //.style.opacity=1} 
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button className="arrow down" onClick={this.handleButtonPress} />
+                </div>
+
                 <div id="section1" className="index-slide section" >
                   <div className="section-wrapper section-banner get-the-skinny">
                     <div className="text-background-black"></div>
                     <h1 className="section-title title-white">{dataCMS[1].acf.header}</h1>
                     <div className="btn"><Link to="work">GET THE SKINNY</Link></div>
-                    <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={true} />
+                    <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" />
                   </div>
-                  {/* <div class="wistia_channel wistia_async_y65t1pr7ah mode=inline" style={{position:'relative'}}></div> */}
                   <button className="arrow down" onClick={this.handleButtonPress} />
                 </div>
 
@@ -227,8 +260,8 @@ class IndexPage extends React.Component {
                     <div className="btn"><Link to="approach">OUR PHILOSOPHY</Link></div>
                   </div>
                   <button className="arrow down" onClick={this.handleButtonPress} />
-                  {this.state.windowWidth < 480 ? <Img fluid={dataCMS[2].acf.background_image_mobile.localFile.childImageSharp.fluid} fadeIn={false} critical={true} /> :
-                    <Img fluid={dataCMS[2].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={true} />}
+                  {this.state.windowWidth < 480 ? <Img fluid={dataCMS[2].acf.background_image_mobile.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" /> :
+                    <Img fluid={dataCMS[2].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" />}
                 </div>
 
                 <div id="section3" className="index-slide section">
@@ -260,7 +293,7 @@ class IndexPage extends React.Component {
                       <div className="btn"><Link to="us">WHO WE ARE</Link></div>
                     </div >
                     <button className="arrow down" onClick={this.handleButtonPress} />
-                    <Img fluid={dataCMS[3].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={true} />
+                    <Img fluid={dataCMS[3].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" />
                   </div >
                 </div>
 
@@ -269,8 +302,8 @@ class IndexPage extends React.Component {
                   <div className="footer-content-wrapper section-banner">
                     <ClientWall />
                   </div>
-                  {this.state.windowWidth < 480 ? <Img fluid={dataCMS[4].acf.background_image_mobile.localFile.childImageSharp.fluid} fadeIn={false} critical={true} /> :
-                    <Img fluid={dataCMS[4].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={true} />}
+                  {this.state.windowWidth < 480 ? <Img fluid={dataCMS[4].acf.background_image_mobile.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" /> :
+                    <Img fluid={dataCMS[4].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" />}
                   <button className="arrow down" onClick={this.handleButtonPress} />
                 </div>
 
@@ -292,8 +325,8 @@ class IndexPage extends React.Component {
                       </div>
                     </section>
                   </div>
-                  {this.state.windowWidth < 480 ? <Img fluid={dataCMS[5].acf.background_image_mobile.localFile.childImageSharp.fluid} fadeIn={false} critical={true} /> :
-                    <Img fluid={dataCMS[5].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={true} />}
+                  {this.state.windowWidth < 480 ? <Img fluid={dataCMS[5].acf.background_image_mobile.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" /> :
+                    <Img fluid={dataCMS[5].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" />}
                 </div>
 
               </>}

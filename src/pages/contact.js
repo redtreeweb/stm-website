@@ -221,12 +221,12 @@ class ContactPage extends React.Component {
                 {/* <a href="https://twitter.com/skinnytiemedia" target="_blank" className="hi-icon icon-twitter">Twitter</a> */}
                 <a href="https://www.linkedin.com/company/skinny-tie-media" target="_blank" className="hi-icon icon-linkedin">LinkedIn</a>
                 {/* <a href="mailto:Hello@SkinnyTieMedia.com" target="_blank" className="hi-icon icon-envelope">Email</a> */}
-                <a href="tel:+14125025054" target="_blank" className="hi-icon icon-phone">Phone<i class="material-icons">local_phone</i></a>
+                <a href="tel:+14125025054" target="_blank" className="hi-icon icon-phone">Phone<i className="material-icons">local_phone</i></a>
               </div>
             </section>
             </div>
-            { this.state.windowWidth < 480 ? <Img fluid={dataCMS[5].acf.background_image_mobile.localFile.childImageSharp.fluid} fadeIn={false} critical={true} />  :
-            <Img fluid={dataCMS[5].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} critical={true} /> }        
+            { this.state.windowWidth < 480 ? <Img fluid={dataCMS[5].acf.background_image_mobile.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" />  :
+            <Img fluid={dataCMS[5].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" /> }        
           </div>
       </div>
       </div>
