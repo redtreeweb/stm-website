@@ -211,7 +211,18 @@ class IndexPage extends React.Component {
             </div>
             {this.state.initialPhotoLoad &&
               <>
-                <div id="section0-video" className="index-slide section" >
+                <div id="section1" className="index-slide section" >
+                  <div className="section-wrapper section-banner get-the-skinny">
+                    <div className="text-background-black"></div>
+                    <h1 className="section-title title-white">{dataCMS[1].acf.header}</h1>
+                    <div className="btn"><Link to="work">GET THE SKINNY</Link></div>
+                    <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" />
+                  </div>
+                  <button className="arrow down" onClick={this.handleButtonPress} />
+                </div>
+
+
+                <div id="section1-video" className="index-slide section" >
                   <div className="section-wrapper section-banner get-the-skinny">
                     <div className="text-background-black"></div>
                     <h1 className="section-title title-white">WE CAN MOVE / CHANGE THE TEXT.</h1>
@@ -242,15 +253,7 @@ class IndexPage extends React.Component {
                   <button className="arrow down" onClick={this.handleButtonPress} />
                 </div>
 
-                <div id="section1" className="index-slide section" >
-                  <div className="section-wrapper section-banner get-the-skinny">
-                    <div className="text-background-black"></div>
-                    <h1 className="section-title title-white">{dataCMS[1].acf.header}</h1>
-                    <div className="btn"><Link to="work">GET THE SKINNY</Link></div>
-                    <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" />
-                  </div>
-                  <button className="arrow down" onClick={this.handleButtonPress} />
-                </div>
+
 
 
                 <div id="section2" className="index-slide section">
