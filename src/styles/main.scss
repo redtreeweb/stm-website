@@ -152,7 +152,7 @@ p{
 		}
 	}
 	
-		h2{
+	h2{
 		font-size: 3em;
 		font-family: arial,helvetica;
 		color: #fff;
@@ -419,6 +419,8 @@ a {
 	&.title-white {
 		color: #ffffff;
 	}
+	
+
 	@media (max-width:400px) {
 		letter-spacing: 0px;
 		font-size: 45px;
@@ -470,6 +472,45 @@ a {
 
 	 }
 	
+}
+
+#section1 {
+	h1 {
+		font-size: 2.8em;
+		line-height: 1em;
+		padding: 1em;
+		background-color: rgba($color-gray, .7);
+		text-align: center;
+		margin-bottom: .2em;
+		text-transform: none;
+	}
+	h2 {
+		font-size: 2em;
+		line-height: 1em;
+		background-color: rgba($color-gray, .7);
+		padding: 1em;
+		text-transform: none;
+	}
+}
+
+#section1-video {
+	h1, h2 {
+		font-family: 'Knockout 30 A', 'Knockout 30 B'; 
+		z-index: 100;
+	}
+
+	h1 {
+		letter-spacing: 2px;
+		font-size: 70px;
+		margin-bottom: 20px;
+		line-height: 60px;
+		padding: 40px 0 0 0;
+		padding-top: 0;
+	}
+
+	h2 {
+		line-height: 1.2em;
+	}
 }
 
 .interior-title {

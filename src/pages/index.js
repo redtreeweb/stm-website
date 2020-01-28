@@ -214,7 +214,13 @@ class IndexPage extends React.Component {
                 <div id="section1" className="index-slide section" >
                   <div className="section-wrapper section-banner get-the-skinny">
                     <div className="text-background-black"></div>
-                    <h1 className="section-title title-white">{dataCMS[1].acf.header}</h1>
+                    {/* <h1 className="section-title title-white">{dataCMS[1].acf.header}</h1> */}
+                    <h1 className="section-title title-white">
+                      Skinny Tie is an internal communications agency that specializes in developing video content that creates meaningful employee experiences. 
+                    </h1>
+                    <h2 className="section-title title-white">
+                      We are dedicated to help companies with the critical step of connecting the business strategy with their people.
+                    </h2>
                     <div className="btn"><Link to="work">GET THE SKINNY</Link></div>
                     <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" />
                   </div>
@@ -225,8 +231,11 @@ class IndexPage extends React.Component {
                 <div id="section1-video" className="index-slide section" >
                   <div className="section-wrapper section-banner get-the-skinny">
                     <div className="text-background-black"></div>
-                    <h1 className="section-title title-white">WE CAN MOVE / CHANGE THE TEXT.</h1>
-                    <div className="btn"><Link to="work">CALL TO ACTION</Link></div>
+                    <h1 className="title-white title-video">EVERY ORGANIZATION HAS A STORY</h1>
+                    <h2 className="title-white title-video">Discover. Develop. Tell.</h2>
+
+                    <div className="btn"><Link to="work">START WATCHING</Link></div>
+                    <h2 className="title-white title-video">By making our stories visible we allow people to find similarities, build connection and engage.</h2>
                     <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" />
                     <div className="wistia__container" style={{ position: 'absolute', width: '100%', height: '100%' }}>
                       <div className="wistia_responsive_padding" style={{
