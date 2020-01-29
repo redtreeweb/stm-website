@@ -239,7 +239,7 @@ class IndexPage extends React.Component {
                     <div className="text-background-black"></div>
                     <h1 className="section-title title-white">{dataCMS[1].acf.header}</h1>
                     <div className="btn"><Link to="work">GET THE SKINNY</Link></div>
-                    <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} />
+                    <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" />
                   </div>
                   {/* <div class="wistia_channel wistia_async_y65t1pr7ah mode=inline" style={{position:'relative'}}></div> */}
                   <button className="arrow down" onClick={this.handleButtonPress} />
@@ -253,8 +253,8 @@ class IndexPage extends React.Component {
                     <div className="btn"><Link to="approach">OUR PHILOSOPHY</Link></div>
                   </div>
                   <button className="arrow down" onClick={this.handleButtonPress} />
-                  {this.state.windowWidth < 480 ? <Img fluid={dataCMS[2].acf.background_image_mobile.localFile.childImageSharp.fluid} fadeIn={false}  /> :
-                    <Img fluid={dataCMS[2].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false}  />}
+                  {this.state.windowWidth < 480 ? <Img fluid={dataCMS[2].acf.background_image_mobile.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" /> :
+                    <Img fluid={dataCMS[2].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" />}
                 </div>
 
                 <div id="section3" className="index-slide section">
@@ -286,7 +286,7 @@ class IndexPage extends React.Component {
                       <div className="btn"><Link to="us">WHO WE ARE</Link></div>
                     </div >
                     <button className="arrow down" onClick={this.handleButtonPress} />
-                    <Img fluid={dataCMS[3].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} />
+                    <Img fluid={dataCMS[3].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" />
                   </div >
                 </div>
 
@@ -295,8 +295,8 @@ class IndexPage extends React.Component {
                   <div className="footer-content-wrapper section-banner">
                     <ClientWall />
                   </div>
-                  {this.state.windowWidth < 480 ? <Img fluid={dataCMS[4].acf.background_image_mobile.localFile.childImageSharp.fluid} fadeIn={false} /> :
-                    <Img fluid={dataCMS[4].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false}  />}
+                  {this.state.windowWidth < 480 ? <Img fluid={dataCMS[4].acf.background_image_mobile.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" /> :
+                    <Img fluid={dataCMS[4].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false}  loading="eager" />}
                   <button className="arrow down" onClick={this.handleButtonPress} />
                 </div>
 
@@ -318,8 +318,8 @@ class IndexPage extends React.Component {
                       </div>
                     </section>
                   </div>
-                  {this.state.windowWidth < 480 ? <Img fluid={dataCMS[5].acf.background_image_mobile.localFile.childImageSharp.fluid} fadeIn={false} /> :
-                    <Img fluid={dataCMS[5].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} />}
+                  {this.state.windowWidth < 480 ? <Img fluid={dataCMS[5].acf.background_image_mobile.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" /> :
+                    <Img fluid={dataCMS[5].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" />}
                 </div>
 
               </>}
