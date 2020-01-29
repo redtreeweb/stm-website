@@ -78,7 +78,7 @@ const ClientWall = () => <StaticQuery
              imgStyle={{objectFit: 'contain'}}
              fadeIn={false}
             //  loading="eager" // for future
-            critical={true}
+            // critical={true}
          />
      </div>)
 
