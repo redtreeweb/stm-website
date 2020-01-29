@@ -225,8 +225,8 @@ class ContactPage extends React.Component {
               </div>
             </section>
             </div>
-            { this.state.windowWidth < 480 ? <Img fluid={dataCMS[5].acf.background_image_mobile.localFile.childImageSharp.fluid} fadeIn={false}  />  :
-            <Img fluid={dataCMS[5].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false}  /> }        
+            { this.state.windowWidth < 480 ? <Img fluid={dataCMS[5].acf.background_image_mobile.localFile.childImageSharp.fluid} fadeIn={false} loading="eager"  />  :
+            <Img fluid={dataCMS[5].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} loading="eager"  /> }        
           </div>
       </div>
       </div>
