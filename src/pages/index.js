@@ -37,7 +37,7 @@ class IndexPage extends React.Component {
 
     this.state = {
       scrollPosition,
-      initialPhotoLoad: false,
+      initialPhotoLoad: true,
       windowWidth: null,
       isTouchable: false,
       posTouchStart: 0
@@ -203,8 +203,34 @@ class IndexPage extends React.Component {
             // onScroll={this.handleScrollEvent}
           >
             <div id="section0" className="index-slide section" ref={section => this.section = section}>
-              {this.state.windowWidth < 480 ? <Img fluid={dataFirstItem[0].acf.background_image_mobile.localFile.childImageSharp.fluid} onLoad={() => this.setState({ initialPhotoLoad: true })} /> :
-                <Img fluid={dataFirstItem[0].acf.background_image.localFile.childImageSharp.fluid} onLoad={() => this.setState({ initialPhotoLoad: true })} />}
+              {/* {this.state.windowWidth < 480 ? <Img fluid={dataFirstItem[0].acf.background_image_mobile.localFile.childImageSharp.fluid} onLoad={() => this.setState({ initialPhotoLoad: true })} /> :
+                <Img fluid={dataFirstItem[0].acf.background_image.localFile.childImageSharp.fluid} onLoad={() => this.setState({ initialPhotoLoad: true })} />} */}
+                <div className="background-orange">
+                <svg 
+                  // width="100%" 
+                  // height="100%" 
+                  // width="10%"
+                  // maxHeight="50%"
+                  viewBox="0 0 53 278" 
+                  version="1.1" 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  style={{
+                    // maxHeight: '18em',
+                    height: '30%',
+                    fillRule: 'evenodd',
+                    clipRule: 'evenodd',
+                    strokeLinejoin:'round',
+                    strokeMiterlimit:2,
+                    zIndex: 10
+                    }}>
+                      <path 
+                        d="M29.005,277.401l14.875,-15.913l-7.105,-237.383l16.002,-21.55c-8.637,-1.657 -17.544,-2.555 -26.665,-2.555c-8.927,0 -17.647,0.868 -26.112,2.457l16.079,21.648l-7.091,237.383l14.905,15.914" 
+                        style={{
+                          fill: '#fff',
+                          fillRule: 'nonzero'
+                        }}/>
+                    </svg>
+                  </div>
               <div className="layer">
                 <h1 className="title">{dataCMS[0].acf.header}</h1>
               </div>
@@ -361,7 +387,7 @@ class IndexPage extends React.Component {
               </>}
           </div>
         </div>
-        {this.state.initialPhotoLoad && <ImageCache />}
+        {/* {this.state.initialPhotoLoad && <ImageCache />} */}
       </Layout >
     )
   }
@@ -385,7 +411,7 @@ export const query = graphql`
             source_url
             localFile {
               childImageSharp {
-                fluid(maxWidth: 2100, quality: 100) {
+                fluid(quality: 60) {
                   ...GatsbyImageSharpFluid_noBase64
                 }
               }
@@ -395,7 +421,7 @@ export const query = graphql`
             source_url
             localFile {
               childImageSharp {
-                fluid(srcSetBreakpoints: [ 1400, 1800 ], maxWidth: 2100, quality: 100) {
+                fluid(quality: 60) {
                   ...GatsbyImageSharpFluid_noBase64
                 }
               }
@@ -419,7 +445,7 @@ export const query = graphql`
             source_url
             localFile {
               childImageSharp {
-                fluid(maxWidth: 1800, quality: 50) {
+                fluid(quality: 60) {
                   ...GatsbyImageSharpFluid_noBase64
                 }
               }
@@ -429,7 +455,7 @@ export const query = graphql`
             source_url
             localFile {
               childImageSharp {
-                fluid(srcSetBreakpoints: [ 1400, 1800 ], maxWidth: 1800, quality: 50) {
+                fluid(quality: 60) {
                   ...GatsbyImageSharpFluid_noBase64
                 }
               }

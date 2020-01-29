@@ -17,11 +17,20 @@
     // margin: 2em 0;
     // transition: height 500ms;
 
+    @media (max-width: 560px) {
+        padding: .4em 1em;
+        height: auto;
+    }
+
     .form-subscribe__fields {
         display: flex;
         justify-content: center;
         align-items: center;
         padding: .8em 0 .4em;
+
+        @media (max-width: 560px) {
+            flex-wrap: wrap;
+        }
     }
 
     input {
@@ -39,6 +48,7 @@
         resize: none;
         font-size: 1em;
         border: 1px solid #aaa;
+        background-color: #fff;
 
         // margin: 1em 0;
         padding: .3em 1em;
@@ -48,6 +58,13 @@
 
         &:hover {
             background-color: #dedede;
+        }
+    }
+
+    .form-subscribe__button-wrapper {
+        @media (max-width: 560px) {
+            flex: 0 0 100%;
+            padding-top: 1em;
         }
     }
 
