@@ -56,9 +56,9 @@ class IndexPage extends React.Component {
 
   componentDidMount() {
     this.handleResize();
-    window.addEventListener('wheel', this.handleScrollEvent, false);
-    window.addEventListener('touchstart', this.handleTouchStart, false);
-    window.addEventListener('touchmove', this.handleScrollEvent, false);
+    // window.addEventListener('wheel', this.handleScrollEvent, false);
+    // window.addEventListener('touchstart', this.handleTouchStart, false);
+    // window.addEventListener('touchmove', this.handleScrollEvent, false);
     // window.addEventListener('scroll', this.handleScrollEvent, false);
 
 
@@ -188,18 +188,19 @@ class IndexPage extends React.Component {
         pageName='index'
       >
         <Helmet>
-          <html className="overflow-hidden" />
-          <body className="overflow-hidden" />
+          {/* <html className="overflow-hidden" />
+          <body className="overflow-hidden" /> */}
           <meta name="description" content="Skinny Tie Media is a communications agency formed in 2014 on the foundation of 20+ years of experience." />
           <script src="https://fast.wistia.com/embed/medias/8r03pohwtn.jsonp" async></script>
           <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
         </Helmet>
-        <div className={'fullpage-viewport' + (isTouchable ? ' enable-scroll' : '')}>
+        {/* <div className={'fullpage-viewport' + (isTouchable ? ' enable-scroll' : '')}> */}
+        <div className="fullpage-viewport enable-scroll">
           <div
             id="fullpage-wrapper"
             className="fullpage-wrapper"
             style={{ transform: !isTouchable ? transformWrapper : '' }}
-            onScroll={this.handleScrollEvent}
+            // onScroll={this.handleScrollEvent}
           >
             <div id="section0" className="index-slide section" ref={section => this.section = section}>
               {this.state.windowWidth < 480 ? <Img fluid={dataFirstItem[0].acf.background_image_mobile.localFile.childImageSharp.fluid} onLoad={() => this.setState({ initialPhotoLoad: true })} /> :
@@ -207,11 +208,11 @@ class IndexPage extends React.Component {
               <div className="layer">
                 <h1 className="title">{dataCMS[0].acf.header}</h1>
               </div>
-              <button className="arrow down" onClick={this.handleButtonPress} />
+              {/* <button className="arrow down" onClick={this.handleButtonPress} /> */}
             </div>
             {this.state.initialPhotoLoad &&
               <>
-                <div id="section1" className="index-slide section" >
+                {false && <div id="section1" className="index-slide section" >
                   <div className="section-wrapper section-banner get-the-skinny">
                     <div className="text-background-black"></div>
                     {/* <h1 className="section-title title-white">{dataCMS[1].acf.header}</h1> */}
@@ -224,7 +225,23 @@ class IndexPage extends React.Component {
                     <div className="btn"><Link to="work">GET THE SKINNY</Link></div>
                     <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" />
                   </div>
-                  <button className="arrow down" onClick={this.handleButtonPress} />
+                  {/* <button className="arrow down" onClick={this.handleButtonPress} /> */}
+                </div>}
+
+                <div id="section1" className="section index-slide section__mission-statement" >
+                  <div className="section-wrapper section-banner get-the-skinny">
+                    {/* <div className="text-background-black"></div> */}
+                    {/* <h1 className="section-title title-white">{dataCMS[1].acf.header}</h1> */}
+                    <h1>
+                      Skinny Tie is an internal communications agency that specializes in developing video content that creates meaningful employee experiences. 
+                    </h1>
+                    <h2>
+                      We are dedicated to help companies with the critical step of connecting the business strategy with their people.
+                    </h2>
+                    <div className="btn"><Link to="work">GET THE SKINNY</Link></div>
+                    {/* <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" /> */}
+                  </div>
+                  {/* <button className="arrow down" onClick={this.handleButtonPress} /> */}
                 </div>
 
 
@@ -259,7 +276,7 @@ class IndexPage extends React.Component {
                     </div>
                   </div>
 
-                  <button className="arrow down" onClick={this.handleButtonPress} />
+                  {/* <button className="arrow down" onClick={this.handleButtonPress} /> */}
                 </div>
 
 
@@ -271,7 +288,7 @@ class IndexPage extends React.Component {
                     <h1 className="section-title title-white" dangerouslySetInnerHTML={{ __html: dataCMS[2].acf.header }}></h1>
                     <div className="btn"><Link to="approach">OUR PHILOSOPHY</Link></div>
                   </div>
-                  <button className="arrow down" onClick={this.handleButtonPress} />
+                  {/* <button className="arrow down" onClick={this.handleButtonPress} /> */}
                   {this.state.windowWidth < 480 ? <Img fluid={dataCMS[2].acf.background_image_mobile.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" /> :
                     <Img fluid={dataCMS[2].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" />}
                 </div>
@@ -304,7 +321,7 @@ class IndexPage extends React.Component {
                       </div>
                       <div className="btn"><Link to="us">WHO WE ARE</Link></div>
                     </div >
-                    <button className="arrow down" onClick={this.handleButtonPress} />
+                    {/* <button className="arrow down" onClick={this.handleButtonPress} /> */}
                     <Img fluid={dataCMS[3].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" />
                   </div >
                 </div>
@@ -316,7 +333,7 @@ class IndexPage extends React.Component {
                   </div>
                   {this.state.windowWidth < 480 ? <Img fluid={dataCMS[4].acf.background_image_mobile.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" /> :
                     <Img fluid={dataCMS[4].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" />}
-                  <button className="arrow down" onClick={this.handleButtonPress} />
+                  {/* <button className="arrow down" onClick={this.handleButtonPress} /> */}
                 </div>
 
                 {/* SLIDE 6 -- HARD CODED FOR CONTACT */}

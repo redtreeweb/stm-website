@@ -474,24 +474,36 @@ a {
 	
 }
 
-#section1 {
+#section1.section__mission-statement {
+	background-color: #fff;
+	font-family: 'Knockout 30 A', 'Knockout 30 B'; 
+	height: auto;
+	padding: 5em 1em;
+
+
 	h1 {
+		font-family: 'Knockout 30 A', 'Knockout 30 B'; 
 		font-size: 2.8em;
 		line-height: 1em;
-		padding: 1em;
-		background-color: rgba($color-gray, .7);
-		text-align: center;
+		// padding: 1em;
+		// background-color: rgba($color-gray, .7);
+		text-align: left;
 		margin-bottom: .2em;
 		text-transform: none;
+		color: #000;
 	}
 	h2 {
+		font-family: 'Knockout 30 A', 'Knockout 30 B'; 
 		font-size: 2em;
 		line-height: 1em;
-		background-color: rgba($color-gray, .7);
-		padding: 1em;
+		// background-color: rgba($color-gray, .7);
+		// padding: 1em;
 		text-transform: none;
+		color: $color-primary-orange;
+		text-align: left;
 	}
 }
+
 
 #section1-video {
 	h1, h2 {
