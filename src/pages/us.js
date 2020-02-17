@@ -70,6 +70,9 @@ class OurBackground extends React.Component {
 
     // this changes the grid to fit different sizes
     let itemsBiosDefaultGridSize = itemsBiosDefault.length % 3 === 0 ? 3 : 2;
+    if (itemsBiosDefault.length === 1) {
+      itemsBiosDefaultGridSize = 1;
+    }
 
     return (
       <Layout
