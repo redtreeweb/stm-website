@@ -244,7 +244,7 @@ class IndexPage extends React.Component {
                             <div className="layer">
                                 <h1 className="title">{dataCMS[0].acf.header}</h1>
                             </div>
-                            {/* <button className="arrow down" onClick={this.handleButtonPress} /> */}
+                            <button className="arrow down" onClick={this.handleButtonPress} />
                         </div>
                         {this.state.initialPhotoLoad &&
               <>
@@ -254,7 +254,7 @@ class IndexPage extends React.Component {
                         {/* <h1 className="section-title title-white">{dataCMS[1].acf.header}</h1> */}
                         <h1 className="section-title title-white">
                           Skinny Tie is a communications boutique that specializes in developing video content 
-                          that creates meaningful connection — inside or outside your organization.
+                          that creates meaningful connection inside or outside your organization.
                         </h1>
                         {/* <h2 className="section-title title-white">
                       We are dedicated to help companies with the critical step of connecting the business strategy with their people.
@@ -271,12 +271,12 @@ class IndexPage extends React.Component {
                         {/* <h1 className="section-title title-white">{dataCMS[1].acf.header}</h1> */}
                         <h1>
                             Skinny Tie is a communications boutique that specializes in developing video content
-                             that creates meaningful connection — inside or outside your organization.
+                             that creates meaningful connection inside or outside your organization.
                         </h1>
                         {/* <h2>
                       We are dedicated to help companies with the critical step of connecting the business strategy with their people.
                     </h2> */}
-                        <div className="btn"><Link to="work">GET THE SKINNY</Link></div>
+                        {/* <div className="btn"><Link to="work">GET THE SKINNY</Link></div> */}
                         {/* <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" /> */}
                     </div>
                     {/* <button className="arrow down" onClick={this.handleButtonPress} /> */}
@@ -289,7 +289,7 @@ class IndexPage extends React.Component {
                         <h1 className="title-white title-video">EVERY ORGANIZATION HAS A STORY</h1>
                         <h2 className="title-white title-video">Discover. Develop. Tell.</h2>
 
-                        <div className="btn"><Link to="work">START WATCHING</Link></div>
+                        <div className="btn"><a href="https://fast.wistia.net/embed/channel/gin533im6g">START WATCHING</a></div>
                         {/* <h2 className="title-white title-video">By making our stories visible we allow people to find similarities, build connection and engage.</h2> */}
                         {/* <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" /> */}
                         <div className="wistia__container" style={{ position: 'absolute', width: '100%', height: '100%' }}>
@@ -314,10 +314,10 @@ class IndexPage extends React.Component {
                         </div>
                     </div>
 
-                    {/* <button className="arrow down" onClick={this.handleButtonPress} /> */}
+                    <button className="arrow down" onClick={this.handleButtonPress} />
                 </div>
 
-                <div id="section1" className="section index-slide section__mission-statement" >
+                <div id="section1" className="section index-slide section__video-post" >
                     <div className="section-wrapper section-banner get-the-skinny">
                         {/* <div className="text-background-black"></div> */}
                         {/* <h1 className="section-title title-white">{dataCMS[1].acf.header}</h1> */}
@@ -327,7 +327,7 @@ class IndexPage extends React.Component {
                         {/* <h2>
                       We are dedicated to help companies with the critical step of connecting the business strategy with their people.
                     </h2> */}
-                        <div className="btn"><Link to="work">GET THE SKINNY</Link></div>
+                        {/* <div className="btn"><Link to="work">GET THE SKINNY</Link></div> */}
                         {/* <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" /> */}
                     </div>
                     {/* <button className="arrow down" onClick={this.handleButtonPress} /> */}
