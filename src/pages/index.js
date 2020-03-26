@@ -253,7 +253,7 @@ class IndexPage extends React.Component {
                         <div className="text-background-black"></div>
                         {/* <h1 className="section-title title-white">{dataCMS[1].acf.header}</h1> */}
                         <h1 className="section-title title-white">
-                          DEVSkinny Tie is a communications boutique that specializes in developing video content 
+                          Skinny Tie is a communications boutique that specializes in developing video content 
                           that creates meaningful connection — inside or outside your organization.
                         </h1>
                         {/* <h2 className="section-title title-white">
@@ -270,7 +270,8 @@ class IndexPage extends React.Component {
                         {/* <div className="text-background-black"></div> */}
                         {/* <h1 className="section-title title-white">{dataCMS[1].acf.header}</h1> */}
                         <h1>
-                      DEVSkinny Tie is a communications boutique that specializes in developing video content that creates meaningful connection — inside or outside your organization.
+                            Skinny Tie is a communications boutique that specializes in developing video content
+                             that creates meaningful connection — inside or outside your organization.
                         </h1>
                         {/* <h2>
                       We are dedicated to help companies with the critical step of connecting the business strategy with their people.
@@ -289,7 +290,7 @@ class IndexPage extends React.Component {
                         <h2 className="title-white title-video">Discover. Develop. Tell.</h2>
 
                         <div className="btn"><Link to="work">START WATCHING</Link></div>
-                        <h2 className="title-white title-video">By making our stories visible we allow people to find similarities, build connection and engage.</h2>
+                        {/* <h2 className="title-white title-video">By making our stories visible we allow people to find similarities, build connection and engage.</h2> */}
                         {/* <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" /> */}
                         <div className="wistia__container" style={{ position: 'absolute', width: '100%', height: '100%' }}>
                             <div className="wistia_responsive_padding" style={{
@@ -316,8 +317,21 @@ class IndexPage extends React.Component {
                     {/* <button className="arrow down" onClick={this.handleButtonPress} /> */}
                 </div>
 
-{console.log(dataCMS)}
-
+                <div id="section1" className="section index-slide section__mission-statement" >
+                    <div className="section-wrapper section-banner get-the-skinny">
+                        {/* <div className="text-background-black"></div> */}
+                        {/* <h1 className="section-title title-white">{dataCMS[1].acf.header}</h1> */}
+                        <h1>
+                            By making our stories visible we allow people to find similarities, build connection and engage.
+                        </h1>
+                        {/* <h2>
+                      We are dedicated to help companies with the critical step of connecting the business strategy with their people.
+                    </h2> */}
+                        <div className="btn"><Link to="work">GET THE SKINNY</Link></div>
+                        {/* <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" /> */}
+                    </div>
+                    {/* <button className="arrow down" onClick={this.handleButtonPress} /> */}
+                </div>
 
                 <div id="section2" className="index-slide section">
                     <div className="footer-content-wrapper section-banner">
@@ -391,8 +405,8 @@ class IndexPage extends React.Component {
                             </div>
                         </section>
                     </div>
-                    {/* {this.state.windowWidth < 480 ? <Img fluid={dataCMS[5].acf.background_image_mobile.localFile.childImageSharp.fluid} fadeIn={false} /> :
-                        <Img fluid={dataCMS[5].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} />} */}
+                    {this.state.windowWidth < 480 ? <Img fluid={dataCMS[5].acf.background_image_mobile.localFile.childImageSharp.fluid} fadeIn={false} /> :
+                        <Img fluid={dataCMS[5].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} />}
                 </div>
 
               </>}
