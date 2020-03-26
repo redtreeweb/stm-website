@@ -253,7 +253,7 @@ class IndexPage extends React.Component {
                         <div className="text-background-black"></div>
                         {/* <h1 className="section-title title-white">{dataCMS[1].acf.header}</h1> */}
                         <h1 className="section-title title-white">
-                          Skinny Tie is a communications boutique that specializes in developing video content 
+                          DEVSkinny Tie is a communications boutique that specializes in developing video content 
                           that creates meaningful connection — inside or outside your organization.
                         </h1>
                         {/* <h2 className="section-title title-white">
@@ -270,7 +270,7 @@ class IndexPage extends React.Component {
                         {/* <div className="text-background-black"></div> */}
                         {/* <h1 className="section-title title-white">{dataCMS[1].acf.header}</h1> */}
                         <h1>
-                      Skinny Tie is a communications boutique that specializes in developing video content that creates meaningful connection — inside or outside your organization.
+                      DEVSkinny Tie is a communications boutique that specializes in developing video content that creates meaningful connection — inside or outside your organization.
                         </h1>
                         {/* <h2>
                       We are dedicated to help companies with the critical step of connecting the business strategy with their people.
@@ -316,7 +316,7 @@ class IndexPage extends React.Component {
                     {/* <button className="arrow down" onClick={this.handleButtonPress} /> */}
                 </div>
 
-
+{console.log(dataCMS)}
 
 
                 <div id="section2" className="index-slide section">
@@ -391,8 +391,8 @@ class IndexPage extends React.Component {
                             </div>
                         </section>
                     </div>
-                    {this.state.windowWidth < 480 ? <Img fluid={dataCMS[5].acf.background_image_mobile.localFile.childImageSharp.fluid} fadeIn={false} /> :
-                        <Img fluid={dataCMS[5].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} />}
+                    {/* {this.state.windowWidth < 480 ? <Img fluid={dataCMS[5].acf.background_image_mobile.localFile.childImageSharp.fluid} fadeIn={false} /> :
+                        <Img fluid={dataCMS[5].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} />} */}
                 </div>
 
               </>}
