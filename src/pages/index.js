@@ -25,7 +25,6 @@ const numSlides = 5;
 
 
 // kick off the polyfill!
-smoothscroll.polyfill();
 
 
 class IndexPage extends React.Component {
@@ -33,6 +32,7 @@ class IndexPage extends React.Component {
     constructor(props) {
         super(props);
 
+        // !!window && smoothscroll.polyfill();
 
         let scrollPosition = 0;
         if (this.props.location.hash === '#contact') {
@@ -62,6 +62,7 @@ class IndexPage extends React.Component {
 
     componentDidMount() {
         this.handleResize();
+        smoothscroll.polyfill();
         // window.addEventListener('wheel', this.handleScrollEvent, false);
         // window.addEventListener('touchstart', this.handleTouchStart, false);
         // window.addEventListener('touchmove', this.handleScrollEvent, false);
