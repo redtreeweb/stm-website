@@ -1,9 +1,11 @@
 import Lethargy from "exports-loader?this.Lethargy!lethargy/lethargy";
-
+import smoothscroll from 'smoothscroll-polyfill';
+ 
 import React, { createRef } from 'react';
 import Helmet from 'react-helmet';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
+
 
 
 import Layout from '../components/layout';
@@ -11,7 +13,7 @@ import Slider from "react-slick";
 import ContactForm from '../components/ContactForm';
 import ClientWall from '../components/ClientWall';
 
-import _ from 'lodash';
+// import _ from 'lodash';
 
 import '../styles/slick/slick.scss';
 import '../styles/grid-wall.scss';
@@ -21,6 +23,9 @@ import ImageCache from '../components/ImageCache';
 
 const numSlides = 5;
 
+
+// kick off the polyfill!
+smoothscroll.polyfill();
 
 
 class IndexPage extends React.Component {
@@ -46,6 +51,7 @@ class IndexPage extends React.Component {
         this.posTouchStart = 0;
 
         this.handleButtonPress = this.handleButtonPress.bind(this);
+        this.handleButtonPressFirstPanel = this.handleButtonPressFirstPanel.bind(this);
         this.handleTouchStart = this.handleTouchStart.bind(this);
         this.handleScrollEvent = this.handleScrollEvent.bind(this);
         this.handleResize = this.handleResize.bind(this);
@@ -108,6 +114,11 @@ class IndexPage extends React.Component {
     handleButtonPress() {
         window.location.hash = '';
         this.setState({ scrollPosition: Math.min(this.state.scrollPosition + 1, numSlides) });
+    }
+
+    handleButtonPressFirstPanel() {
+        document.getElementById('section1-video')
+            .scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
     }
 
     handleTouchStart(e) {
@@ -214,7 +225,9 @@ class IndexPage extends React.Component {
                     >
                         <div id="section0" className="index-slide section" ref={section => this.section = section}>
                             {/* {this.state.windowWidth < 480 ? <Img fluid={dataFirstItem[0].acf.background_image_mobile.localFile.childImageSharp.fluid} onLoad={() => this.setState({ initialPhotoLoad: true })} /> :
-                <Img fluid={dataFirstItem[0].acf.background_image.localFile.childImageSharp.fluid} onLoad={() => this.setState({ initialPhotoLoad: true })} />} */}
+                <Img 
+                fluid={dataFirstItem[0].acf.background_image.localFile.childImageSharp.fluid} 
+                onLoad={() => this.setState({ initialPhotoLoad: true })} />} */}
                             <div className="background-orange">
                                 <svg 
                                     // width="100%" 
@@ -244,7 +257,15 @@ class IndexPage extends React.Component {
                             <div className="layer">
                                 <h1 className="title">{dataCMS[0].acf.header}</h1>
                             </div>
-                            <button className="arrow down" onClick={this.handleButtonPress} />
+                            {/* <a
+                                href="#section1-video"
+                            > */}
+                            <button 
+                                className="arrow down" 
+                                // href="#section1-video"
+                                onClick={this.handleButtonPressFirstPanel} 
+                            />
+                            {/* </a> */}
                         </div>
                         {this.state.initialPhotoLoad &&
               <>
@@ -260,7 +281,8 @@ class IndexPage extends React.Component {
                       We are dedicated to help companies with the critical step of connecting the business strategy with their people.
                     </h2> */}
                         <div className="btn"><Link to="work">GET THE SKINNY</Link></div>
-                        {/* <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" /> */}
+                        {/* <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} 
+                        fadeIn={false} loading="eager" /> */}
                     </div>
                     {/* <button className="arrow down" onClick={this.handleButtonPress} /> */}
                 </div>}
@@ -277,7 +299,8 @@ class IndexPage extends React.Component {
                       We are dedicated to help companies with the critical step of connecting the business strategy with their people.
                     </h2> */}
                         {/* <div className="btn"><Link to="work">GET THE SKINNY</Link></div> */}
-                        {/* <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" /> */}
+                        {/* <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} 
+                        fadeIn={false} loading="eager" /> */}
                     </div>
                     {/* <button className="arrow down" onClick={this.handleButtonPress} /> */}
                 </div>
@@ -290,8 +313,11 @@ class IndexPage extends React.Component {
                         <h2 className="title-white title-video">Discover. Develop. Tell.</h2>
 
                         <div className="btn"><a href="https://fast.wistia.net/embed/channel/gin533im6g">START WATCHING</a></div>
-                        {/* <h2 className="title-white title-video">By making our stories visible we allow people to find similarities, build connection and engage.</h2> */}
-                        {/* <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" /> */}
+                        {/* <h2 className="title-white title-video">
+                        By making our stories visible we allow people to find similarities, build connection and engage.
+                        </h2> */}
+                        {/* <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} 
+                        fadeIn={false} loading="eager" /> */}
                         <div className="wistia__container" style={{ position: 'absolute', width: '100%', height: '100%' }}>
                             <div className="wistia_responsive_padding" style={{
                                 // padding: '56.25% 0 0 0',
@@ -299,8 +325,12 @@ class IndexPage extends React.Component {
                                 position: 'relative'
                             }}>
                                 <div className="wistia_responsive_wrapper" style={{ height: '100%', left: 0, position: 'absolute', top: 0, width: '100%' }}>
-                                    <div className="wistia_embed wistia_async_8r03pohwtn videoFoam=true autoPlay=true endVideoBehavior=loop controlsVisibleOnLoad=false muted=true playbar=false qualityControl=false settingsControl=false smallPlayButton=false volumeControl=false fullscreenButton=false" style={{ height: '100%', position: 'relative', width: '100%', opacity: 1 }}>
-                                        <div className="wistia_swatch" style={{ height: '100%', left: 0, opacity: 0, overflow: 'hidden', position: 'absolute', top: 0, transition: 'opacity 200ms', width: '100%' }}>
+                                    <div className="wistia_embed wistia_async_8r03pohwtn videoFoam=true autoPlay=true endVideoBehavior=loop controlsVisibleOnLoad=false muted=true playbar=false qualityControl=false settingsControl=false smallPlayButton=false volumeControl=false fullscreenButton=false" 
+                                        style={{ height: '100%', position: 'relative', width: '100%', opacity: 1 }}
+                                    >
+                                        <div className="wistia_swatch" 
+                                            style={{ height: '100%', left: 0, opacity: 0, overflow: 'hidden', position: 'absolute', top: 0, transition: 'opacity 200ms', width: '100%' }}
+                                        >
                                             <img
                                                 ref={this.img}
                                                 src="https://fast.wistia.com/embed/medias/8r03pohwtn/swatch"
@@ -314,7 +344,7 @@ class IndexPage extends React.Component {
                         </div>
                     </div>
 
-                    <button className="arrow down" onClick={this.handleButtonPress} />
+                    {/* <button className="arrow down" onClick={this.handleButtonPress} /> */}
                 </div>
 
                 <div id="section1" className="section index-slide section__video-post" >
@@ -322,13 +352,16 @@ class IndexPage extends React.Component {
                         {/* <div className="text-background-black"></div> */}
                         {/* <h1 className="section-title title-white">{dataCMS[1].acf.header}</h1> */}
                         <h1>
-                            By making our stories visible we allow people to find similarities, build connection and engage.
+                            By showcasing your stories we allow people to see similarities, 
+                            build connection, and emotionally attach.
                         </h1>
                         {/* <h2>
                       We are dedicated to help companies with the critical step of connecting the business strategy with their people.
                     </h2> */}
                         {/* <div className="btn"><Link to="work">GET THE SKINNY</Link></div> */}
-                        {/* <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} loading="eager" /> */}
+                        {/* <Img 
+                        fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} 
+                        fadeIn={false} loading="eager" /> */}
                     </div>
                     {/* <button className="arrow down" onClick={this.handleButtonPress} /> */}
                 </div>
@@ -340,8 +373,19 @@ class IndexPage extends React.Component {
                         <div className="btn"><Link to="approach">OUR PHILOSOPHY</Link></div>
                     </div>
                     {/* <button className="arrow down" onClick={this.handleButtonPress} /> */}
-                    {this.state.windowWidth < 480 ? <Img fluid={dataCMS[2].acf.background_image_mobile.localFile.childImageSharp.fluid} fadeIn={false} /> :
+                    {this.state.windowWidth < 480 ? <Img 
+                        fluid={dataCMS[2].acf.background_image_mobile.localFile.childImageSharp.fluid} 
+                        fadeIn={false} /> :
                         <Img fluid={dataCMS[2].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} />}
+                </div>
+
+                <div id="section1" className="section index-slide section__video-post" >
+                    <div className="section-wrapper section-banner get-the-skinny">
+                        <h1>
+                            By amplifying your value we give people incentive to join, 
+                            a reason to invest, and be a part of something bigger than themselves.
+                        </h1>
+                    </div>
                 </div>
 
                 <div id="section3" className="index-slide section">
@@ -354,19 +398,49 @@ class IndexPage extends React.Component {
                             <div className="testimonial-slider">
                                 <Slider {...settings}>
                                     <div>
-                                        <div>Working with Skinny Tie is simply a fun experience that results in creative, strategic, and exciting materials. They took the time to ensure that the project perfectly captured who we are in an engaging and appealing way. Even under a tight deadline, they delivered a top quality product that has resonated with our employees.<p>- Rachel Shento, Corporate Communications, NOVA Chemicals Corporation</p><br /></div>
+                                        <div>Working with Skinny Tie is simply a fun experience that 
+                                            results in creative, strategic, and exciting materials. 
+                                            They took the time to ensure that the project perfectly 
+                                            captured who we are in an engaging and appealing way. 
+                                            Even under a tight deadline, they delivered a top quality 
+                                            product that has resonated with our employees.
+                                        <p>- Rachel Shento, Corporate Communications, 
+                                            NOVA Chemicals Corporation</p><br /></div>
                                     </div>
                                     <div>
-                                        <div>Skinny Tie Media was a key partner during our recent acquisition - creating a beautifully crafted story through video, celebrating our respective histories, diverse businesses, cultures, and talents. Skinny Tie continues to be a valued partner as we work through the integration to build and brand our new organization.<p>- Ann Wilson, Director, Culture, Change, and Communication, Matthews International</p><br /></div>
+                                        <div>Skinny Tie Media was a key partner during our recent 
+                                            acquisition - creating a beautifully crafted story through video, 
+                                            celebrating our respective histories, diverse businesses, cultures, 
+                                            and talents. Skinny Tie continues to be a valued partner as we work 
+                                            through the integration to build and brand our new organization.
+                                        <p>- Ann Wilson, Director, 
+                                            Culture, Change, and Communication, Matthews International</p><br /></div>
                                     </div>
                                     <div>
-                                        <div>Not only did they deliver top-notch creative that was aligned with our broader communications strategy, they also managed all aspects of the video -- video shoots in 7 countries, travel, logistics, and all of the communication and relationships with the internal co-workers – flawlessly! The final project exceeded all expectations.<p>- Melissa Murphy, President, Melissa Murphy Marketing</p><br /></div>
+                                        <div>Not only did they deliver top-notch creative that was aligned 
+                                            with our broader communications strategy, they also managed 
+                                            all aspects of the video -- video shoots in 7 countries, travel, 
+                                            logistics, and all of the communication and relationships with 
+                                            the internal co-workers – flawlessly! The final project exceeded 
+                                            all expectations.
+                                        <p>- Melissa Murphy, President, Melissa Murphy Marketing</p><br /></div>
                                     </div>
                                     <div>
-                                        <div>It’s been a pleasure working with Skinny Tie.  Their grasp of our organization's ‘vibe’ makes them feel like members of our extended family, not simply vendors providing a service.  Their creativity, attention to detail, and flexibility make Jamie and Nate our go-to guys for all things related to video and production.<p>- Tara Simmons, Vice President, Women and Girls Foundation</p><br /></div>
+                                        <div>It’s been a pleasure working with Skinny Tie.  Their grasp of our 
+                                            organization's ‘vibe’ makes them feel like members of our extended 
+                                            family, not simply vendors providing a service.  Their creativity, 
+                                            attention to detail, and flexibility make Jamie and Nate our go-to guys 
+                                            for all things related to video and production.
+                                        <p>- Tara Simmons, Vice President, Women and Girls Foundation</p><br /></div>
                                     </div>
                                     <div>
-                                        <div>They are experts in their craft. They treat each client, and every project, as if it were their first priority. Our company has worked with Jamie and Nate for over ten years. What impresses us the most is their creativity, concern for details, high level of professionalism, understanding of budget, and their commitment to perfection.<p>- Heather Arnet, CEO, Women & Girls Foundation</p><br /></div>
+                                        <div>They are experts in their craft. They treat each client, 
+                                            and every project, as if it were their first priority. 
+                                            Our company has worked with Jamie and Nate for over ten years. 
+                                            What impresses us the most is their creativity, concern for details, 
+                                            high level of professionalism, understanding of budget, 
+                                            and their commitment to perfection.
+                                        <p>- Heather Arnet, CEO, Women & Girls Foundation</p><br /></div>
                                     </div>
                                 </Slider>
                             </div>
@@ -377,12 +451,25 @@ class IndexPage extends React.Component {
                     </div >
                 </div>
 
+                {/* SLIDE DIVIDER */}
+                <div id="section1" className="section index-slide section__video-post" >
+                    <div className="section-wrapper section-banner get-the-skinny">
+                        <h1>
+                            By marketing your brand we create curiosity, 
+                            motivate applicants and create desirability.
+                        </h1>
+                    </div>
+                </div>
+
                 {/* SLIDE 5  -- HARD CODED FOR CLIENT WALL */}
                 <div id="section5" className="index-slide section" style={{ backgroundColor: '#aaa' }}>
                     <div className="footer-content-wrapper section-banner">
                         <ClientWall />
                     </div>
-                    {this.state.windowWidth < 480 ? <Img fluid={dataCMS[4].acf.background_image_mobile.localFile.childImageSharp.fluid} fadeIn={false} /> :
+                    {this.state.windowWidth < 480 ? 
+                        <Img 
+                            fluid={dataCMS[4].acf.background_image_mobile.localFile.childImageSharp.fluid} 
+                            fadeIn={false} /> :
                         <Img fluid={dataCMS[4].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} />}
                     {/* <button className="arrow down" onClick={this.handleButtonPress} /> */}
                 </div>
@@ -397,15 +484,19 @@ class IndexPage extends React.Component {
                         <section id="set-3" className="social-links">
                             <div className="hi-icon-wrap hi-icon-effect-3 hi-icon-effect-3b">
                                 {/* <a href="https://instagram.com/skinnytiemedia" target="_blank" className="hi-icon icon-instagram">Instagram</a> */}
-                                <a href="https://vimeo.com/skinnytiemedia" target="_blank" className="hi-icon icon-vimeo">Vimeo</a>
+                                <a href="https://vimeo.com/skinnytiemedia" target="_blank" rel="noopener noreferrer" className="hi-icon icon-vimeo">Vimeo</a>
                                 {/* <a href="https://twitter.com/skinnytiemedia" target="_blank" className="hi-icon icon-twitter">Twitter</a> */}
-                                <a href="https://www.linkedin.com/company/skinny-tie-media" target="_blank" className="hi-icon icon-linkedin">LinkedIn</a>
-                                {/* <a href="mailto:Hello@SkinnyTieMedia.com" target="_blank" className="hi-icon icon-envelope">Email</a> */}
-                                <a href="tel:+14125025054" target="_blank" className="hi-icon icon-phone">Phone<i class="material-icons">local_phone</i></a>
+                                <a href="https://www.linkedin.com/company/skinny-tie-media" target="_blank" rel="noopener noreferrer" className="hi-icon icon-linkedin">LinkedIn</a>
+                                {/* <a href="mailto:Hello@SkinnyTieMedia.com" target="_blank" 
+                                className="hi-icon icon-envelope">Email</a> */}
+                                <a href="tel:+14125025054" target="_blank" rel="noopener noreferrer" className="hi-icon icon-phone">Phone<i class="material-icons">local_phone</i></a>
                             </div>
                         </section>
                     </div>
-                    {this.state.windowWidth < 480 ? <Img fluid={dataCMS[5].acf.background_image_mobile.localFile.childImageSharp.fluid} fadeIn={false} /> :
+                    {this.state.windowWidth < 480 ? 
+                        <Img 
+                            fluid={dataCMS[5].acf.background_image_mobile.localFile.childImageSharp.fluid} 
+                            fadeIn={false} /> :
                         <Img fluid={dataCMS[5].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} />}
                 </div>
 
