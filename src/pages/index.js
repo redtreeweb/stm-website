@@ -254,15 +254,15 @@ class IndexPage extends React.Component {
                     </div>
                 </div>} */}
 
-                {/* <div id="section1" className="section index-slide section__mission-statement" >
+                <div id="section1" className="section index-slide section__mission-statement" >
                     <div className="section-wrapper section-banner get-the-skinny">
                       
-                        <h1>
+                        {/* <h1>
                             Skinny Tie is a communications boutique that specializes in developing video content
                              that creates meaningful connection inside or outside your organization.
-                        </h1>
+                        </h1> */}
                     </div>
-                </div> */}
+                </div>
 
 
                 <div id="section1-video" className="index-slide section" >
