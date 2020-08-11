@@ -93,16 +93,9 @@ class IndexPage extends React.Component {
         this.setState({ isTouchable: is_touch_device() });
     }
 
-    // static getDerivedStateFromProps(nextProps, prevState) {
-    //   console.log(nextProps, prevState)
-    // }
-
     componentDidUpdate(prevProps, prevState) {
 
-    // console.log(prevProps, prevState)
-
         if (this.props.location.hash === '#contact' && prevState.scrollPosition !== 5) {
-            // return Object.assign({}, prevState, {scrollPosition: 5})
             document.getElementById('fullpage-wrapper').style.transition = 'none';
             this.setState({ scrollPosition: 5 }, () => {
 
@@ -123,8 +116,6 @@ class IndexPage extends React.Component {
     }
 
     handleTouchStart(e) {
-    // consol
-    // this.setState({posTouchStart: e.touches[0].clientY})
         this.posTouchStart = e.touches[0].clientY;
     }
 
@@ -171,7 +162,6 @@ class IndexPage extends React.Component {
             0;
         const transformWrapper = `translate3d(0, ${-scrollPositionWrapper}px, 0)`;
 
-        // const {isTouchable} = this.state;
         const isTouchable = false;
 
         const settings = {
@@ -195,20 +185,14 @@ class IndexPage extends React.Component {
             .filter(({ node }) => node.wordpress_parent === 316)
             .map(({ node }) => node); 
        
-        // const dataFirstItem = this.props.data.firstItem.edges.map(({ node }) => node); //filter(({node}) => node.wordpress_parent === 316).
-
-
         dataCMS.sort((a, b) => a.menu_order - b.menu_order);
 
         return (
             <Layout
                 headerFontColor="light"
-                //bodyClass={!isTouchable ? 'disable-scroll' : ''}
                 pageName='index'
             >
                 <Helmet>
-                    {/* <html className="overflow-hidden" />
-          <body className="overflow-hidden" /> */}
                     <meta 
                         name="description" 
                         content="Skinny Tie Media is a communications agency formed in 2014 on the foundation of 20+ years of experience." 
@@ -216,19 +200,13 @@ class IndexPage extends React.Component {
                     <script src="https://fast.wistia.com/embed/medias/8r03pohwtn.jsonp" async></script>
                     <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
                 </Helmet>
-                {/* <div className={'fullpage-viewport' + (isTouchable ? ' enable-scroll' : '')}> */}
                 <div className="fullpage-viewport enable-scroll">
                     <div
                         id="fullpage-wrapper"
                         className="fullpage-wrapper"
                         style={{ transform: !isTouchable ? transformWrapper : '' }}
-                        // onScroll={this.handleScrollEvent}
                     >
                         <div id="section0" className="index-slide section" ref={section => this.section = section}>
-                            {/* {this.state.windowWidth < 480 ? <Img fluid={dataFirstItem[0].acf.background_image_mobile.localFile.childImageSharp.fluid} onLoad={() => this.setState({ initialPhotoLoad: true })} /> :
-                <Img 
-                fluid={dataFirstItem[0].acf.background_image.localFile.childImageSharp.fluid} 
-                onLoad={() => this.setState({ initialPhotoLoad: true })} />} */}
                             <div className="background-orange">
                                 <svg 
                                     // width="100%" 
@@ -258,52 +236,32 @@ class IndexPage extends React.Component {
                             <div className="layer">
                                 <h1 className="title">{dataCMS[0].acf.header}</h1>
                             </div>
-                            {/* <a
-                                href="#section1-video"
-                            > */}
                             <button 
                                 className="arrow down" 
-                                // href="#section1-video"
                                 onClick={this.handleButtonPressFirstPanel} 
                             />
-                            {/* </a> */}
                         </div>
                         {this.state.initialPhotoLoad &&
               <>
                 {false && <div id="section1" className="index-slide section" >
                     <div className="section-wrapper section-banner get-the-skinny">
                         <div className="text-background-black"></div>
-                        {/* <h1 className="section-title title-white">{dataCMS[1].acf.header}</h1> */}
                         <h1 className="section-title title-white">
                           Skinny Tie is a communications boutique that specializes in developing video content 
                           that creates meaningful connection inside or outside your organization.
                         </h1>
-                        {/* <h2 className="section-title title-white">
-                      We are dedicated to help companies with the critical step of connecting the business strategy with their people.
-                    </h2> */}
                         <div className="btn"><Link to="work">GET THE SKINNY</Link></div>
-                        {/* <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} 
-                        fadeIn={false} loading="eager" /> */}
                     </div>
-                    {/* <button className="arrow down" onClick={this.handleButtonPress} /> */}
                 </div>}
 
                 <div id="section1" className="section index-slide section__mission-statement" >
                     <div className="section-wrapper section-banner get-the-skinny">
-                        {/* <div className="text-background-black"></div> */}
-                        {/* <h1 className="section-title title-white">{dataCMS[1].acf.header}</h1> */}
+                      
                         <h1>
                             Skinny Tie is a communications boutique that specializes in developing video content
                              that creates meaningful connection inside or outside your organization.
                         </h1>
-                        {/* <h2>
-                      We are dedicated to help companies with the critical step of connecting the business strategy with their people.
-                    </h2> */}
-                        {/* <div className="btn"><Link to="work">GET THE SKINNY</Link></div> */}
-                        {/* <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} 
-                        fadeIn={false} loading="eager" /> */}
                     </div>
-                    {/* <button className="arrow down" onClick={this.handleButtonPress} /> */}
                 </div>
 
 
@@ -314,14 +272,8 @@ class IndexPage extends React.Component {
                         <h2 className="title-white title-video">Discover. Develop. Show.</h2>
 
                         <div className="btn"><a href="https://fast.wistia.net/embed/channel/gin533im6g">START WATCHING</a></div>
-                        {/* <h2 className="title-white title-video">
-                        By making our stories visible we allow people to find similarities, build connection and engage.
-                        </h2> */}
-                        {/* <Img fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} 
-                        fadeIn={false} loading="eager" /> */}
                         <div className="wistia__container" style={{ position: 'absolute', width: '100%', height: '100%' }}>
                             <div className="wistia_responsive_padding" style={{
-                                // padding: '56.25% 0 0 0',
                                 padding: '100vw 100vh',
                                 position: 'relative'
                             }}>
@@ -344,27 +296,15 @@ class IndexPage extends React.Component {
                             </div>
                         </div>
                     </div>
-
-                    {/* <button className="arrow down" onClick={this.handleButtonPress} /> */}
                 </div>
 
                 <div id="section1" className="section index-slide section__video-post" >
                     <div className="section-wrapper section-banner get-the-skinny">
-                        {/* <div className="text-background-black"></div> */}
-                        {/* <h1 className="section-title title-white">{dataCMS[1].acf.header}</h1> */}
                         <h1>
                             By showcasing your stories we allow people to see similarities, 
                             build connection, and emotionally attach.
                         </h1>
-                        {/* <h2>
-                      We are dedicated to help companies with the critical step of connecting the business strategy with their people.
-                    </h2> */}
-                        {/* <div className="btn"><Link to="work">GET THE SKINNY</Link></div> */}
-                        {/* <Img 
-                        fluid={dataCMS[1].acf.background_image.localFile.childImageSharp.fluid} 
-                        fadeIn={false} loading="eager" /> */}
                     </div>
-                    {/* <button className="arrow down" onClick={this.handleButtonPress} /> */}
                 </div>
 
                 <div id="section2" className="index-slide section">
@@ -373,7 +313,6 @@ class IndexPage extends React.Component {
                         <h1 className="section-title title-white" dangerouslySetInnerHTML={{ __html: dataCMS[2].acf.header }}></h1>
                         <div className="btn"><Link to="approach">OUR PHILOSOPHY</Link></div>
                     </div>
-                    {/* <button className="arrow down" onClick={this.handleButtonPress} /> */}
                     {this.state.windowWidth < 480 ? <Img 
                         fluid={dataCMS[2].acf.background_image_mobile.localFile.childImageSharp.fluid} 
                         fadeIn={false} /> :
@@ -447,7 +386,6 @@ class IndexPage extends React.Component {
                             </div>
                             <div className="btn"><Link to="us">WHO WE ARE</Link></div>
                         </div >
-                        {/* <button className="arrow down" onClick={this.handleButtonPress} /> */}
                         <Img fluid={dataCMS[3].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} />
                     </div >
                 </div>
@@ -484,13 +422,30 @@ class IndexPage extends React.Component {
 
                         <section id="set-3" className="social-links">
                             <div className="hi-icon-wrap hi-icon-effect-3 hi-icon-effect-3b">
-                                {/* <a href="https://instagram.com/skinnytiemedia" target="_blank" className="hi-icon icon-instagram">Instagram</a> */}
-                                <a href="https://vimeo.com/skinnytiemedia" target="_blank" rel="noopener noreferrer" className="hi-icon icon-vimeo">Vimeo</a>
-                                {/* <a href="https://twitter.com/skinnytiemedia" target="_blank" className="hi-icon icon-twitter">Twitter</a> */}
-                                <a href="https://www.linkedin.com/company/skinny-tie-media" target="_blank" rel="noopener noreferrer" className="hi-icon icon-linkedin">LinkedIn</a>
-                                {/* <a href="mailto:Hello@SkinnyTieMedia.com" target="_blank" 
-                                className="hi-icon icon-envelope">Email</a> */}
-                                <a href="tel:+14125025054" target="_blank" rel="noopener noreferrer" className="hi-icon icon-phone">Phone<i class="material-icons">local_phone</i></a>
+                                <a 
+                                    href="https://vimeo.com/skinnytiemedia" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    className="hi-icon icon-vimeo"
+                                >
+                                    Vimeo
+                                </a>
+                                <a 
+                                    href="https://www.linkedin.com/company/skinny-tie-media" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    className="hi-icon icon-linkedin"
+                                >
+                                    LinkedIn
+                                </a>
+                                <a 
+                                    href="tel:+14125025054" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    className="hi-icon icon-phone">
+                                        Phone
+                                    <i class="material-icons">local_phone</i>
+                                </a>
                             </div>
                         </section>
                     </div>
@@ -504,7 +459,6 @@ class IndexPage extends React.Component {
               </>}
                     </div>
                 </div>
-                {/* {this.state.initialPhotoLoad && <ImageCache />} */}
             </Layout >
         );
     }
