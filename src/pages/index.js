@@ -311,7 +311,7 @@ class IndexPage extends React.Component {
                     <div className="section-wrapper section-banner get-the-skinny">
                         <div className="text-background-black"></div>
                         <h1 className="title-white title-video">EVERY ORGANIZATION HAS A STORY</h1>
-                        <h2 className="title-white title-video">Discover. Develop. Tell.</h2>
+                        <h2 className="title-white title-video">Discover. Develop. Show.</h2>
 
                         <div className="btn"><a href="https://fast.wistia.net/embed/channel/gin533im6g">START WATCHING</a></div>
                         {/* <h2 className="title-white title-video">
