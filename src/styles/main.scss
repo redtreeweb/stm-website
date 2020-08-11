@@ -209,17 +209,18 @@ p{
 		overflow: hidden;
 	}
 	
-	#section0 .layer, #section1 .layer, #section2 .layer, #section3 .layer, #section4 .layer{
-		position: absolute;
-		z-index: 4;
-		width: 100%;
-		left: 0;
-		top: 43%;
-		height: 100%;
-
+	#section0, #section1-video, #section2-panel, #section3-panel, #section4-panel {
+		.layer {
+			position: absolute;
+			z-index: 4;
+			width: 100%;
+			left: 0;
+			top: 43%;
+			height: 100%;
+		}
 	}
 	
-	#section2 .testimonial-intro {
+	#section2-panel .testimonial-intro {
 		top: 20%;
 	}
 	
@@ -1284,10 +1285,14 @@ img.tapes {
 	* --------------------------------------- */
 #section0,
 #section1,
-#section2,
-#section3,
-#section4,
-#section5,
+#section2-copy,
+#section3-copy,
+#section4-copy,
+#section5-copy,
+#section2-panel,
+#section3-panel,
+#section4-panel,
+#section5-panel,
 #contact {
 	background-size: cover;
 	background-position: center top;
@@ -1397,7 +1402,7 @@ img.tapes {
 	}
 }
 
-#section3 {
+#section3-panel {
 	// background-image: url('../images/footer-bk-1-small.jpg');
 	background-color: #20313d;
 	@media (min-width:500px){

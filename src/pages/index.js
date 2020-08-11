@@ -243,7 +243,7 @@ class IndexPage extends React.Component {
                         </div>
                         {this.state.initialPhotoLoad &&
               <>
-                {false && <div id="section1" className="index-slide section" >
+                {/* {false && <div id="section1" className="index-slide section" >
                     <div className="section-wrapper section-banner get-the-skinny">
                         <div className="text-background-black"></div>
                         <h1 className="section-title title-white">
@@ -252,9 +252,9 @@ class IndexPage extends React.Component {
                         </h1>
                         <div className="btn"><Link to="work">GET THE SKINNY</Link></div>
                     </div>
-                </div>}
+                </div>} */}
 
-                <div id="section1" className="section index-slide section__mission-statement" >
+                {/* <div id="section1" className="section index-slide section__mission-statement" >
                     <div className="section-wrapper section-banner get-the-skinny">
                       
                         <h1>
@@ -262,7 +262,7 @@ class IndexPage extends React.Component {
                              that creates meaningful connection inside or outside your organization.
                         </h1>
                     </div>
-                </div>
+                </div> */}
 
 
                 <div id="section1-video" className="index-slide section" >
@@ -297,17 +297,17 @@ class IndexPage extends React.Component {
                         </div>
                     </div>
                 </div>
-
-                <div id="section1" className="section index-slide section__video-post" >
+{/* 
+                <div id="section2-copy" className="section index-slide section__video-post" >
                     <div className="section-wrapper section-banner get-the-skinny">
                         <h1>
                             By showcasing your stories we allow people to see similarities, 
                             build connection, and emotionally attach.
                         </h1>
                     </div>
-                </div>
+                </div> */}
 
-                <div id="section2" className="index-slide section">
+                <div id="section2-panel" className="index-slide section">
                     <div className="footer-content-wrapper section-banner">
                         <div className="text-background-black"></div>
                         <h1 className="section-title title-white" dangerouslySetInnerHTML={{ __html: dataCMS[2].acf.header }}></h1>
@@ -319,16 +319,16 @@ class IndexPage extends React.Component {
                         <Img fluid={dataCMS[2].acf.background_image.localFile.childImageSharp.fluid} fadeIn={false} />}
                 </div>
 
-                <div id="section1" className="section index-slide section__video-post" >
+                {/* <div id="section3-copy" className="section index-slide section__video-post" >
                     <div className="section-wrapper section-banner get-the-skinny">
                         <h1>
                             By amplifying your value we give people incentive to join, 
                             a reason to invest, and be a part of something bigger than themselves.
                         </h1>
                     </div>
-                </div>
+                </div> */}
 
-                <div id="section3" className="index-slide section">
+                <div id="section3-panel" className="index-slide section">
                     <div className="section-wrapper section-banner">
                         <div className="text-background-black"></div>
                         <h1 className="section-title title-white" dangerouslySetInnerHTML={{ __html: dataCMS[3].acf.header }}></h1>
@@ -391,17 +391,17 @@ class IndexPage extends React.Component {
                 </div>
 
                 {/* SLIDE DIVIDER */}
-                <div id="section1" className="section index-slide section__video-post" >
+                {/* <div id="section4-copy" className="section index-slide section__video-post" >
                     <div className="section-wrapper section-banner get-the-skinny">
                         <h1>
                             By marketing your brand we create curiosity, 
                             motivate applicants and create desirability.
                         </h1>
                     </div>
-                </div>
+                </div> */}
 
                 {/* SLIDE 5  -- HARD CODED FOR CLIENT WALL */}
-                <div id="section5" className="index-slide section" style={{ backgroundColor: '#aaa' }}>
+                <div id="section4-panel" className="index-slide section" style={{ backgroundColor: '#aaa' }}>
                     <div className="footer-content-wrapper section-banner">
                         <ClientWall />
                     </div>
@@ -416,7 +416,7 @@ class IndexPage extends React.Component {
                 {/* SLIDE 6 -- HARD CODED FOR CONTACT */}
                 <div id="contact" className="index-slide section" style={{ backgroundColor: '#aaa' }}>
                     <div className="footer-content-wrapper section-banner">
-                        <h1 className="section-title title-white">Contact</h1>
+                        <h1 className="section-title title-white">What's Your Story?</h1>
 
                         <ContactForm />
 
