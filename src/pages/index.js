@@ -90,7 +90,7 @@ class IndexPage extends React.Component {
             return mq(query);
         }
 
-        this.setState({ isTouchable: is_touch_device() });
+        // this.setState({ isTouchable: is_touch_device() });
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -198,7 +198,7 @@ class IndexPage extends React.Component {
                         content="Skinny Tie Media is a communications agency formed in 2014 on the foundation of 20+ years of experience." 
                     />
                     <script src="https://fast.wistia.com/embed/medias/8r03pohwtn.jsonp" async></script>
-                    <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+                    <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script>
                 </Helmet>
                 <div className="fullpage-viewport enable-scroll">
                     <div
