@@ -3,7 +3,7 @@ import smoothscroll from 'smoothscroll-polyfill';
  
 import React, { createRef } from 'react';
 import Helmet from 'react-helmet';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 
