@@ -16,11 +16,16 @@
             max-width: 24em;
             width: 100%;
         }
+    }
 
-        // demo only
-        // .grid-staff-member:last-child {
-        //     display: none;
-        // }
+    &.col-1 {
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+
+        .grid-staff-member {
+            max-width: 24em;
+            width: 100%;
+        }
     }
 
 
