@@ -1205,7 +1205,31 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 }
 
 
+.wrapper.events {
+	background-color: #fff;
+	padding: 50px 0 100px;
+		& h3 {
+			font-family: 'Knockout 90 A', 'Knockout 90 B'; 
+			font-weight: 400; 
+			font-style: normal;
+			color: #4A4A4A;
+			font-size: 30px;
+			letter-spacing: 1px;
+			line-height: 1.1;
+			margin: .2em 0;
+		}
+	
+	.row {
+		max-width: initial;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 
+	.contact-form__body {
+		border: 3px solid $color-gray;
+	}
+}
 
 
 

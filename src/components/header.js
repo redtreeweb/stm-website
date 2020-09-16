@@ -29,6 +29,7 @@ class Header extends React.Component {
             {/* <li>DEV BUILD</li> */}
             <li><Link to="/approach">Approach</Link></li>
             <li><Link to="/work">Work</Link></li>
+            <li><Link to="/events">Events</Link></li>
             <li><Link to="/us">Us</Link></li>
             <li><Link to="/blog">Blog</Link></li>
             <li><Link to="/contact">What's Your Story?</Link></li>
