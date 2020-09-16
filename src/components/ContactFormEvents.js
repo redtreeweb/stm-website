@@ -10,29 +10,38 @@ const ContactForm = () => {
     const [showFields, setShowFields] = useState({ 'contact-form-follow-up__phone': false, 'contact-form-follow-up__email': false });
     const [formStatus, setFormStatus] = useState('PRISTINE');
 
-
     const onFormSubmission = (e) => {
         e.preventDefault();
 
         const name = document.getElementById('contact-form-name').value;
-        const contactFormText = document.getElementById('contact-form-text').value;
+        const eventType = document.getElementById('contact-form-event-type').value;
+        const eventDate = document.getElementById('contact-form-event-date').value;
 
         const followUpEmail = document.getElementById('contact-form-follow-up__email__value').value;
         const followUpPhone = document.getElementById('contact-form-follow-up__phone__value').value;
 
         const followUp = !!showFields['contact-form-follow-up__phone'] ? 'phone' : 'email';
 
-        axios.post('https://cms.skinnytiemedia.com/form-email.php',
-            { name, contactFormText, followUpEmail, followUpPhone, followUp },
-        ).then(res => {
+        // axios.post('https://cms.skinnytiemedia.com/form-email-events.php',
+        //     { 
+        //         name, 
+        //         eventType,
+        //         eventDate,
+        //         followUpEmail, 
+        //         followUpPhone, 
+        //         followUp 
+        //     },
+        // ).then(res => {
 
-            if (res.status === 200) {
-                setFormStatus('SUBMITTED');
-                return;
-            }
-            setFormStatus('ERROR');
-        });
+        //     if (res.status === 200) {
+        //         setFormStatus('SUBMITTED');
+        //         return;
+        //     }
+        //     setFormStatus('ERROR');
+        // });
+        setFormStatus('SUBMITTED');
     };
+
 
     const onFollowUpChange = (e) => {
         const { value } = e.target;
@@ -51,8 +60,9 @@ const ContactForm = () => {
     };
 
 
-    return <form className="contact-form contact-form-events" id="contact-form">
-        <h4>Tell us about your event</h4>
+    return <>
+    <h4 class="contact-form-events-h4">Tell us about your event</h4>
+    <form className="contact-form contact-form-events" id="contact-form">
         <div className="contact-form_phone-number">
             Drop us a line at <a href="tel:+14125025054" target="_blank" rel="noopener noreferrer" >412.502.5054</a>
         </div>
@@ -63,8 +73,8 @@ const ContactForm = () => {
             </fieldset>
 
             <fieldset>
-                <label for="contact-form-name">What type of event?</label>
-                <select name="contact-form-event-type">
+                <label for="contact-form-event-type">What type of event?</label>
+                <select name="contact-form-event-type" id="contact-form-event-type">
                     <option value="Zoom Webinar">Zoom Webinar</option>
                     <option value="Zoom Meeting">Zoom Meeting</option>
                     <option value="Option 3">Option 3</option>
@@ -121,7 +131,8 @@ const ContactForm = () => {
 
             </div>}
         </div>
-    </form>;
+    </form>
+    </>;
 };
 
 

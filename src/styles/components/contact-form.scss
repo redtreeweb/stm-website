@@ -267,6 +267,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        border: 3px solid #2e3333;
 
         animation: fadeIn 300ms;
         // top: -100px;    
@@ -274,6 +275,7 @@
         p , a {
             color: inherit;
         }
+
         .contact-form__modal__copy {
             display: flex;
             flex-direction: column;
@@ -295,6 +297,10 @@
             justify-self: flex-start;
             padding: 1em;
         }
+
+        a:hover {
+            color: $color-primary-orange;
+        }
     }
 
 
@@ -314,7 +320,7 @@
 
 .contact-form-events {
 
-    h4 {
+    &-h4 {
         font-family: $font-family-copy;
         font-size: 1.6em;
         color: #000;
