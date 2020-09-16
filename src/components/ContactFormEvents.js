@@ -5,7 +5,7 @@ import '../styles/components/contact-form.scss';
 
 
 
-const ContactFormEvents = () => {
+const ContactForm = () => {
 
     const [showFields, setShowFields] = useState({ 'contact-form-follow-up__phone': false, 'contact-form-follow-up__email': false });
     const [formStatus, setFormStatus] = useState('PRISTINE');
@@ -51,7 +51,8 @@ const ContactFormEvents = () => {
     };
 
 
-    return <form className="contact-form" id="contact-form">
+    return <form className="contact-form contact-form-events" id="contact-form">
+        <h4>Tell us about your event</h4>
         <div className="contact-form_phone-number">
             Drop us a line at <a href="tel:+14125025054" target="_blank" rel="noopener noreferrer" >412.502.5054</a>
         </div>
@@ -60,10 +61,27 @@ const ContactFormEvents = () => {
                 <label for="contact-form-name">Nice to meet you _______</label>
                 <input id="contact-form-name" type="text" placeholder="First and Last Name" />
             </fieldset>
+
             <fieldset>
+                <label for="contact-form-name">What type of event?</label>
+                <select name="contact-form-event-type">
+                    <option value="Zoom Webinar">Zoom Webinar</option>
+                    <option value="Zoom Meeting">Zoom Meeting</option>
+                    <option value="Option 3">Option 3</option>
+                    <option value="Option 4">Option 4</option>
+                    <option value="Option 5">Option 5</option>
+                    <option value="Option 6">Option 6</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <label for="contact-form-event-date">Event Date</label>
+                <input id="contact-form-event-date" type="text" placeholder="Event Date" />
+            </fieldset>
+
+            {/* <fieldset>
                 <label for="contact-form-name">What can we do for you?</label>
                 <textarea id="contact-form-text" placeholder="Let's Collaborate on Something!" data-test={showFields.test}></textarea>
-            </fieldset>
+            </fieldset> */}
             <fieldset className="contact-form-follow-up">
                 <label className="section-label">How should we follow up?</label>
                 <label for="contact-form-follow-up__email" onChange={onFollowUpChange}>
@@ -107,4 +125,4 @@ const ContactFormEvents = () => {
 };
 
 
-export default ContactFormEvents;
+export default ContactForm;

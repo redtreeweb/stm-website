@@ -4,9 +4,9 @@ import Layout from '../components/layout';
 import Footer from '../components/footer';
 
 import imgHeader from '../images/catalog-header.jpg';
-import WorkItem from '../components/WorkItem';
+import WorkItem from '../components/WorkItem.js';
 
-import ContactForm from '../components/ContactForm';
+import ContactFormEvents from '../components/ContactFormEvents.js';
 
 
 class Events extends React.Component {
@@ -22,10 +22,10 @@ class Events extends React.Component {
         return <Layout
             headerFontColor="dark"
             headerFontSize="large"
-            headerSubTitle="[EVENTS TITLE]"
+            headerSubTitle="Events Gone Virtual"
         >
             <Helmet 
-                title={`Events - Skinny Tie Media`}
+                title={`Events Gone Virtual - Skinny Tie Media`}
             >
                 <meta 
                     name="description" 
@@ -45,9 +45,7 @@ class Events extends React.Component {
                 <div class="wrapper catalog">
                     <div class="row">
                         <div class="large-12 columns center catalog-copy">
-
                             <p class="pad-top-none">We’ve had the opportunity to work with some amazing people and organizations in the 20+ years we’ve been a part of this industry, allowing us to produce a catalog of work that’s achieved Telly, Addy, IABC and CASE recognition.</p>
-
                             <p>Feel free to browse some of our recent creations below, or to see an extended catalog, <a href="https://www.vimeo.com/skinnytiemedia" target="blank">click here.</a></p>
                         </div>
 
@@ -58,7 +56,7 @@ class Events extends React.Component {
                 </div>
                 <div class="wrapper events">
                     <div class="row">
-                        <ContactForm />
+                        <ContactFormEvents />
                     </div>
                 </div>
             </div>
