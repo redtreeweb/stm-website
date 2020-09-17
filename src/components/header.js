@@ -22,13 +22,14 @@ class Header extends React.Component {
     render() {
 
 
-        const { siteTitle, fontColor, subTitle, fontSize, pageName } = this.props;
+        const { siteTitle, fontColor, subTitle, fontSize, pageName, className } = this.props;
         const { isSidebarOpen } = this.state;
 
         const navUl = <ul>
             {/* <li>DEV BUILD</li> */}
             <li><Link to="/approach">Approach</Link></li>
             <li><Link to="/work">Work</Link></li>
+            <li><Link to="/events">Events</Link></li>
             <li><Link to="/us">Us</Link></li>
             <li><Link to="/blog">Blog</Link></li>
             <li><Link to="/contact">What's Your Story?</Link></li>
@@ -61,7 +62,7 @@ class Header extends React.Component {
 			    <html className={isSidebarOpen ? 'overflow-hidden' : ''} />
 			    <body className={isSidebarOpen ? 'overflow-hidden' : ''} />
 			</Helmet>
-			<div className={`nav-wrapper ${fontColor}`}>
+			<div className={`nav-wrapper ${fontColor} ${className}`}>
 			    <div id="logo-flow">
 			        {/* {pageName === 'index' ? <a href="/">: <Link to="/" state={{scrollPosition: 0}}> */}
 			        <HeaderLink>

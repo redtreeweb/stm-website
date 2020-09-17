@@ -1,16 +1,15 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import Helmet from 'react-helmet';
 
 import Layout from '../components/layout';
 import Footer from '../components/footer';
 
 import imgHeader from '../images/catalog-header.jpg';
-import imgFeature from '../images/featured-tag.svg';
-import imgTellyBronze from '../images/telly_site_bugs_bronze.gif';
-import imgTellySilver from '../images/telly_site_bugs_silver.gif';
-import imgMatthews from '../images/we-are-matthews-thumb.jpg';
-import imgCrossroads from '../images/crossroads-gallery.jpg';
+// import imgFeature from '../images/featured-tag.svg';
+// import imgTellyBronze from '../images/telly_site_bugs_bronze.gif';
+// import imgTellySilver from '../images/telly_site_bugs_silver.gif';
+// import imgMatthews from '../images/we-are-matthews-thumb.jpg';
+// import imgCrossroads from '../images/crossroads-gallery.jpg';
 
 import ImageCache from '../components/ImageCache';
 
@@ -20,63 +19,67 @@ import WorkItem from '../components/WorkItem';
 
 class OurWork extends React.Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      initialPhotoLoad: false
+    constructor(props) {
+        super(props);
+        this.state = {
+            initialPhotoLoad: false
+        };
     }
-  }
 
-  render() {
+    render() {
 
-    const dataCMS = this.props.data.allWordpressPage.edges.map(({node}) => node) //filter(({node}) => node.wordpress_parent === 316).
+        const dataCMS = this.props.data.allWordpressPage.edges.map(({ node }) => node); //filter(({node}) => node.wordpress_parent === 316).
 
-    const workItems = dataCMS.slice(1).map((d,i) => {
-      return <WorkItem {...(d.acf)} index={i} />
-    })
+        const workItems = dataCMS.slice(1).map((d,i) => {
+            return <WorkItem {...(d.acf)} index={i} />;
+        });
 
-    return (
-      <Layout
-        headerFontColor="dark"
-        headerFontSize="large"
-        headerSubTitle="DELIVERING INSIGHT AND EXPERIENCE"
-      >
-         <Helmet 
-          title={`Work - Skinny Tie Media`}
-        >
-          <meta name="description" content="We’ve had the opportunity to work with some amazing people and organizations in the 20+ years we’ve been a part of this industry, allowing us to produce a catalog of work that’s achieved Telly, Addy, IABC and CASE recognition." />
-        </Helmet>
-        <div className="content-featured-image-fixed our-work">
-          {/* crude way to tell if the image has loaded. */}
-          <img src={imgHeader} className="content-featured-image-fixed our-approach" style={{display: 'none'}} onLoad={() => this.setState({initialPhotoLoad: true})} />
-        </div>
-        <div className="" style={{ flex: 1 }}>
-          <div className="content-featured-image-fixed our-approach spacer"></div>
-          <div class="wrapper catalog">
-            <div class="row">
-              <div class="large-12 columns center catalog-copy">
+        return (
+            <Layout
+                headerFontColor="dark"
+                headerFontSize="large"
+                headerSubTitle="DELIVERING INSIGHT AND EXPERIENCE"
+            >
+                <Helmet 
+                    title={`Work - Skinny Tie Media`}
+                >
+                    <meta name="description" content="We’ve had the opportunity to work with some amazing people and organizations in the 20+ years we’ve been a part of this industry, allowing us to produce a catalog of work that’s achieved Telly, Addy, IABC and CASE recognition." />
+                </Helmet>
+                <div className="content-featured-image-fixed our-work">
+                    {/* crude way to tell if the image has loaded. */}
+                    <img 
+                        src={imgHeader} 
+                        className="content-featured-image-fixed our-approach" 
+                        style={{ display: 'none' }} 
+                        onLoad={() => this.setState({ initialPhotoLoad: true })} />
+                </div>
+                <div className="" style={{ flex: 1 }}>
+                    <div className="content-featured-image-fixed our-approach spacer"></div>
+                    <div class="wrapper catalog">
+                        <div class="row">
+                            <div class="large-12 columns center catalog-copy">
 
-                <p class="pad-top-none">We’ve had the opportunity to work with some amazing people and organizations in the 20+ years we’ve been a part of this industry, allowing us to produce a catalog of work that’s achieved Telly, Addy, IABC and CASE recognition.</p>
+                                <p class="pad-top-none">We’ve had the opportunity to work with some amazing people and organizations in the 20+ years we’ve been a part of this industry, allowing us to produce a catalog of work that’s achieved Telly, Addy, IABC and CASE recognition.</p>
 
-                <p>Feel free to browse some of our recent creations below, or to see an extended catalog, <a href="https://www.vimeo.com/skinnytiemedia" target="blank">click here.</a></p>
-              </div>
+                                <p>Feel free to browse some of our recent creations below, or to see an extended catalog, <a href="https://www.vimeo.com/skinnytiemedia" target="blank">click here.</a></p>
+                            </div>
 
-            </div>
-          </div>
+                        </div>
+                    </div>
 
-          {/* <!-- FEATURED VIDEO --> */}
-          {/* A PROP ON THIS MAKES THIS SEPARATE FROM THE NORMAL WorkItems */}
-          <div class="wrapper featured-video">
-              <WorkItem {...(dataCMS[0].acf)} type="featured-top"/>
-          </div>
+                    {/* <!-- FEATURED VIDEO --> */}
+                    {/* A PROP ON THIS MAKES THIS SEPARATE FROM THE NORMAL WorkItems */}
+                    <div class="wrapper featured-video">
+                        <WorkItem {...(dataCMS[0].acf)} type="featured-top"/>
+                    </div>
 
-          <div class="wrapper catalog-videos">
-            <div class="row">
+                    <div class="wrapper catalog-videos">
+                        <div class="row">
 
-              {workItems}
+                            {workItems}
 
 
-              {/* <div class="large-12 columns video-wrapper">
+                            {/* <div class="large-12 columns video-wrapper">
                 <div class="large-6 columns flex-video vimeo widescreen thumb">
                   <iframe src="https://player.vimeo.com/video/145694989" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                 </div>
@@ -88,7 +91,7 @@ class OurWork extends React.Component {
               </div> */}
 
 
-              {/* <div class="large-12 columns video-wrapper">
+                            {/* <div class="large-12 columns video-wrapper">
                 <div class="large-6 columns flex-video vimeo widescreen right thumb">
                   <iframe src="https://player.vimeo.com/video/145695235" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
@@ -102,7 +105,7 @@ class OurWork extends React.Component {
 
 
 
-              {/* <div class="large-12 columns video-wrapper">
+                            {/* <div class="large-12 columns video-wrapper">
                 <div class="large-6 columns flex-video vimeo widescreen thumb">
                   <iframe src="https://player.vimeo.com/video/135692205?color=d94c00&title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                 </div>
@@ -116,7 +119,7 @@ class OurWork extends React.Component {
 
 
 
-              {/* <div class="large-12 columns video-wrapper">
+                            {/* <div class="large-12 columns video-wrapper">
                 <div class="large-12 columns video-wrapper">
                   <div class="large-6 columns right thumb">
                     <a href="https://www.flickr.com/photos/130258915@N06/sets/72157653945657150" target="_blank"><img class="img-marg-thumb" src={imgMatthews} alt="crossroads-gallery" /></a>
@@ -137,7 +140,7 @@ class OurWork extends React.Component {
 
 
 
-                {/* <div class="large-12 columns video-wrapper">
+                            {/* <div class="large-12 columns video-wrapper">
 
                   <div class="large-6 columns flex-video vimeo widescreen thumb">
                     <a href="https://www.flickr.com/photos/130258915@N06/sets/72157650997362449/" target="_blank"><img src={imgCrossroads} alt="crossroads-gallery" /></a>
@@ -155,7 +158,7 @@ class OurWork extends React.Component {
 
 
 
-                {/* <div class="large-12 columns video-wrapper">
+                            {/* <div class="large-12 columns video-wrapper">
 
                   <div class="large-6 columns flex-video vimeo widescreen right thumb">
                     <iframe src="https://player.vimeo.com/video/95430795?color=d94c00" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -190,7 +193,7 @@ class OurWork extends React.Component {
 
 
 
-                {/* <div class="large-12 columns video-wrapper">
+                            {/* <div class="large-12 columns video-wrapper">
 
                   <div class="large-6 columns flex-video vimeo widescreen thumb">
                     <iframe src="https://player.vimeo.com/video/96278016?color=d94c00" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -217,7 +220,7 @@ class OurWork extends React.Component {
 
 
 
-                {/* <div class="large-12 columns video-wrapper">
+                            {/* <div class="large-12 columns video-wrapper">
 
                   <div class="large-6 columns flex-video vimeo widescreen right thumb">
                     <iframe src="https://player.vimeo.com/video/94747824?color=d94c00" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -239,7 +242,7 @@ class OurWork extends React.Component {
 
 
 
-                {/* <div class="large-12 columns video-wrapper">
+                            {/* <div class="large-12 columns video-wrapper">
 
                   <div class="large-6 columns flex-video vimeo widescreen thumb">
                     <iframe src="https://player.vimeo.com/video/96272166?color=d94c00" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -266,7 +269,7 @@ class OurWork extends React.Component {
 
 
 
-                {/* <div class="large-12 columns video-wrapper">
+                            {/* <div class="large-12 columns video-wrapper">
 
                   <div class="large-6 columns flex-video vimeo widescreen right thumb">
                     <iframe src="https://player.vimeo.com/video/96279697?color=d94c00" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -291,7 +294,7 @@ class OurWork extends React.Component {
 
 
 
-                {/* <div class="large-12 columns video-wrapper">
+                            {/* <div class="large-12 columns video-wrapper">
 
                   <div class="large-6 columns flex-video vimeo widescreen thumb">
                     <iframe src="https://player.vimeo.com/video/94702433?color=d94c00&title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -305,17 +308,17 @@ class OurWork extends React.Component {
 
                 </div> 
               </div>*/}
-            </div>
-          </div>
-        </div>
-        <Footer />
-        {this.state.initialPhotoLoad && <ImageCache />}
-      </Layout>
-    )
-  }
+                        </div>
+                    </div>
+                </div>
+                <Footer />
+                {this.state.initialPhotoLoad && <ImageCache />}
+            </Layout>
+        );
+    }
 }
 
-export default OurWork
+export default OurWork;
 
 export const query = graphql`{
   allWordpressPage(filter: {wordpress_parent: {eq: 353}}, sort: {fields: [menu_order],  order: ASC}) {
@@ -340,6 +343,6 @@ export const query = graphql`{
       }
     }
   }
-}`
+}`;
 
 
