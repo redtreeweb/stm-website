@@ -80,10 +80,10 @@ class Events extends React.Component {
                             But, since March of 2020, the idea of live events has taken on new meaning and in many cases, greater significance.
                             </p>
                             <p class="pad-top-none">
-                            We can help you CREATE IMPACTFUL VIRTUAL EXPERIENCES FOR ANY EVENT.
+                            We can help you create impactful virtual experiences for any event.
                             </p>
                             <p class="pad-top-none">
-                            See what what we’ve done and lets us know what you need help with.
+                            See our most recent events below and lets us know what you need help with.
                             </p>
                         </div>
 
