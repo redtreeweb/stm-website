@@ -45,8 +45,13 @@ class Events extends React.Component {
                 <div class="wrapper catalog">
                     <div class="row">
                         <div class="large-12 columns center catalog-copy">
-                            <p class="pad-top-none">We’ve had the opportunity to work with some amazing people and organizations in the 20+ years we’ve been a part of this industry, allowing us to produce a catalog of work that’s achieved Telly, Addy, IABC and CASE recognition.</p>
-                            <p>Feel free to browse some of our recent creations below, or to see an extended catalog, <a href="https://www.vimeo.com/skinnytiemedia" target="blank">click here.</a></p>
+                            <p class="pad-top-none">
+                            It’s been exciting to partner with organizations over the years to produce live events for their members or employees. 
+                            But, since March of 2020, the idea of live events has taken on new meaning and in many cases, greater significance.
+                            </p>
+                            <p class="pad-top-none">
+                            Take a look as some of the events we have recently produced and delivered.
+                            </p>
                         </div>
 
                     </div>
@@ -55,7 +60,7 @@ class Events extends React.Component {
                     <WorkItem {...(dataCMS[0].acf)} type="featured-top"/>
                 </div>
                 <div class="wrapper events">
-                    <div class="row">
+                    <div class="row" style={{ padding: '0 10px' }}>
                         <ContactFormEvents />
                     </div>
                 </div>
