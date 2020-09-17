@@ -53,6 +53,7 @@ class Events extends React.Component {
             headerFontColor="dark"
             headerFontSize="large"
             headerSubTitle="Events Gone Virtual"
+            className="header-events"
         >
             <Helmet 
                 title={`Events Gone Virtual - Skinny Tie Media`}

@@ -582,6 +582,15 @@ a {
 	
 }
 
+.header-events {
+	.interior-title {
+		&.large-title {
+			font-size: 88px;
+			line-height: 88px;
+		}
+	}
+}
+
 
 body {
 	background-color: #fff;
