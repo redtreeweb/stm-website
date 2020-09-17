@@ -1134,6 +1134,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 	}
 	& .video-description {
 		font-size: 14px;
+
+		@media (max-width: 500px) {
+			padding: 0;
+		}
 	}
 	& .video-wrapper {
 		max-width: 62.5em;
