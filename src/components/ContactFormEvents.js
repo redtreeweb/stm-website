@@ -21,24 +21,23 @@ const ContactForm = () => {
 
         const followUp = !!showFields['contact-form-follow-up__phone'] ? 'phone' : 'email';
 
-        // TODO
-        // axios.post('https://cms.skinnytiemedia.com/form-email-events.php',
-        //     { 
-        //         name, 
-        //         eventType,
-        //         eventDate,
-        //         followUpEmail, 
-        //         followUpPhone, 
-        //         followUp 
-        //     },
-        // ).then(res => {
+        axios.post('https://cms.skinnytiemedia.com/form-email-events.php',
+            { 
+                name, 
+                eventType,
+                eventDate,
+                followUpEmail, 
+                followUpPhone, 
+                followUp 
+            },
+        ).then(res => {
 
-        //     if (res.status === 200) {
-        //         setFormStatus('SUBMITTED');
-        //         return;
-        //     }
-        //     setFormStatus('ERROR');
-        // });
+            if (res.status === 200) {
+                setFormStatus('SUBMITTED');
+                return;
+            }
+            setFormStatus('ERROR');
+        });
         setFormStatus('SUBMITTED');
     };
 

@@ -84,7 +84,7 @@ class Events extends React.Component {
                             We can help you create impactful virtual experiences for any event.
                             </p>
                             <p class="pad-top-none">
-                            See our most recent events below and lets us know what you need help with.
+                            See our most recent events below and let us know what you need help with.
                             </p>
                         </div>
 
