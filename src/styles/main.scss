@@ -1177,6 +1177,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 		// 	border: pink;
 		// }
 	}
+
+
 	& .vimeo-link a {
 		text-transform: uppercase;
 		padding: 10px 13px 10px 13px;
@@ -1200,6 +1202,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 	& .video-right .flex-video {
 		@media (max-width:1024px){
 			margin-top: 30px;
+		}
+	}
+}
+
+.wrapper.catalog-videos.events {
+
+	& .video-wrapper {
+		&:last-child {
+			border-bottom: 1px solid #acacac;
 		}
 	}
 }
