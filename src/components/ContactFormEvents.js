@@ -4,7 +4,6 @@ import axios from 'axios';
 import '../styles/components/contact-form.scss';
 
 
-
 const ContactForm = () => {
 
     const [showFields, setShowFields] = useState({ 'contact-form-follow-up__phone': false, 'contact-form-follow-up__email': false });
@@ -22,6 +21,7 @@ const ContactForm = () => {
 
         const followUp = !!showFields['contact-form-follow-up__phone'] ? 'phone' : 'email';
 
+        // TODO
         // axios.post('https://cms.skinnytiemedia.com/form-email-events.php',
         //     { 
         //         name, 
@@ -75,12 +75,11 @@ const ContactForm = () => {
             <fieldset>
                 <label for="contact-form-event-type">What type of event?</label>
                 <select name="contact-form-event-type" id="contact-form-event-type">
-                    <option value="Zoom Webinar">Zoom Webinar</option>
-                    <option value="Zoom Meeting">Zoom Meeting</option>
-                    <option value="Option 3">Option 3</option>
-                    <option value="Option 4">Option 4</option>
-                    <option value="Option 5">Option 5</option>
-                    <option value="Option 6">Option 6</option>
+                    <option value="Employee Event">Employee Event</option>
+                    <option value="Awards/Recognition Event">Awards/Recognition Event</option>
+                    <option value="Public Event">Public Event</option>
+                    <option value="Town Hall">Town Hall</option>
+                    <option value="Press Conference">Press Conference</option>
                 </select>
             </fieldset>
             <fieldset>

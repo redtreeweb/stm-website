@@ -1225,6 +1225,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 		flex-direction: column;
 		align-items: center;
 	}
+
+	.row_video-container {
+		p {
+			color: #000;
+		}
+	}
 }
 
 
@@ -1644,7 +1650,10 @@ body.disable-scroll {
 
 	&.our-work {
 		background-image: url('../images/catalog-header.jpg');
+	}
 
+	&.events {
+		background-image: url('../images/events-header.jpg');
 	}
 
 
