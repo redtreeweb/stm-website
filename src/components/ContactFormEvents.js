@@ -79,6 +79,7 @@ const ContactForm = () => {
                     <option value="Public Event">Public Event</option>
                     <option value="Town Hall">Town Hall</option>
                     <option value="Press Conference">Press Conference</option>
+                    <option value="Other">Other</option>
                 </select>
             </fieldset>
             <fieldset>

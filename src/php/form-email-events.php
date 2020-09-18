@@ -54,8 +54,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // send email
     // dev
     // mail("sean.dolinar@gmail.com", $subject, $body, $headers);
-    mail("sjjd199@gmail.com", $subject, $body, $headers);
+    // mail("sjjd199@gmail.com", $subject, $body, $headers);
     mail("hello@skinnytiemedia.com", $subject, $body, $headers);
+    mail("n.wadding@skinnytiemedia.com", $subject, $body, $headers);
+    mail("n8wadding@gmail.com", $subject, $body, $headers);
+
 }
 else {
     //mail("sean.dolinar@gmail.com","Options Only", $_SERVER['REQUEST_METHOD'], $headers);
