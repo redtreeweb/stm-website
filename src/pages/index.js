@@ -189,6 +189,7 @@ class IndexPage extends React.Component {
 
         return (
             <Layout
+                bodyClass = "home"
                 headerFontColor="light"
                 pageName='index'
             >

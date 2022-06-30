@@ -334,7 +334,6 @@ export const query = graphql`{
           work_description,
           work_type,
           work_url,
-          work_badges,
           work_thumbnail {
             source_url
           },

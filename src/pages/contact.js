@@ -62,13 +62,12 @@ class ContactPage extends React.Component {
 
         return (
             <Layout
+                bodyClass="contact"
                 headerFontColor="light"
                 pageName='contact'
             >
                 <Helmet
                     title="Contact - Skinny Tie Media">
-                    <html className="overflow-hidden" />
-                    <body className="overflow-hidden" />
                     <meta name="description" content="Nice to meet you. What can we do for you?" />
                 </Helmet>
                 <div className={'fullpage-viewport'} >

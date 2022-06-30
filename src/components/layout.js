@@ -29,14 +29,15 @@ const Layout = ({ children, className, headerFontColor, headerFontSize, headerSu
             // ]}
             link={[
                 { rel: 'stylesheet', type: 'text/css', href: '//cloud.typography.com/7803112/799324/css/fonts.css' },
+                { rel: 'stylesheet', type: 'text/css', href: '//fonts.googleapis.com/css2?family=League+Gothic&display=swap' }
             ]}
         >
             <html lang="en" />
-            <body className={bodyClass} />
             <meta name="google-site-verification" content="iHCvh1L-5oY1aiFIMF7iDUBeW1it-IDpa8wAMALuDJw" />
         </Helmet>
         <div className="site-wrapper">
             <Header
+                bodyClass={bodyClass}
                 siteTitle={data.site.siteMetadata.title}
                 fontColor={headerFontColor}
                 fontSize={headerFontSize}

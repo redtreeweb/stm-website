@@ -22,7 +22,7 @@ class Header extends React.Component {
     render() {
 
 
-        const { siteTitle, fontColor, subTitle, fontSize, pageName, className } = this.props;
+        const { siteTitle, fontColor, subTitle, fontSize, pageName, className, bodyClass } = this.props;
         const { isSidebarOpen } = this.state;
 
         const navUl = <ul>
@@ -60,7 +60,7 @@ class Header extends React.Component {
 			{/* {console.log(location)} */}
 			<Helmet>
 			    <html className={isSidebarOpen ? 'overflow-hidden' : ''} />
-			    <body className={isSidebarOpen ? 'overflow-hidden' : ''} />
+			    <body className={ bodyClass + " " + (isSidebarOpen ? 'overflow-hidden' : '') } />
 			</Helmet>
 			<div className={`nav-wrapper ${fontColor} ${className}`}>
 			    <div id="logo-flow">
@@ -81,6 +81,19 @@ class Header extends React.Component {
 			        </nav>
 			    </div>
 			    <h3 className={`center interior-title ${  fontSize === 'large' ? 'large-title' : ''}`}>{subTitle}</h3>
+                
+                <div className="triangle">
+                    <svg width="1200px" height="54px" viewBox="0 0 1200 54" version="1.1">
+                        <g id="Welcome" stroke="none" strokeWidth="1" fill="none">
+                            <g id="Get-the-Skinny" transform="translate(0.000000, -189.000000)" fill="#FFFFFF" opacity="0.7">
+                                <g id="page-title" transform="translate(0.000000, 102.000000)">
+                                    <path d="M600,140.933365 L0,87 L1200,87 L600,140.933365 Z" id="Triangle-1"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                
 			</div>
 			<div className={`site-sidebar${  this.state.isSidebarOpen ? ' is-visible' : ''}`}>
 			    {mobileClose}

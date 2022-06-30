@@ -1,65 +1,71 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import React, { useState, useEffect } from 'react';
+import ReactTooltip from 'react-tooltip';
+
+import { graphql, Link } from 'gatsby';
 import Helmet from 'react-helmet';
+
+import Slider from 'react-slick';
 
 import Layout from '../components/layout';
 import Footer from '../components/footer';
 
-import ImageCache from '../components/ImageCache';
+import StaffMember from '../components/StaffMember';
+
+import AnimatedIconsBlock from '../components/AnimatedIconsBlock';
+
+import MapChart from "../components/MapChart";
 
 import '../styles/grid-wall.scss';
 
-class Us extends React.Component {
+const Us = ({data}) => {
+        const [content, setContent] = useState("");
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            initialPhotoLoad: false
-        };
-    }
+        const [activeStaff, setActiveStaff] = useState("");
 
-    render() {
+        const staffData = data.allWordpressPage.edges.map(({ node }) => node);
 
-        const dataCMS = this.props.data.allWordpressPage.edges.map(({ node }) => node);
+        const itemsBiosDefault = staffData.map( ( { acf: d }, i ) => {
 
-        const itemBottomImage = dataCMS.find(({ acf: d }) => { return d.staff_type === 'bottom_image'; });
-
-        const itemsBiosFeatured = dataCMS.filter(({ acf: d }) => { return d.staff_type === 'featured'; }).map(({ acf: d }, i) => {
+            const toggleActiveStaff = () => {
+                // If clicking the already-active staff member, hide it
+                if ( activeStaff === i ) {
+                    setActiveStaff('');
+                } else {
+                    setActiveStaff( i );
+                }
+            }
 
             return (
-                <div className="staff-member-featured">
-                    <Img fluid={d.staff_image.localFile.childImageSharp.fluid} style={{ maxHeight: '30em' }} />
-                    <div className={(i === 0 ? 'jamie-bio' : 'nathan-bio')}>
-                        <h5 className={`name staff-name ${  i === 0 ? 'jamie-name' : 'nathan-name'}`}>{d.staff_name}</h5>
-                        <p>{d.staff_blurb}</p>
-                    </div>
-                </div>
+                <StaffMember staffData={d} key={i} index={i} toggleFunction={toggleActiveStaff} activeStaff={activeStaff}></StaffMember>
             );
         });
 
-        const itemsBiosDefault = dataCMS.filter(({ acf: d }) => { return d.staff_type === 'default'; }).map(({ acf: d }, i) => {
+        const bannerImages = function() {
+            let images = data.wordpressAcfPages.acf.banner_images;
+            images = images.map( function(d, index) {
+                return (
+                    <img src={d.image.source_url} key={index} />
+                )
+            });
+
+            const sliderSettings = {
+                autoplay: true,
+                dots: true,
+                arrows: false,
+                autoplaySpeed: 7000
+            };
 
             return (
-                <div className={'grid-staff-member'}>
-                    <h5 className={'grid-staff-member-name'}>{d.staff_name}</h5>
-                    <div className="grid-staff-member-modal">
-                        <Img fluid={d.staff_image.localFile.childImageSharp.fluid} />
-                        <div className="grid-staff-member-title">{d.staff_title}</div>
-                        <div className="grid-staff-member-blurb"><p>{d.staff_blurb}</p></div>
-                    </div>
-                </div>
+                <Slider {...sliderSettings}>
+                    {images}
+                </Slider>
             );
-        });
-      
-
-        // this changes the grid to fit different sizes
-        let itemsBiosDefaultGridSize = itemsBiosDefault.length % 3 === 0 ? 3 : 2;
+        }
 
         return (
             <Layout
-                headerFontColor="dark"
-                headerFontSize="large"
+                bodyClass="about"
+                headerFontColor="light"
                 headerSubTitle="WHO WE ARE + WHAT WE DO"
             >
                 <Helmet
@@ -67,63 +73,124 @@ class Us extends React.Component {
                 >
                     <meta name="description" content="WHO WE ARE + WHAT WE DO" />
                 </Helmet>
+
                 <div className="" style={{ flex: 1 }}>
-                    {/* <div className="header-wrapper background-header"  onLoad={() => this.setState({ initialPhotoLoad: true })} /> */}
-                    <div className="wrapper background">
-                        <div className="row wrapper-staff-member-featured" style={{ maxWidth: '80em' }}>
-                            {/* <div style={{height: '12em', width: '100%', backgroundColor: '#fff'}}></div> */}
-                            {/* <div style={{display: 'flex'}}> */}
-                            {itemsBiosFeatured}
-                            {/* </div> */}
-                        </div>
+                <div className="content-featured-image">
+                    { bannerImages() }
+                    <div class="overlay">
+                        <h2>{ data.wordpressAcfPages.acf.banner_text }</h2>
+                    </div>
+                </div>
+                    <div className="wrapper">
                         <div className="row">
-                            <div className={`grid-staff col-${itemsBiosDefaultGridSize}`}>
-                                {itemsBiosDefault}
+                            <AnimatedIconsBlock></AnimatedIconsBlock>
+                        </div>
+
+                        <div className="leadership">
+                            <div className="row">
+                                <div className="large-12">
+                                    <h2>Leadership Team</h2>
+                                </div>
+                                <div className="row">
+                                    <div className={`grid-staff col-3`}>
+                                        {itemsBiosDefault}
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div className="row">
-                      
-                            <div className="large-12 columns collage">
-                                <Img fluid={itemBottomImage.acf.staff_image.localFile.childImageSharp.fluid} />
+
+                        <div className='map'>
+                            <div className="row">
+                                <div className="large-12">
+                                    <h2>We Go Places</h2>
+                                    <p className="small-screens">Pinch or use scroll wheel to zoom.</p>
+                                </div>
+                            </div>
+                            <div className="map-holder">
+                                <MapChart setTooltipContent={setContent} />
+                                <ReactTooltip className="mapTooltip" backgroundColor="#D94C00" offset={{top: 10, left: 10}}>{content}</ReactTooltip>
+                            </div>
+                        </div>
+
+                        <div className="story">
+                            <div className='row center'>
+                                <div className='large-12'>
+                                    <Link to="/contact" className="button">What's Your Story?</Link>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <Footer />
-                {this.state.initialPhotoLoad && <ImageCache />}
             </Layout>
         );
-    }
 }
-export default Us;
 
 
-export const query = graphql`{
-  allWordpressPage(filter: {wordpress_parent: {eq: 406}}, sort: {fields: [menu_order],  order: ASC}) {
-    edges {
-      node {
-        slug,
-        wordpress_parent,
-        wordpress_id,
-        content,
-        menu_order,
-        acf {
-          staff_name,
-          staff_blurb,
-          staff_type,
-          staff_title,
-          staff_image {
-            localFile {
-              #sourceUrl,
-              childImageSharp {
-                  fluid(maxWidth: 500, quality: 70) {
-                      ...GatsbyImageSharpFluid_noBase64
-                  }
-              }
-          }
+export const query = graphql`
+    query AboutPageQuery {
+        wordpressAcfPages(wordpress_id: {eq: 976}) {
+            acf {
+                banner_text,
+                banner_images {
+                    image {
+                        path
+                        source_url
+                        alt_text
+                    }
+                }
+            }
         }
+        allWordpressPage(filter: {wordpress_parent: {eq: 406}}, sort: {fields: [menu_order], order: ASC}) {
+            edges {
+                node {
+                    slug,
+                    wordpress_parent,
+                    wordpress_id,
+                    content,
+                    menu_order,
+                    acf {
+                        staff_name,
+                        staff_title,
+                        staff_blurb_flexible_page {
+                            ... on WordPressAcf_row {
+                                id
+                                row {
+                                    column {
+                                        text
+                                        image {
+                                            source_url
+                                            alt_text
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        staff_image {
+                            localFile {
+                                #sourceUrl,
+                                childImageSharp {
+                                    fluid(maxWidth: 500, quality: 70) {
+                                        ...GatsbyImageSharpFluid_noBase64
+                                    }
+                                }
+                            }
+                        },
+                        staff_image_active {
+                            localFile {
+                                #sourceUrl,
+                                childImageSharp {
+                                    fluid(maxWidth: 500, quality: 70) {
+                                        ...GatsbyImageSharpFluid_noBase64
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
-      }
     }
-  }
-}`;
+`;
+
+export default Us
