@@ -1,5 +1,5 @@
 import React, { createRef } from 'react';
-import '@lottiefiles/lottie-player';
+import { Player } from '@lottiefiles/react-lottie-player';
 import { useInView } from 'react-intersection-observer';
 import CountUp from 'react-countup';
 
@@ -36,7 +36,7 @@ const AnimatedIconsBlock = () => {
             <h2>Why <span>Us?</span></h2>
             <div className="animated-icon">
 
-                <lottie-player
+                <Player
                     ref={player1}
                     keepLastFrame={true}
                     src="../../lotties/lightbulb.json"
@@ -48,7 +48,7 @@ const AnimatedIconsBlock = () => {
             </div>
 
             <div className='animated-icon'>
-                <lottie-player
+                <Player
                     ref={player2}
                     keepLastFrame={true}
                     src="../../lotties/playbtn.json"
@@ -60,7 +60,7 @@ const AnimatedIconsBlock = () => {
             </div>
 
             <div className='animated-icon'>
-                <lottie-player
+                <Player
                     ref={player3}
                     keepLastFrame={true}
                     src="../../lotties/speechbubble.json"
@@ -73,7 +73,7 @@ const AnimatedIconsBlock = () => {
 
 
             <div className='animated-icon'>
-            <lottie-player
+            <Player
                 ref={player4}
                 keepLastFrame={true}
                 src="../../lotties/dragon.json"
