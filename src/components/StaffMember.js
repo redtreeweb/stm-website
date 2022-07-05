@@ -23,8 +23,8 @@ const StaffMember = ( { staffData, activeStaff, toggleFunction, index } ) => {
                 <h5 className={'grid-staff-member-name'}>{staffData.staff_name}</h5>
                 <div className="grid-staff-member-title">{staffData.staff_title}</div>
             </div>
+            { ( isActiveStaff ) ? <StaffBio bio={ bio } /> : null }
         </div>
-        { ( isActiveStaff ) ? <StaffBio bio={ bio } /> : null }
         </>
     );
 
