@@ -20,6 +20,15 @@
 	font-display: swap; 
 }
 
+@font-face {
+    font-family: 'Knockout HTF 30';
+    src: url('./fonts/knockout/knockout-htf30-juniorwelterwt-webfont.woff2') format('woff2'),
+         url('./fonts/knockout/knockout-htf30-juniorwelterwt-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 
 /* Reset CSS
  * --------------------------------------- */
@@ -107,13 +116,13 @@ text-rendering: optimizeLegibility !important;
 /* Custom CSS
  * --------------------------------------- */
 body{
-	font-family: 'Gotham SSm A', 'Gotham SSm B'; 
+	font-family: 'Montserrat', 'Gotham SSm B'; 
 	color: #fff;
 	color: rgba(0,0,0,0.5);
 }
 
 p{
-	font-family: 'Gotham SSm A', 'Gotham SSm B'; 
+	font-family: 'Montserrat', 'Gotham SSm B'; 
 	font-weight: 400; 
 	font-style: normal;
 	font-size: 16px;
@@ -436,7 +445,7 @@ a {
 
 .section-title {
 	color: #d94c00;
-	font-family: 'Knockout 30 A', 'Knockout 30 B'; 
+	font-family: 'Knockout HTF 30'; 
 	font-weight: 400; 
 	font-style: normal;
 	text-transform: uppercase;
@@ -507,13 +516,13 @@ a {
 #section1.section__mission-statement,
 #section1.section__video-post {
 	background-color: #fff;
-	font-family: 'Knockout 30 A', 'Knockout 30 B'; 
+	font-family: 'Knockout HTF 27'; 
 	height: auto;
 	padding: 1em 1em;
 
 
 	h1 {
-		font-family: 'Knockout 30 A', 'Knockout 30 B'; 
+		font-family: 'Knockout HTF 27'; 
 		font-size: 2.7em;
 		line-height: 1em;
 		// padding: 1em;
@@ -525,7 +534,7 @@ a {
 		padding: .8em 0;
 	}
 	h2 {
-		font-family: 'Knockout 30 A', 'Knockout 30 B'; 
+		font-family: 'Knockout HTF 27'; 
 		font-size: 2em;
 		line-height: 1em;
 		// background-color: rgba($color-gray, .7);
@@ -556,7 +565,7 @@ a {
 
 #section1-video {
 	h1, h2 {
-		font-family: 'Knockout 30 A', 'Knockout 30 B'; 
+		font-family: 'Knockout HTF 30'; 
 		z-index: 100;
 	}
 
@@ -592,7 +601,7 @@ a {
 
 .interior-title {
 	color: #000000;
-	font-family: 'Knockout 26 A', 'Knockout 26 B'; 	font-weight: 400; 
+	font-family: 'Knockout HTF 27'; 	font-weight: 400; 
 	font-style: normal;
 	text-transform: uppercase;
 	letter-spacing: 5px;
@@ -970,7 +979,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 			padding: 9px 18px;
 			background-color: #2E2E2E;
 			margin-bottom: 15px;
-			font-family: 'Knockout 30 A', 'Knockout 30 B'; 
+			font-family: 'Knockout HTF 27'; 
 			font-weight: 400; 
 			font-style: normal;
 			letter-spacing: 2px;
@@ -1097,7 +1106,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 		font-size: 14px;
 	}
 	& h3 {
-		font-family: 'Knockout 90 A', 'Knockout 90 B'; 
+		font-family: 'Knockout HTF 30'; 
 		font-weight: 400; 
 		font-style: normal;
 		color: #fff;
@@ -1126,7 +1135,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 		color: #fff;
 		background-color: #3e3e3e;
 		border-radius: 25px;
-		font-family: 'Gotham SSm A', 'Gotham SSm B'; 
+		font-family: 'Montserrat', 'Gotham SSm B'; 
 		font-weight: 700; 
 		font-style: normal;
 		font-size: 10px;
@@ -1151,7 +1160,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 	background-color: #fff;
 	padding: 50px 0 0 0;
 		& h3 {
-		font-family: 'Knockout 90 A', 'Knockout 90 B'; 
+		font-family: 'Knockout HTF 30'; 
 		font-weight: 400; 
 		font-style: normal;
 		color: #4A4A4A;
@@ -1255,7 +1264,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 		color: #fff;
 		background-color: #3e3e3e;
 		border-radius: 25px;
-		font-family: 'Gotham SSm A', 'Gotham SSm B'; 
+		font-family: 'Montserrat', 'Gotham SSm B'; 
 		font-weight: 700; 
 		font-style: normal;
 		font-size: 10px;
@@ -1290,7 +1299,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 	background-color: #fff;
 	padding: 50px 0 100px;
 		& h3 {
-			font-family: 'Knockout 90 A', 'Knockout 90 B'; 
+			font-family: 'Knockout HTF 30'; 
 			font-weight: 400; 
 			font-style: normal;
 			color: #4A4A4A;
@@ -2048,7 +2057,7 @@ body.about .content-featured-image .overlay {
 		padding-top: 5%;
 		text-align: center;
 		color: white;
-		font-family: 'Gotham SSm A';
+		font-family: 'Montserrat';
 		font-weight: 700;
 		font-size: 28px;
 
@@ -2254,7 +2263,7 @@ body.about .animated-icons-block h2 {
 	background: $color-primary-orange;
     color: white;
     padding: 14px 26px;
-    font-family: 'Knockout 30 A';
+    font-family: 'Knockout HTF 27';
     font-size: 28px;
     text-transform: uppercase;
 

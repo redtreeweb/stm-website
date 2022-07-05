@@ -28,8 +28,7 @@ const Layout = ({ children, className, headerFontColor, headerFontSize, headerSu
             //   { name: 'keywords', content: 'sample, something' },
             // ]}
             link={[
-                { rel: 'stylesheet', type: 'text/css', href: '//cloud.typography.com/7803112/799324/css/fonts.css' },
-                { rel: 'stylesheet', type: 'text/css', href: '//fonts.googleapis.com/css2?family=League+Gothic&display=swap' }
+                { rel: 'stylesheet', type: 'text/css', href: '//fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap' }
             ]}
         >
             <html lang="en" />
