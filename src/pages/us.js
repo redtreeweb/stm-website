@@ -103,7 +103,7 @@ const Us = ({data}) => {
                             <div className="row">
                                 <div className="large-12">
                                     <h2>We Go Places</h2>
-                                    <p className="small-screens">Pinch or use scroll wheel to zoom.</p>
+                                    {/* <p className="small-screens">Pinch or use scroll wheel to zoom.</p> */}
                                 </div>
                             </div>
                             <div className="map-holder">
