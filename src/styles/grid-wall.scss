@@ -108,7 +108,7 @@
             display: flex;
             background-color: #2E3333;
             padding: 0;
-            width: 100vw;
+            width: 100%;
             position: absolute;
             right: 0;
             left: 0;
@@ -118,7 +118,7 @@
                 margin-left: 0;
                 min-height: 400px;
                 position: absolute;
-                left: calc((100vw - 1240px) / -2);  
+                left: calc((100vw - 1270px) / -2);  
             }
         }
     }
