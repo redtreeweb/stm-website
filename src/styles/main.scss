@@ -2101,8 +2101,12 @@ body.about h2 {
 body.about .story {
 	background-image: url('../images/story-background.jpg');
 	background-size: cover;
-	background-position: center;
-	padding: 150px 0;
+	background-position: center top;
+	padding: 250px 0;
+
+	@media (max-width: 768px) {
+		padding: 150px 0;
+	}
 }
 
 .animated-icons-block {
