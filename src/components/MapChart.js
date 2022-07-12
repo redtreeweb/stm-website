@@ -11,7 +11,7 @@ import geoUrl from "../data/world-geo.json";
 const MapChart = ({ setTooltipContent }) => {
   return (
     <div data-tip="">
-      <ComposableMap projectionConfig={{ scale: 140 }} width="700" height="400">
+      <ComposableMap projectionConfig={{ scale: 140 }} width={700} height={400}>
         {/* <ZoomableGroup center={[0, 0]} zoom={1}> */}
             <Geographies geography={geoUrl}>
               {({ geographies }) =>
