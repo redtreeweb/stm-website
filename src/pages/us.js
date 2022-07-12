@@ -77,7 +77,7 @@ const Us = ({data}) => {
                 <div className="" style={{ flex: 1 }}>
                 <div className="content-featured-image">
                     { bannerImages() }
-                    <div class="overlay">
+                    <div className="overlay">
                         <h2>{ data.wordpressAcfPages.acf.banner_text }</h2>
                     </div>
                 </div>
