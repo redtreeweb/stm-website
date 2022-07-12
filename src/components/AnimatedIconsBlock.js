@@ -1,5 +1,6 @@
-import React, { createRef } from 'react';
+import React, { createRef, useEffect } from 'react';
 import { Player } from '@lottiefiles/react-lottie-player';
+
 import { useInView } from 'react-intersection-observer';
 import CountUp from 'react-countup';
 
@@ -9,32 +10,41 @@ const AnimatedIconsBlock = () => {
     const player3 = createRef();
     const player4 = createRef();
 
-    const { ref, inView, entry } = useInView({
-        threshold: 1,
-        triggerOnce: true,
+    const [playerRefOne] = useInView({
+        triggerOnce: false,
         onChange: (inView) => {
-            if (inView) {
-                player1.current.play();
+            player1.current.play();
+        }
+    });
 
-                setTimeout(function(){
-                    player2.current.play();
+    const [playerRefTwo] = useInView({
+        triggerOnce: false,
+        delay: 500,
+        onChange: (inView) => {
+            player2.current.play();
+        }
+    });
 
-                    setTimeout(function(){
-                        player3.current.play();
+    const [playerRefThree] = useInView({
+        triggerOnce: false,
+        delay: 1000,
+        onChange: (inView) => {
+            player3.current.play();
+        }
+    });
 
-                        setTimeout(function(){
-                            player4.current.play();
-                        }, 500);
-                    }, 500);
-                }, 500);
-            }
+    const [playerRefFour] = useInView({
+        triggerOnce: false,
+        delay: 1500,
+        onChange: (inView) => {
+            player4.current.play();
         }
     });
 
     return (
-        <div className="animated-icons-block" ref={ref}>
+        <div className="animated-icons-block">
             <h2>Why <span>Us?</span></h2>
-            <div className="animated-icon">
+            <div className="animated-icon" ref={playerRefOne}>
 
                 <Player
                     ref={player1}
@@ -47,7 +57,7 @@ const AnimatedIconsBlock = () => {
                 <p className='countup-label'>Years of Experience</p>
             </div>
 
-            <div className='animated-icon'>
+            <div className='animated-icon' ref={playerRefTwo}>
                 <Player
                     ref={player2}
                     keepLastFrame={true}
@@ -59,7 +69,7 @@ const AnimatedIconsBlock = () => {
                 <p className='countup-label'>Hours of Video Created</p>
             </div>
 
-            <div className='animated-icon'>
+            <div className='animated-icon' ref={playerRefThree}>
                 <Player
                     ref={player3}
                     keepLastFrame={true}
@@ -72,7 +82,7 @@ const AnimatedIconsBlock = () => {
             </div>
 
 
-            <div className='animated-icon'>
+            <div className='animated-icon' ref={playerRefFour}>
             <Player
                 ref={player4}
                 keepLastFrame={true}
