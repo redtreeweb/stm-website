@@ -11,14 +11,14 @@ const AnimatedIconsBlock = () => {
     const player4 = createRef();
 
     const [playerRefOne] = useInView({
-        triggerOnce: false,
+        threshold: 1,
         onChange: (inView) => {
             player1.current.play();
         }
     });
 
     const [playerRefTwo] = useInView({
-        triggerOnce: false,
+        threshold: 1,
         delay: 500,
         onChange: (inView) => {
             player2.current.play();
@@ -26,7 +26,7 @@ const AnimatedIconsBlock = () => {
     });
 
     const [playerRefThree] = useInView({
-        triggerOnce: false,
+        threshold: 1,
         delay: 1000,
         onChange: (inView) => {
             player3.current.play();
@@ -34,7 +34,7 @@ const AnimatedIconsBlock = () => {
     });
 
     const [playerRefFour] = useInView({
-        triggerOnce: false,
+        threshold: 1,
         delay: 1500,
         onChange: (inView) => {
             player4.current.play();
