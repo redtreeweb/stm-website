@@ -3,7 +3,9 @@ footer {
     display: block;
     width: 100%;
     text-align: center;
-	background-image: url('../../images/interior-footer-bk.jpg');
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,.6)), to(rgba(0,0,0,.8))), url('../../images/footer-bk-2.jpg');
+	background-image: -o-linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.8)), url('../../images/footer-bk-2.jpg');
+	background-image: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.8)), url('../../images/footer-bk-2.jpg');
 	background-size: cover;
 	background-position: center center;
 	background-color: #2c3b44;

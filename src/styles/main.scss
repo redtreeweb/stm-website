@@ -2101,7 +2101,7 @@ body.about h2 {
 body.about .story {
 	background-image: url('../images/story-background.jpg');
 	background-size: cover;
-	background-position: center top;
+	background-position: center -3px;
 	padding: 250px 0;
 
 	@media (max-width: 768px) {
