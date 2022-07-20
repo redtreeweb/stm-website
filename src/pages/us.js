@@ -89,7 +89,7 @@ const Us = ({data}) => {
                         <div className="leadership">
                             <div className="row">
                                 <div className="large-12">
-                                    <h2>Leadership Team</h2>
+                                    <h2>Team</h2>
                                 </div>
                                 <div className="row">
                                     <div className={`grid-staff col-3`}>
