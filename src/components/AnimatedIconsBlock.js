@@ -1,10 +1,14 @@
-import React, { createRef, useEffect } from 'react';
+import React, { createRef, useEffect, useState } from 'react';
 import { Player } from '@lottiefiles/react-lottie-player';
 
 import { useInView } from 'react-intersection-observer';
 import CountUp from 'react-countup';
 
 const AnimatedIconsBlock = () => {
+    const [animation1PassiveEnabled, setAnimation1PassiveEnabled] = useState(false);
+    const [animation2PassiveEnabled, setAnimation2PassiveEnabled] = useState(false);
+    const [animation3PassiveEnabled, setAnimation3PassiveEnabled] = useState(false);
+
     const player1 = createRef();
     const player2 = createRef();
     const player3 = createRef();
@@ -65,7 +69,9 @@ const AnimatedIconsBlock = () => {
                     style={{ width: '225px', height: '225px', marginBottom: '-40px' }}
                 />
 
-                <div className="countup-wrapper"><CountUp start={0} end={16000} delay={.5} separator="," duration={5} /></div>
+                <div className="countup-wrapper">
+                    { (animation1PassiveEnabled) ? <CountUp start={16000} end={16100} separator="," duration={600} /> : <CountUp start={0} end={16000} separator="," duration={5} delay={.5} onEnd={() => { setAnimation1PassiveEnabled(true) }} /> }
+                </div>
                 <p className='countup-label'>Hours of Video Created</p>
             </div>
 
@@ -77,7 +83,9 @@ const AnimatedIconsBlock = () => {
                     style={{ width: '200px', height: '200px', marginBottom: '-20px', }}
                 />
 
-                <div className="countup-wrapper"><CountUp start={0} end={490} delay={1} /></div>
+                <div className="countup-wrapper">
+                    { (animation2PassiveEnabled) ? <CountUp start={490} end={1000} separator="," duration={6000} /> : <CountUp start={0} end={490} delay={1} onEnd={() => { setAnimation2PassiveEnabled(true) }} /> }
+                </div>
                 <p className='countup-label'>Stories Told</p>
             </div>
 
@@ -90,7 +98,9 @@ const AnimatedIconsBlock = () => {
                 style={{ width: '175px', height: '175px', marginBottom: '-20px', }}
             />
 
-            <div className="countup-wrapper"><CountUp start={0} end={1.5} delay={1.5} decimals={1} /></div>
+            <div className="countup-wrapper">
+                { (animation3PassiveEnabled) ? <CountUp start={1.5} end={30} duration={1000} decimals={1} /> : <CountUp start={0} end={1.5} delay={1.5} decimals={1} onEnd={() => { setAnimation3PassiveEnabled(true) }} /> }
+            </div>
             <p className='countup-label'>Dragons Slayed for Our Clients <br/>(Weekly)</p>
             </div>
         </div>
