@@ -1,4 +1,4 @@
-import React, { createRef, useEffect, useState } from 'react';
+import React, { createRef, useState } from 'react';
 import { Player } from '@lottiefiles/react-lottie-player';
 
 import { useInView } from 'react-intersection-observer';

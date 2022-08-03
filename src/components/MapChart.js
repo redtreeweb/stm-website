@@ -1,4 +1,5 @@
-import React, { memo } from "react";
+import React, { memo, useState } from "react";
+import { useInView } from 'react-intersection-observer';
 import {
   ComposableMap,
   ZoomableGroup,
@@ -9,14 +10,28 @@ import {
 import geoUrl from "../data/world-geo.json";
 
 const MapChart = ({ setTooltipContent }) => {
+  const [geographyColor, setGeographyColor] = useState('#ffffff');
+  const [geographyTransition, setGeographyTransition] = useState('fill 1s');
+
+  const [mapRef] = useInView({
+    threshold: .50,
+    onChange: (inView) => {
+      if (inView) {
+        setGeographyColor("#EAA583");
+        setTimeout(function(){
+          setGeographyTransition('fill, .4s');
+        }, 1000);
+      }
+    }
+  });
+
   return (
-    <div data-tip="">
-      <ComposableMap projectionConfig={{ scale: 140 }} width={700} height={400}>
-        {/* <ZoomableGroup center={[0, 0]} zoom={1}> */}
+    <div data-tip="" ref={mapRef}>
+      <ComposableMap projectionConfig={{ scale: 140 }} width={700} height={400}> 
             <Geographies geography={geoUrl}>
-              {({ geographies }) =>
-                geographies.map(geo => (
-                
+              { ({ geographies }) =>
+                geographies.map((geo) =>
+
                   <Geography
                     tabIndex={-1}
                     key={geo.rsmKey}
@@ -34,8 +49,9 @@ const MapChart = ({ setTooltipContent }) => {
                     style={
                       geo.properties.STMLabel != null ? {
                         default: {
-                          fill: "#FC9867",
-                          outline: "#222222"
+                          fill: geographyColor,
+                          outline: "#222222",
+                          transition: geographyTransition
                         },
                         hover: {
                           fill: "#D94C00",
@@ -47,24 +63,23 @@ const MapChart = ({ setTooltipContent }) => {
                         }
                     } : {
                         default: {
-                          fill: "#e7e7e7",
+                          fill: "#ffffff",
                           outline: "#222222"
                         },
                         hover: {
-                          fill: "#e7e7e7",
+                          fill: "#ffffff",
                           outline: "#222222"
                         },
                         pressed: {
-                          fill: "#e7e7e7",
+                          fill: "#ffffff",
                           outline: "#222222"
                         }
                     }
                     }
                   />
-                ))
+                )
               }
             </Geographies>
-          {/* </ZoomableGroup> */}
       </ComposableMap>
     </div>
   );
