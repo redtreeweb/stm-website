@@ -101,22 +101,10 @@ module.exports = {
             },
         },
         {
-            resolve: `gatsby-plugin-google-analytics`,
-            options: {
-                trackingId: "UA-60717411-1",
-                // Defines where to place the tracking script - `true` in the head and `false` in the body
-                head: false,
-                // Setting this parameter is optional
-                anonymize: true,
-                // Setting this parameter is also optional
-                respectDNT: true,
-            },
-        },
-        {
           resolve: `gatsby-plugin-google-gtag`,
           options: {
             trackingIds: [
-              'G-3S4YDQ2X6G'
+              'G-3S4YDQ2X6G', '4358867121', 'UA-60717411-1'
             ],
             pluginConfig: {
               head: true
