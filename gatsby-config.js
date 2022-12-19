@@ -113,6 +113,17 @@ module.exports = {
             },
         },
         {
+          resolve: `gatsby-plugin-google-gtag`,
+          options: {
+            trackingIds: [
+              'G-3S4YDQ2X6G'
+            ],
+            pluginConfig: {
+              head: true
+            }
+          }
+        },
+        {
             resolve: 'gatsby-plugin-mailchimp',
             options: {
                 endpoint: 'https://skinnytiemedia.us10.list-manage.com/subscribe/post?u=9000c9c71a9eb1030fd6c4320&amp;id=d18a0fae0e', // add your MC list endpoint here; see instructions below
