@@ -101,14 +101,9 @@ module.exports = {
             },
         },
         {
-          resolve: `gatsby-plugin-google-gtag`,
+          resolve: `gatsby-plugin-google-tagmanager`,
           options: {
-            trackingIds: [
-              'G-3S4YDQ2X6G', 'UA-60717411-1'
-            ],
-            pluginConfig: {
-              head: true
-            }
+            id: 'GTM-KLVTD6X'
           }
         },
         {
