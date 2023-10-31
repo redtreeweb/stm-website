@@ -1,5 +1,6 @@
 import Lethargy from "exports-loader?this.Lethargy!lethargy/lethargy";
 import smoothscroll from 'smoothscroll-polyfill';
+import Popup from '../components/Popup';
  
 import React, { createRef } from 'react';
 import Helmet from 'react-helmet';
@@ -202,6 +203,7 @@ class IndexPage extends React.Component {
                     <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script>
                 </Helmet>
                 <div className="fullpage-viewport enable-scroll">
+                    <Popup></Popup>
                     <div
                         id="fullpage-wrapper"
                         className="fullpage-wrapper"

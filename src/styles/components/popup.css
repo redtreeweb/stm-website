@@ -1,0 +1,55 @@
+.popupwrapper {
+  opacity: 0;
+}
+
+.popupwrapper.visible {
+  opacity: 1;
+  transition: opacity .4s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.popup {
+  position: absolute;
+  top: 50%;
+  background: white;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  z-index: 9999;
+  width: 50%;
+  padding: 24px;
+  min-height: 200px;
+}
+
+.popup h2 {
+  color: black;
+  font-family: 'Knockout HTF\ 30';
+  padding-top: 0;
+}
+
+.popup p {
+  color: black;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.popup a {
+  color: #d94c00;
+  font-weight: 700;
+}
+
+.overlay {
+  background: rgba(0,0,0,.4);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}

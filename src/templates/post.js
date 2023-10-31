@@ -27,8 +27,6 @@ class PostTemplate extends Component {
         const post = this.props.data.wordpressPost;
         const entryDate = new Date(post.date);
 
-        const featuredImage = post.featured_media && post.featured_media.localFile && post.featured_media.localFile.childImageSharp.fluid;
-
         return (
             <Layout
                 headerFontColor="dark"
@@ -38,12 +36,8 @@ class PostTemplate extends Component {
                     title={`${post.title} - Skinny Tie Media`}
                 >
                     <meta property="og:title" content={post.title} />
-                    <meta property="og:image" content={post.featured_media && post.featured_media.source_url} />
                 </Helmet>
                 <div className="post-wrapper" >
-                    <div className="post-header post-featured-image">
-                        {!!featuredImage ? <Img fluid={featuredImage} /> : <ImageFallback />}
-                    </div>
                     <div className="post-content" >
                         <div className="post-meta">
                             <div className="post-meta__content">
@@ -86,16 +80,6 @@ export const pageQuery = graphql`
       date,
       acf {
         location
-      },
-      featured_media {
-        source_url,
-        localFile {
-          childImageSharp {
-              fluid(maxWidth: 1400, quality: 70) {
-                ...GatsbyImageSharpFluid_noBase64
-              }
-            }
-        }
       }
     }
     site {

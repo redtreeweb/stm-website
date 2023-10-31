@@ -32,9 +32,7 @@ class Category extends React.Component {
         const {data: {allWordpressPost}, pageContext: {id, name}} = this.props;
 
         const postsCategory = allWordpressPost.edges.filter(({node}) => {
-          if (!node.featured_media) {
-            return false
-          }
+
           if (node.categories.length) {
             return node.categories.reduce((p,c) => {
               return p || c.id === id
@@ -46,7 +44,6 @@ class Category extends React.Component {
             <Link to={ '/blog/' + post.slug } className="item-blog-roll-link-wrapper">
                 <div className="item-blog-roll">
                     <div className="item-blog-roll-title">{post.title}</div>
-                    {post.featured_media && post.featured_media.localFile && <Img fluid={ post.featured_media.localFile.childImageSharp.fluid} /> }
                     <div className="item-blog-roll-copy">
                         <div className="item-blog-roll-excerpt" dangerouslySetInnerHTML={{__html: post.excerpt}}></div>
                     </div>
@@ -55,18 +52,7 @@ class Category extends React.Component {
         ))
 
         console.log(postsCategory)
-        
-        
-        // .map(({node: {title, slug, featured_media, excerpt}}) => {
-        //   return <React.Fragment key={slug}>
-        //   <PostThumbnail 
-        //     title={title} 
-        //     slug={slug} 
-        //     imgUrl={featured_media.source_url} 
-        //     />
-        //       <div className="category-item-copy" dangerouslySetInnerHTML={{ __html: excerpt }}></div>
-        //     </React.Fragment>;
-        // })
+    
 
         const blogRoll = postsCategory
 
@@ -113,15 +99,6 @@ query {
         excerpt,
         categories {
           id
-        },
-        featured_media {
-            localFile {
-                childImageSharp {
-                    fluid(maxWidth: 1400, quality: 70) {
-                        ...GatsbyImageSharpFluid_noBase64
-                    }
-                }
-            }
         }
       }   
     }
