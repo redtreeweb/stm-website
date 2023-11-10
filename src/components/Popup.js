@@ -13,7 +13,7 @@ const Popup = () => {
   return (
     <div className="popupwrapper">
     <div className="overlay"></div>
-    <div className="popup"><h2>SkinnyTie Media has rebranded to Kindling Creative. </h2><p>For years, we've been dedicated to crafting exceptional communication tools and strategies. Now, we're taking that commitment to the next level. We're now focused on uncovering authentic voices within organizations, making workplaces more meaningful.</p><p><a href=" https://thekindlingagency.com">Let's spark something big by telling us your story »</a></p></div>
+    <div className="popup"><h2>SkinnyTie Media is now Kindling Creative Agency.</h2><p>Same great team.<br/>Same amazing work.<br/>Bigger vision.</p><p>Spark something BIG and see what we're up to over at <a href=" https://thekindlingagency.com">thekindlingagency.com</a></p><p>P.S. All Ties Welcome!</p></div>
     </div>
   );
 }
